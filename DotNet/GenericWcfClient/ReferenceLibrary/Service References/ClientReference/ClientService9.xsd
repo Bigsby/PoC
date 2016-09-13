@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" />
+  <xs:complexType name="ArrayOfCareTeamAssignment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareTeamAssignment" nillable="true" type="tns:CareTeamAssignment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareTeamAssignment" nillable="true" type="tns:ArrayOfCareTeamAssignment" />
+  <xs:complexType name="CareTeamAssignment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdmissionID" type="xs:long" />
+      <xs:element minOccurs="0" name="CareTeamRole" nillable="true" type="tns:CareTeamRole" />
+      <xs:element minOccurs="0" name="CareTeamRoleID" type="xs:long" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsConsultant" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="PatientAdmission" nillable="true" type="q1:PatientAdmission" />
+      <xs:element minOccurs="0" name="PatientAdmissionGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="StaffId" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffMember" nillable="true" type="tns:Staff" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CareTeamAssignment" nillable="true" type="tns:CareTeamAssignment" />
+  <xs:complexType name="CareTeamRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbbreviatedRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AllowManualUpdate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CareTeamRoleID" type="xs:long" />
+      <xs:element minOccurs="0" name="IsPrimaryDoctor" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedDescription" nillable="true" type="q2:LocalisedItem" />
+      <xs:element minOccurs="0" name="PatientFriendlyRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFriendlyRoleLID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="StaffType" nillable="true" type="tns:StaffType" />
+      <xs:element minOccurs="0" name="StaffTypeId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CareTeamRole" nillable="true" type="tns:CareTeamRole" />
+  <xs:complexType name="StaffType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Culture" nillable="true" type="q3:Culture" />
+      <xs:element minOccurs="0" name="CultureId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LoginRequiresPatient" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StaffTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffTypeName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" minOccurs="0" name="TagGroup" nillable="true" type="q4:TagGroup" />
+      <xs:element minOccurs="0" name="TagGroupId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffType" nillable="true" type="tns:StaffType" />
+  <xs:complexType name="Staff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Evidence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FalseAcceptRate" type="xs:long" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Image" nillable="true" type="q5:Blob" />
+      <xs:element minOccurs="0" name="ImageBlobId" nillable="true" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" minOccurs="0" name="Inbox" nillable="true" type="q6:Inbox" />
+      <xs:element minOccurs="0" name="InboxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginType" type="tns:LoginType" />
+      <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reports" nillable="true" type="tns:Staff" />
+      <xs:element minOccurs="0" name="ReportsTo" nillable="true" type="xs:long" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" minOccurs="0" name="ScheduleItems" nillable="true" type="q7:ArrayOfScheduleItem" />
+      <xs:element minOccurs="0" name="StaffGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="StaffID" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffType" nillable="true" type="tns:StaffType" />
+      <xs:element minOccurs="0" name="StaffTypeID" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffTypes" nillable="true" type="tns:ArrayOfStaffType" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Staff" nillable="true" type="tns:Staff" />
+  <xs:simpleType name="LoginType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="Pin" />
+      <xs:enumeration value="PinAndPassword" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LoginType" nillable="true" type="tns:LoginType" />
+  <xs:complexType name="ArrayOfStaff">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Staff" nillable="true" type="tns:Staff" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaff" nillable="true" type="tns:ArrayOfStaff" />
+  <xs:complexType name="ArrayOfStaffType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StaffType" nillable="true" type="tns:StaffType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaffType" nillable="true" type="tns:ArrayOfStaffType" />
+  <xs:complexType name="ArrayOfNurseAllocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NurseAllocation" nillable="true" type="tns:NurseAllocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNurseAllocation" nillable="true" type="tns:ArrayOfNurseAllocation" />
+  <xs:complexType name="NurseAllocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedByStaff" nillable="true" type="tns:Staff" />
+      <xs:element minOccurs="0" name="AssignedByStaffID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AssignedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssigneeStaff" nillable="true" type="tns:Staff" />
+      <xs:element minOccurs="0" name="NurseAllocationID" type="xs:long" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="PatientAdmission" nillable="true" type="q8:PatientAdmission" />
+      <xs:element minOccurs="0" name="PatientAdmissionID" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffID" type="xs:long" />
+      <xs:element minOccurs="0" name="UnAssignedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UnassignedByStaff" nillable="true" type="tns:Staff" />
+      <xs:element minOccurs="0" name="UnassignedByStaffID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NurseAllocation" nillable="true" type="tns:NurseAllocation" />
+</xs:schema>

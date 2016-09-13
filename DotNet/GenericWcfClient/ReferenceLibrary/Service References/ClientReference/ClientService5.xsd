@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomaticallyAssigned" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BlobID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Charge" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InitialBalance" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LockToFirstFacilityUsed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxPerDay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OnlyValidInAnInterval" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PercentageTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PeriodAvailable" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PromptBeforeDebit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UsageInMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidFromTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidToTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Balance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Patient" nillable="true" type="q1:Patient" />
+      <xs:element minOccurs="0" name="PatientID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Balance" nillable="true" type="tns:Balance" />
+  <xs:complexType name="ArrayOfPurchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Purchase" nillable="true" type="tns:Purchase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchase" nillable="true" type="tns:ArrayOfPurchase" />
+  <xs:complexType name="Purchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalChargeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUsed" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MinutesPurchased" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Patient" nillable="true" type="q2:Patient" />
+      <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PurchaseId" type="xs:long" />
+      <xs:element minOccurs="0" name="PurchaseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchasedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Room" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondsUsed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidUntil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Voucher" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Purchase" nillable="true" type="tns:Purchase" />
+</xs:schema>

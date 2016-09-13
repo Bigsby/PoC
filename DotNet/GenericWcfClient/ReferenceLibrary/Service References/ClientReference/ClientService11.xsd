@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.PatientEducation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.PatientEducation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfEducationSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EducationSearchResult" nillable="true" type="tns:EducationSearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEducationSearchResult" nillable="true" type="tns:ArrayOfEducationSearchResult" />
+  <xs:complexType name="EducationSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfEducationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EducationSearchResult" nillable="true" type="tns:EducationSearchResult" />
+  <xs:complexType name="ArrayOfEducationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EducationItem" nillable="true" type="tns:EducationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEducationItem" nillable="true" type="tns:ArrayOfEducationItem" />
+  <xs:complexType name="EducationItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AvailableCultures" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FacilityId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAdded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WasAdded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EducationItem" nillable="true" type="tns:EducationItem" />
+</xs:schema>

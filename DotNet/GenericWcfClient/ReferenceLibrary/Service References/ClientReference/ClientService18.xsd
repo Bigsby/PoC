@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.MealOrdering" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Substitutions" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" />
+  <xs:complexType name="ArrayOfStaffInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StaffInfo" nillable="true" type="tns:StaffInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaffInfo" nillable="true" type="tns:ArrayOfStaffInfo" />
+  <xs:complexType name="StaffInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Evidence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageBlobId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="InboxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportsTo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffId" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffTypeName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StaffTypes" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffInfo" nillable="true" type="tns:StaffInfo" />
+  <xs:complexType name="PatientWhiteboardInfo">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Allergies" nillable="true" type="q2:ArrayOfAllergy" />
+      <xs:element minOccurs="0" name="CareTeam" nillable="true" type="tns:ArrayOfCareTeamMemberInfo" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="DietOrders" nillable="true" type="q3:ArrayOfPatientDietOrder" />
+      <xs:element minOccurs="0" name="ExpectedDischargeDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Goals" nillable="true" type="q4:ArrayOfPatientGoal" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.MealOrdering" minOccurs="0" name="MealOrderingStatus" nillable="true" type="q5:PatientMealOrderingStatus" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Observations" nillable="true" type="q6:ArrayOfObservation" />
+      <xs:element minOccurs="0" name="PatientAdmissionID" type="xs:long" />
+      <xs:element minOccurs="0" name="PictureID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientWhiteboardInfo" nillable="true" type="tns:PatientWhiteboardInfo" />
+  <xs:complexType name="ArrayOfCareTeamMemberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareTeamMemberInfo" nillable="true" type="tns:CareTeamMemberInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareTeamMemberInfo" nillable="true" type="tns:ArrayOfCareTeamMemberInfo" />
+  <xs:complexType name="CareTeamMemberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CareTeamRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsPrimaryDoctor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrigRoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleFinish" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RoleStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="StaffInfo" nillable="true" type="tns:StaffInfo" />
+      <xs:element minOccurs="0" name="Target" type="tns:RoleTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CareTeamMemberInfo" nillable="true" type="tns:CareTeamMemberInfo" />
+  <xs:simpleType name="RoleTarget">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CurrentPatient" />
+      <xs:enumeration value="NewBornChild" />
+      <xs:enumeration value="Child" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoleTarget" nillable="true" type="tns:RoleTarget" />
+  <xs:complexType name="CompletionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompletedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompletionDto" nillable="true" type="tns:CompletionDto" />
+  <xs:complexType name="ParentalControlInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeMyPhotosInScreenSaver" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentalControls" type="tns:ParentalControl" />
+      <xs:element minOccurs="0" name="PictureID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SafeBrowsingEnabled" type="xs:boolean" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WhiteListedUrls" nillable="true" type="q7:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParentalControlInfo" nillable="true" type="tns:ParentalControlInfo" />
+  <xs:simpleType name="ParentalControl">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Communication_Skype" />
+          <xs:enumeration value="Communication_VideoPhone" />
+          <xs:enumeration value="Entertainment_Games" />
+          <xs:enumeration value="Entertainment_Netflix" />
+          <xs:enumeration value="Entertainment_Spotify" />
+          <xs:enumeration value="General_Kids" />
+          <xs:enumeration value="General_OlderKids" />
+          <xs:enumeration value="General_Teens" />
+          <xs:enumeration value="General_Adult" />
+          <xs:enumeration value="General_MealOrdering" />
+          <xs:enumeration value="Social_Facebook" />
+          <xs:enumeration value="Social_Instagram" />
+          <xs:enumeration value="Social_Twitter" />
+          <xs:enumeration value="WebBrowsing" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ParentalControl" nillable="true" type="tns:ParentalControl" />
+  <xs:complexType name="ArrayOfPatientEducationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientEducationDTO" nillable="true" type="tns:PatientEducationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientEducationDTO" nillable="true" type="tns:ArrayOfPatientEducationDTO" />
+  <xs:complexType name="PatientEducationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompletedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContextData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityID" type="xs:long" />
+      <xs:element minOccurs="0" name="Icon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LowResUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientAdmissionID" type="xs:long" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientEducationDTO" nillable="true" type="tns:PatientEducationDTO" />
+  <xs:complexType name="ArrayOfCareTeamPatientInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareTeamPatientInfo" nillable="true" type="tns:CareTeamPatientInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareTeamPatientInfo" nillable="true" type="tns:ArrayOfCareTeamPatientInfo" />
+  <xs:complexType name="CareTeamPatientInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertReadiness" type="tns:Readiness" />
+      <xs:element minOccurs="0" name="BedNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DietCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationClientTreeItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="MRN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumOfAlerts" type="xs:int" />
+      <xs:element minOccurs="0" name="NumOfQuestions" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="PatientAdmission" nillable="true" type="q8:PatientAdmission" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientPreferedName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionReadiness" type="tns:Readiness" />
+      <xs:element minOccurs="0" name="RoomNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoundStatus" type="tns:RoundStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CareTeamPatientInfo" nillable="true" type="tns:CareTeamPatientInfo" />
+  <xs:simpleType name="Readiness">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Healthy" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Urgent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Readiness" nillable="true" type="tns:Readiness" />
+  <xs:simpleType name="RoundStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="Amber" />
+      <xs:enumeration value="Red" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoundStatus" nillable="true" type="tns:RoundStatus" />
+  <xs:complexType name="SecurityTokenResult">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdditionalSecureHostDomains" nillable="true" type="q9:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ExpiryDateTimeUtc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityTokenResult" nillable="true" type="tns:SecurityTokenResult" />
+  <xs:complexType name="ArrayOfLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationDTO" nillable="true" type="tns:LocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationDTO" nillable="true" type="tns:ArrayOfLocationDTO" />
+  <xs:complexType name="LocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientTierType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationDTO" nillable="true" type="tns:LocationDTO" />
+  <xs:complexType name="PersonInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdmissionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AlternativePatientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DietCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ArrayOfPersonInfo.PropertyDto" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifierList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeMyPhotosInScreensaver" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InsuranceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastSession" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentalControlEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNumberHash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientVerified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalUser" nillable="true" type="tns:PortalUserInfo" />
+      <xs:element minOccurs="0" name="PreferedName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafeBrowsingEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StoryBoardID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TagGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ThemeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhiteboardInfo" nillable="true" type="tns:PatientWhiteboardInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonInfo" nillable="true" type="tns:PersonInfo" />
+  <xs:complexType name="ArrayOfPersonInfo.PropertyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonInfo.PropertyDto" nillable="true" type="tns:PersonInfo.PropertyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonInfo.PropertyDto" nillable="true" type="tns:ArrayOfPersonInfo.PropertyDto" />
+  <xs:complexType name="PersonInfo.PropertyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonInfo.PropertyDto" nillable="true" type="tns:PersonInfo.PropertyDto" />
+  <xs:complexType name="PortalUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColourCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDependant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortalUserInfo" nillable="true" type="tns:PortalUserInfo" />
+  <xs:complexType name="ContentConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentTree" nillable="true" type="tns:ContentTreeDto" />
+      <xs:element minOccurs="0" name="FacilityPlayback" nillable="true" type="tns:ArrayOfFacilityPlaybackDto" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PhrasesDictionary" nillable="true" type="q10:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" minOccurs="0" name="Storyboards" nillable="true" type="q11:ArrayOfSystemStoryboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentConfiguration" nillable="true" type="tns:ContentConfiguration" />
+  <xs:complexType name="ContentTreeDto">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="ContentTree" nillable="true" type="q12:ArrayOfContentTreeItem" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" minOccurs="0" name="EventHandlers" nillable="true" type="q13:ArrayOfFacility" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="MenuItems" nillable="true" type="q14:ArrayOfContentTreeItem" />
+      <xs:element minOccurs="0" name="RootContentItemId" type="xs:long" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" minOccurs="0" name="Storyboards" nillable="true" type="q15:ArrayOfStoryboard" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Substitutions" minOccurs="0" name="Substitutions" nillable="true" type="q16:ArrayOfSubstitution" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="Tiles" nillable="true" type="q17:ArrayOfContentTreeItem" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="Toolbars" nillable="true" type="q18:ArrayOfToolbar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentTreeDto" nillable="true" type="tns:ContentTreeDto" />
+  <xs:complexType name="ArrayOfFacilityPlaybackDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacilityPlaybackDto" nillable="true" type="tns:FacilityPlaybackDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacilityPlaybackDto" nillable="true" type="tns:ArrayOfFacilityPlaybackDto" />
+  <xs:complexType name="FacilityPlaybackDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacilityId" type="xs:long" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacilityPlaybackDto" nillable="true" type="tns:FacilityPlaybackDto" />
+  <xs:complexType name="ActiveHospital">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrowserBookmarks" nillable="true" type="tns:ArrayOfBrowserBookmark" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultCulture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HospitalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HospitalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PaymentCurrency" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveHospital" nillable="true" type="tns:ActiveHospital" />
+  <xs:complexType name="ArrayOfBrowserBookmark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BrowserBookmark" nillable="true" type="tns:BrowserBookmark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBrowserBookmark" nillable="true" type="tns:ArrayOfBrowserBookmark" />
+  <xs:complexType name="BrowserBookmark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FavouriteID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhiteListed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrowserBookmark" nillable="true" type="tns:BrowserBookmark" />
+  <xs:complexType name="ArrayOfPillowKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PillowKey" nillable="true" type="tns:PillowKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPillowKey" nillable="true" type="tns:ArrayOfPillowKey" />
+  <xs:complexType name="PillowKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequiresAlt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequiresCtrl" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequiresShift" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PillowKey" nillable="true" type="tns:PillowKey" />
+  <xs:complexType name="PollRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPU" type="xs:float" />
+      <xs:element minOccurs="0" name="CurrentPatient" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="FirstPollTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastMessageUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastScheduleUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="PatientMode" type="q19:PatientMode" />
+      <xs:element minOccurs="0" name="RAM" type="xs:float" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="SystemMode" type="q20:SystemMode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PollRequest" nillable="true" type="tns:PollRequest" />
+  <xs:complexType name="PollResult">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="Command" type="q21:ClientCommands" />
+      <xs:element minOccurs="0" name="CurrentServerTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PatientAction" type="tns:PatientReloadAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PollResult" nillable="true" type="tns:PollResult" />
+  <xs:simpleType name="PatientReloadAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="PatientLoggedIn" />
+      <xs:enumeration value="PatientLoggedOut" />
+      <xs:enumeration value="PatientChanged" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PatientReloadAction" nillable="true" type="tns:PatientReloadAction" />
+  <xs:complexType name="ArrayOfPersonInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonInfo" nillable="true" type="tns:PersonInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonInfo" nillable="true" type="tns:ArrayOfPersonInfo" />
+  <xs:complexType name="SecondStagePaymentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackEndProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReceiptEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaveCard" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecondStagePaymentDetails" nillable="true" type="tns:SecondStagePaymentDetails" />
+  <xs:complexType name="PaymentCompleteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" type="tns:ChargeError" />
+      <xs:element minOccurs="0" name="PaymentReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentCompleteResponse" nillable="true" type="tns:PaymentCompleteResponse" />
+  <xs:simpleType name="ChargeError">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoError" />
+      <xs:enumeration value="NoPatient" />
+      <xs:enumeration value="InvalidVoucher" />
+      <xs:enumeration value="IncorrectNumber" />
+      <xs:enumeration value="InvalidNumber" />
+      <xs:enumeration value="InvalidCvc" />
+      <xs:enumeration value="ExpiredCard" />
+      <xs:enumeration value="CardDeclined" />
+      <xs:enumeration value="UnknownCreditCardError" />
+      <xs:enumeration value="UnknownVoucherError" />
+      <xs:enumeration value="VoucherAlreadyUsed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChargeError" nillable="true" type="tns:ChargeError" />
+  <xs:complexType name="ProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InitialBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentageTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductInfo" nillable="true" type="tns:ProductInfo" />
+  <xs:complexType name="CardHintDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpiryYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Last4Digits" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardHintDetails" nillable="true" type="tns:CardHintDetails" />
+  <xs:complexType name="ArrayOfProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductInfo" nillable="true" type="tns:ProductInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductInfo" nillable="true" type="tns:ArrayOfProductInfo" />
+  <xs:simpleType name="ApplicationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Patient" />
+      <xs:enumeration value="Clinician" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationMode" nillable="true" type="tns:ApplicationMode" />
+  <xs:complexType name="SkinConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivePatient" nillable="true" type="tns:PersonInfo" />
+      <xs:element minOccurs="0" name="AvailableCultures" nillable="true" type="tns:ArrayOfAvailableCulture" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" minOccurs="0" name="AvailableThemes" nillable="true" type="q22:ArrayOfSkinTheme" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContentTags" nillable="true" type="q23:ArrayOfstring" />
+      <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentalControl" nillable="true" type="tns:ParentalControl" />
+      <xs:element minOccurs="0" name="RootContentItemID" type="xs:long" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" minOccurs="0" name="SelectedTheme" nillable="true" type="q24:SkinTheme" />
+      <xs:element minOccurs="0" name="SkinName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkinConfiguration" nillable="true" type="tns:SkinConfiguration" />
+  <xs:complexType name="ArrayOfAvailableCulture">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvailableCulture" nillable="true" type="tns:AvailableCulture" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvailableCulture" nillable="true" type="tns:ArrayOfAvailableCulture" />
+  <xs:complexType name="AvailableCulture">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplaySub" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvailableCulture" nillable="true" type="tns:AvailableCulture" />
+  <xs:complexType name="ArrayOfSendTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SendTo" nillable="true" type="tns:SendTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSendTo" nillable="true" type="tns:ArrayOfSendTo" />
+  <xs:complexType name="SendTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendTo" nillable="true" type="tns:SendTo" />
+  <xs:complexType name="SendToClient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SendTo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientID" type="xs:long" />
+          <xs:element minOccurs="0" name="ClientIdentity" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendToClient" nillable="true" type="tns:SendToClient" />
+  <xs:complexType name="SendToPatient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SendToUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PatientID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendToPatient" nillable="true" type="tns:SendToPatient" />
+  <xs:complexType name="SendToUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SendTo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendToUser" nillable="true" type="tns:SendToUser" />
+  <xs:complexType name="SendToStaff">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SendToUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StaffID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendToStaff" nillable="true" type="tns:SendToStaff" />
+  <xs:complexType name="PatientProfile">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Diagnoses" nillable="true" type="q25:ArrayOflong" />
+      <xs:element minOccurs="0" name="DietCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TagGroup" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientProfile" nillable="true" type="tns:PatientProfile" />
+  <xs:complexType name="ArrayOfDiet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Diet" nillable="true" type="tns:Diet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiet" nillable="true" type="tns:ArrayOfDiet" />
+  <xs:complexType name="Diet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DietCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Diet" nillable="true" type="tns:Diet" />
+  <xs:complexType name="ArrayOfDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiagnosis" nillable="true" type="tns:ArrayOfDiagnosis" />
+  <xs:complexType name="Diagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosisClassification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosisID" type="xs:long" />
+      <xs:element minOccurs="0" name="DiagnosisType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MajorDiagnosticCategory" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+  <xs:complexType name="ArrayOfTagGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TagGroup" nillable="true" type="tns:TagGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTagGroup" nillable="true" type="tns:ArrayOfTagGroup" />
+  <xs:complexType name="TagGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagGroupID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagGroup" nillable="true" type="tns:TagGroup" />
+</xs:schema>

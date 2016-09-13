@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" />
+  <xs:complexType name="ClientTree">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientTreeID" type="xs:long" />
+      <xs:element minOccurs="0" name="ClientTreeItem" nillable="true" type="tns:ClientTreeItem" />
+      <xs:element minOccurs="0" name="HospitalId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientTree" nillable="true" type="tns:ClientTree" />
+  <xs:complexType name="ClientTreeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ClientTierType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientTree" nillable="true" type="tns:ClientTree" />
+      <xs:element minOccurs="0" name="ClientTreeID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ClientTreeItemID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentClientTreeItem" nillable="true" type="tns:ClientTreeItem" />
+      <xs:element minOccurs="0" name="ParentID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientTreeItem" nillable="true" type="tns:ClientTreeItem" />
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientCommand" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientId" type="xs:long" />
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="tns:ClientType" />
+      <xs:element minOccurs="0" name="ClientTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceMetadata" nillable="true" type="tns:DeviceMetadata" />
+      <xs:element minOccurs="0" name="DeviceStatus" nillable="true" type="tns:ArrayOfDeviceStatus" />
+      <xs:element minOccurs="0" name="Identity" nillable="true" type="xs:base64Binary" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" minOccurs="0" name="Inbox" nillable="true" type="q1:Inbox" />
+      <xs:element minOccurs="0" name="InboxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MonitorClient" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecycleDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" minOccurs="0" name="TagGroup" nillable="true" type="q2:TagGroup" />
+      <xs:element minOccurs="0" name="TagGroupId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="ClientType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IconName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagGroups" nillable="true" type="tns:ArrayOfClientTypeGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientType" nillable="true" type="tns:ClientType" />
+  <xs:complexType name="ArrayOfClientTypeGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientTypeGroup" nillable="true" type="tns:ClientTypeGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientTypeGroup" nillable="true" type="tns:ArrayOfClientTypeGroup" />
+  <xs:complexType name="ClientTypeGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="tns:ClientType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" minOccurs="0" name="TagGroup" nillable="true" type="q3:TagGroup" />
+      <xs:element minOccurs="0" name="TagGroupId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientTypeGroup" nillable="true" type="tns:ClientTypeGroup" />
+  <xs:complexType name="DeviceMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="ClientId" type="xs:long" />
+      <xs:element minOccurs="0" name="FirstPingTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastPingCPU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastPingMemory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastPingTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MacAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoftwareVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartOfUpTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceMetadata" nillable="true" type="tns:DeviceMetadata" />
+  <xs:complexType name="ArrayOfDeviceStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeviceStatus" nillable="true" type="tns:DeviceStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeviceStatus" nillable="true" type="tns:ArrayOfDeviceStatus" />
+  <xs:complexType name="DeviceStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="ClientID" type="xs:long" />
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUpdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusID" type="xs:long" />
+      <xs:element minOccurs="0" name="TimeDeltaSeconds" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceStatus" nillable="true" type="tns:DeviceStatus" />
+</xs:schema>

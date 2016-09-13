@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.oneview.ie" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.oneview.ie" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.oneview.ie/Imports">
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd0" namespace="http://www.oneview.ie" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.MealOrdering" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.PatientEducation" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Hospitals" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Rules" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Person" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ServiceRequest" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Substitutions" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Device" />
+      <xsd:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.EventLogs" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClientService_CreatePatientQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreatePatientQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreatePatientNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientNote" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreatePatientNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientCareTeam_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientCareTeam" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientCareTeam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientCareTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetExpectedDischargeDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpectedDischargeDate" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetExpectedDischargeDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpectedDischargeDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetWhiteboardInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteboardInfo" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetWhiteboardInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWhiteboardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetParentalControlInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentalControlInfo" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetParentalControlInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentalControlInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetSafeBrowsingEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetSafeBrowsingEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetSafeBrowsingEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetSafeBrowsingEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_CheckPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_CheckPIN" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_CheckPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_CheckPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_ClearPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_ClearPIN" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_ClearPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_ClearPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetParentalControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetParentalControls" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetParentalControls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetParentalControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetWhiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PCI_SetWhiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCI_SetWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetIncludeMyPhotosInScreenSaver_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetIncludeMyPhotosInScreenSaver" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetIncludeMyPhotosInScreenSaver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetIncludeMyPhotosInScreenSaverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetNickName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetNickName" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetNickName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNickNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetContactInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetContactInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetPhotoChoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPhotoChoice" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetPhotoChoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPhotoChoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientEducation" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientEducationByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientEducationByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientEducationByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientEducationByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAllEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEducation" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAllEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkPatientEducationAsViewed_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkPatientEducationAsViewed" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkPatientEducationAsViewed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkPatientEducationAsViewedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SearchEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEducation" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SearchEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_IsDemoEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDemoEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_IsDemoEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDemoEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetCareTeamPatientListByLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCareTeamPatientListByLocation" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetCareTeamPatientListByLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCareTeamPatientListByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LoginStaffMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginStaffMember" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LoginStaffMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginStaffMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogoutStaffMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutStaffMember" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogoutStaffMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutStaffMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetLoggedInStaffMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedInStaffMember" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetLoggedInStaffMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedInStaffMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSecurityToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityToken" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSecurityToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientTreeLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientTreeLocations" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientTreeLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientTreeLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPatients" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientPatientsWithCurrentAdmissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPatientsWithCurrentAdmissions" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientPatientsWithCurrentAdmissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPatientsWithCurrentAdmissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetContentTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContentTree" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetContentTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContentTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetQuickLinkFavourites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuickLinkFavourites" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetQuickLinkFavourites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuickLinkFavouritesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStoryboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoryboard" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStoryboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoryboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetChargePremium_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChargePremium" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetChargePremium_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChargePremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPhoneProductInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneProductInfo" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPhoneProductInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneProductInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogFacilityStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogFacilityStart" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogFacilityEnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogFacilityEnd" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_Poll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Poll" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_Poll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetUnassignedPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnassignedPatients" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetUnassignedPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnassignedPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CompletePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompletePayment" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CompletePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompletePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RedeemVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:RedeemVoucher" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RedeemVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RedeemVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientLogoff_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientLogoff" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientLogoff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientLogoffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientVerified_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientVerified" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientVerified_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientVerifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientHasActivePurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHasActivePurchase" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_PatientHasActivePurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHasActivePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetActivePatientPurchases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePatientPurchases" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetActivePatientPurchases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePatientPurchasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeductCostFromBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductCostFromBalance" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeductCostFromBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductCostFromBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientBalance" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetExistingCardHintIfAny_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingCardHintIfAny" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetExistingCardHintIfAny_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingCardHintIfAnyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RemoveCardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RemoveCardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProductInfoFromCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfoFromCode" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProductInfoFromCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfoFromCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SaveToDoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveToDoList" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SaveToDoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveToDoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_FlagStoryboardStepAsComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlagStoryboardStepAsComplete" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_FlagStoryboardStepAsComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlagStoryboardStepAsCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetServerTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetServerTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetSkinConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSkinConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetSkinConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSkinConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetSkinTheme_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSkinTheme" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetSkinTheme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSkinThemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSkinConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkinConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSkinConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkinConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSkinConfigurationForClientType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkinConfigurationForClientType" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSkinConfigurationForClientType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkinConfigurationForClientTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientFavourites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientFavourites" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientFavourites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientFavouritesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddBrowserFavourite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBrowserFavourite" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddBrowserFavourite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBrowserFavouriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RemoveBrowserFavourite_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBrowserFavourite" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RemoveBrowserFavourite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBrowserFavouriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SavePatientExtendedProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientExtendedProperty" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SavePatientExtendedProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePatientExtendedPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeletePatientExtendedProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientExtendedProperty" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeletePatientExtendedProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientExtendedPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RaiseAlertMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:RaiseAlertMessage" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RaiseAlertMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RaiseAlertMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAlertResponses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertResponses" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAlertResponses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SendAlertResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SendAlertResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAlertResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveUnseenMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUnseenMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveUnseenMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUnseenMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveClientMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveClientMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveClientMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveClientMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveUpdatedClientMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUpdatedClientMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveUpdatedClientMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUpdatedClientMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrievePatientMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePatientMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrievePatientMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePatientMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrievePatientMessagesFromID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePatientMessagesFromID" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrievePatientMessagesFromID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrievePatientMessagesFromIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveMessage" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_RetrieveMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsRead" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsUnread_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsUnread" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsUnread_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsUnreadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsResolvedBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsResolvedBy" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsResolvedBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsResolvedByResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsResolved_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsResolved" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkMessageAsResolved_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsResolvedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeleteMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_DeleteMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateMessageByRecipient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageByRecipient" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateMessageByRecipient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageByRecipientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_ValidateRecipients_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRecipients" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_ValidateRecipients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRecipientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientGroupTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientGroupTree" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientGroupTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientGroupTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientGroup" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientUser" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetClientUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetCurrentlyLoggedInPatientProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentlyLoggedInPatientProfile" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetCurrentlyLoggedInPatientProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentlyLoggedInPatientProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetLoggedinPatientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedinPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetLoggedinPatientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedinPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientProfileByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientProfileByID" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientProfileByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientProfileByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientProfileByInbox_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientProfileByInbox" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientProfileByInbox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientProfileByInboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientDetailByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailByID" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientDetailByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetDietCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDietCodes" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetDietCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDietCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetDiagnoses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnoses" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetDiagnoses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnosesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetTagGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagGroups" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetTagGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdatePatientProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientProfile" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdatePatientProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStaffbyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaffbyID" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStaffbyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaffbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleItemTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleItemTypes" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleItemTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleItemTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleReminderOffsets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleReminderOffsets" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleReminderOffsets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleReminderOffsetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleAlertTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleAlertTypes" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetScheduleAlertTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleAlertTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateScheduleItemForPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateScheduleItemForPatient" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateScheduleItemForPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateScheduleItemForPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateScheduleItemForStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateScheduleItemForStaff" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_CreateScheduleItemForStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateScheduleItemForStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSchedulePageURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulePageURL" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetSchedulePageURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulePageURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientScheduleItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientScheduleItems" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetPatientScheduleItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientScheduleItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStaffScheduleItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaffScheduleItems" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetStaffScheduleItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaffScheduleItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_ModifyPatientScheduleItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPatientScheduleItem" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_ModifyPatientScheduleItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPatientScheduleItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetMessageFacility_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageFacility" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetMessageFacility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageFacilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAvailableMessageFacilities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableMessageFacilities" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_GetAvailableMessageFacilities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableMessageFacilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdatePatientSessionTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientSessionTime" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_UpdatePatientSessionTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientSessionTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogEvent" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_LogEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AskEducationQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskEducationQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AskEducationQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskEducationQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetEducationRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEducationRating" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_SetEducationRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEducationRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkGoalCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkGoalCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_MarkGoalCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkGoalCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddFreetextGoal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFreetextGoal" />
+  </wsdl:message>
+  <wsdl:message name="IClientService_AddFreetextGoal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFreetextGoalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClientService">
+    <wsdl:operation name="CreatePatientQuestion">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreatePatientQuestion" message="tns:IClientService_CreatePatientQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreatePatientQuestionResponse" message="tns:IClientService_CreatePatientQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientNote">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreatePatientNote" message="tns:IClientService_CreatePatientNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreatePatientNoteResponse" message="tns:IClientService_CreatePatientNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientCareTeam">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientCareTeam" message="tns:IClientService_GetPatientCareTeam_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientCareTeamResponse" message="tns:IClientService_GetPatientCareTeam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpectedDischargeDate">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetExpectedDischargeDate" message="tns:IClientService_GetExpectedDischargeDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetExpectedDischargeDateResponse" message="tns:IClientService_GetExpectedDischargeDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWhiteboardInfo">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetWhiteboardInfo" message="tns:IClientService_GetWhiteboardInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetWhiteboardInfoResponse" message="tns:IClientService_GetWhiteboardInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentalControlInfo">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetParentalControlInfo" message="tns:IClientService_GetParentalControlInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetParentalControlInfoResponse" message="tns:IClientService_GetParentalControlInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_SetEnabled">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetEnabled" message="tns:IClientService_PCI_SetEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetEnabledResponse" message="tns:IClientService_PCI_SetEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_SetSafeBrowsingEnabled">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetSafeBrowsingEnabled" message="tns:IClientService_PCI_SetSafeBrowsingEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetSafeBrowsingEnabledResponse" message="tns:IClientService_PCI_SetSafeBrowsingEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_CheckPIN">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_CheckPIN" message="tns:IClientService_PCI_CheckPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_CheckPINResponse" message="tns:IClientService_PCI_CheckPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_ClearPIN">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_ClearPIN" message="tns:IClientService_PCI_ClearPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_ClearPINResponse" message="tns:IClientService_PCI_ClearPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_SetParentalControls">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetParentalControls" message="tns:IClientService_PCI_SetParentalControls_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetParentalControlsResponse" message="tns:IClientService_PCI_SetParentalControls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCI_SetWhiteList">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetWhiteList" message="tns:IClientService_PCI_SetWhiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PCI_SetWhiteListResponse" message="tns:IClientService_PCI_SetWhiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIncludeMyPhotosInScreenSaver">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetIncludeMyPhotosInScreenSaver" message="tns:IClientService_SetIncludeMyPhotosInScreenSaver_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetIncludeMyPhotosInScreenSaverResponse" message="tns:IClientService_SetIncludeMyPhotosInScreenSaver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNickName">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetNickName" message="tns:IClientService_SetNickName_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetNickNameResponse" message="tns:IClientService_SetNickName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetContactInfo">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetContactInfo" message="tns:IClientService_SetContactInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetContactInfoResponse" message="tns:IClientService_SetContactInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPhotoChoice">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetPhotoChoice" message="tns:IClientService_SetPhotoChoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetPhotoChoiceResponse" message="tns:IClientService_SetPhotoChoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientEducation">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientEducation" message="tns:IClientService_GetPatientEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientEducationResponse" message="tns:IClientService_GetPatientEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientEducationByPatientId">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientEducationByPatientId" message="tns:IClientService_GetPatientEducationByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientEducationByPatientIdResponse" message="tns:IClientService_GetPatientEducationByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEducation">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetAllEducation" message="tns:IClientService_GetAllEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetAllEducationResponse" message="tns:IClientService_GetAllEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkPatientEducationAsViewed">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkPatientEducationAsViewed" message="tns:IClientService_MarkPatientEducationAsViewed_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkPatientEducationAsViewedResponse" message="tns:IClientService_MarkPatientEducationAsViewed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEducation">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SearchEducation" message="tns:IClientService_SearchEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SearchEducationResponse" message="tns:IClientService_SearchEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDemoEnabled">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/IsDemoEnabled" message="tns:IClientService_IsDemoEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/IsDemoEnabledResponse" message="tns:IClientService_IsDemoEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCareTeamPatientListByLocation">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetCareTeamPatientListByLocation" message="tns:IClientService_GetCareTeamPatientListByLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetCareTeamPatientListByLocationResponse" message="tns:IClientService_GetCareTeamPatientListByLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginStaffMember">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/LoginStaffMember" message="tns:IClientService_LoginStaffMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/LoginStaffMemberResponse" message="tns:IClientService_LoginStaffMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutStaffMember">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/LogoutStaffMember" message="tns:IClientService_LogoutStaffMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/LogoutStaffMemberResponse" message="tns:IClientService_LogoutStaffMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInStaffMember">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetLoggedInStaffMember" message="tns:IClientService_GetLoggedInStaffMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetLoggedInStaffMemberResponse" message="tns:IClientService_GetLoggedInStaffMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityToken">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetSecurityToken" message="tns:IClientService_GetSecurityToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetSecurityTokenResponse" message="tns:IClientService_GetSecurityToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientTreeLocations">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientTreeLocations" message="tns:IClientService_GetClientTreeLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientTreeLocationsResponse" message="tns:IClientService_GetClientTreeLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPatients">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientPatients" message="tns:IClientService_GetClientPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientPatientsResponse" message="tns:IClientService_GetClientPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPatientsWithCurrentAdmissions">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientPatientsWithCurrentAdmissions" message="tns:IClientService_GetClientPatientsWithCurrentAdmissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientPatientsWithCurrentAdmissionsResponse" message="tns:IClientService_GetClientPatientsWithCurrentAdmissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentTree">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetContentTree" message="tns:IClientService_GetContentTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetContentTreeResponse" message="tns:IClientService_GetContentTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickLinkFavourites">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetQuickLinkFavourites" message="tns:IClientService_GetQuickLinkFavourites_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetQuickLinkFavouritesResponse" message="tns:IClientService_GetQuickLinkFavourites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoryboard">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetStoryboard" message="tns:IClientService_GetStoryboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetStoryboardResponse" message="tns:IClientService_GetStoryboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChargePremium">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetChargePremium" message="tns:IClientService_GetChargePremium_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetChargePremiumResponse" message="tns:IClientService_GetChargePremium_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneProductInfo">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPhoneProductInfo" message="tns:IClientService_GetPhoneProductInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPhoneProductInfoResponse" message="tns:IClientService_GetPhoneProductInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogFacilityStart">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/LogFacilityStart" message="tns:IClientService_LogFacilityStart_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogFacilityEnd">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/LogFacilityEnd" message="tns:IClientService_LogFacilityEnd_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientConfiguration">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientConfiguration" message="tns:IClientService_GetClientConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientConfigurationResponse" message="tns:IClientService_GetClientConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterClient">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RegisterClient" message="tns:IClientService_RegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RegisterClientResponse" message="tns:IClientService_RegisterClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Poll">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/Poll" message="tns:IClientService_Poll_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PollResponse" message="tns:IClientService_Poll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedPatients">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetUnassignedPatients" message="tns:IClientService_GetUnassignedPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetUnassignedPatientsResponse" message="tns:IClientService_GetUnassignedPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompletePayment">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CompletePayment" message="tns:IClientService_CompletePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CompletePaymentResponse" message="tns:IClientService_CompletePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemVoucher">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RedeemVoucher" message="tns:IClientService_RedeemVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RedeemVoucherResponse" message="tns:IClientService_RedeemVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientLogoff">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PatientLogoff" message="tns:IClientService_PatientLogoff_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PatientLogoffResponse" message="tns:IClientService_PatientLogoff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientVerified">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PatientVerified" message="tns:IClientService_PatientVerified_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PatientVerifiedResponse" message="tns:IClientService_PatientVerified_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientHasActivePurchase">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/PatientHasActivePurchase" message="tns:IClientService_PatientHasActivePurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/PatientHasActivePurchaseResponse" message="tns:IClientService_PatientHasActivePurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivePatientPurchases">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetActivePatientPurchases" message="tns:IClientService_GetActivePatientPurchases_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetActivePatientPurchasesResponse" message="tns:IClientService_GetActivePatientPurchases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductCostFromBalance">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/DeductCostFromBalance" message="tns:IClientService_DeductCostFromBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/DeductCostFromBalanceResponse" message="tns:IClientService_DeductCostFromBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientBalance">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientBalance" message="tns:IClientService_GetPatientBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientBalanceResponse" message="tns:IClientService_GetPatientBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingCardHintIfAny">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetExistingCardHintIfAny" message="tns:IClientService_GetExistingCardHintIfAny_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetExistingCardHintIfAnyResponse" message="tns:IClientService_GetExistingCardHintIfAny_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCardDetails">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RemoveCardDetails" message="tns:IClientService_RemoveCardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RemoveCardDetailsResponse" message="tns:IClientService_RemoveCardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoFromCode">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetProductInfoFromCode" message="tns:IClientService_GetProductInfoFromCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetProductInfoFromCodeResponse" message="tns:IClientService_GetProductInfoFromCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetProducts" message="tns:IClientService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetProductsResponse" message="tns:IClientService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveToDoList">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SaveToDoList" message="tns:IClientService_SaveToDoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SaveToDoListResponse" message="tns:IClientService_SaveToDoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FlagStoryboardStepAsComplete">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/FlagStoryboardStepAsComplete" message="tns:IClientService_FlagStoryboardStepAsComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/FlagStoryboardStepAsCompleteResponse" message="tns:IClientService_FlagStoryboardStepAsComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetServerTime" message="tns:IClientService_GetServerTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetServerTimeResponse" message="tns:IClientService_GetServerTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSkinConfiguration">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetSkinConfiguration" message="tns:IClientService_SetSkinConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetSkinConfigurationResponse" message="tns:IClientService_SetSkinConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSkinTheme">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetSkinTheme" message="tns:IClientService_SetSkinTheme_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetSkinThemeResponse" message="tns:IClientService_SetSkinTheme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSkinConfiguration">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetSkinConfiguration" message="tns:IClientService_GetSkinConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetSkinConfigurationResponse" message="tns:IClientService_GetSkinConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSkinConfigurationForClientType">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetSkinConfigurationForClientType" message="tns:IClientService_GetSkinConfigurationForClientType_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetSkinConfigurationForClientTypeResponse" message="tns:IClientService_GetSkinConfigurationForClientType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientFavourites">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientFavourites" message="tns:IClientService_GetPatientFavourites_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientFavouritesResponse" message="tns:IClientService_GetPatientFavourites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBrowserFavourite">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/AddBrowserFavourite" message="tns:IClientService_AddBrowserFavourite_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/AddBrowserFavouriteResponse" message="tns:IClientService_AddBrowserFavourite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBrowserFavourite">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RemoveBrowserFavourite" message="tns:IClientService_RemoveBrowserFavourite_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RemoveBrowserFavouriteResponse" message="tns:IClientService_RemoveBrowserFavourite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientExtendedProperty">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SavePatientExtendedProperty" message="tns:IClientService_SavePatientExtendedProperty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SavePatientExtendedPropertyResponse" message="tns:IClientService_SavePatientExtendedProperty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientExtendedProperty">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/DeletePatientExtendedProperty" message="tns:IClientService_DeletePatientExtendedProperty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/DeletePatientExtendedPropertyResponse" message="tns:IClientService_DeletePatientExtendedProperty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RaiseAlertMessage">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RaiseAlertMessage" message="tns:IClientService_RaiseAlertMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RaiseAlertMessageResponse" message="tns:IClientService_RaiseAlertMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertResponses">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetAlertResponses" message="tns:IClientService_GetAlertResponses_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetAlertResponsesResponse" message="tns:IClientService_GetAlertResponses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAlertResponse">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SendAlertResponse" message="tns:IClientService_SendAlertResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SendAlertResponseResponse" message="tns:IClientService_SendAlertResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUnseenMessages">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrieveUnseenMessages" message="tns:IClientService_RetrieveUnseenMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrieveUnseenMessagesResponse" message="tns:IClientService_RetrieveUnseenMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveClientMessages">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrieveClientMessages" message="tns:IClientService_RetrieveClientMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrieveClientMessagesResponse" message="tns:IClientService_RetrieveClientMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUpdatedClientMessages">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrieveUpdatedClientMessages" message="tns:IClientService_RetrieveUpdatedClientMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrieveUpdatedClientMessagesResponse" message="tns:IClientService_RetrieveUpdatedClientMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePatientMessages">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrievePatientMessages" message="tns:IClientService_RetrievePatientMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrievePatientMessagesResponse" message="tns:IClientService_RetrievePatientMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePatientMessagesFromID">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrievePatientMessagesFromID" message="tns:IClientService_RetrievePatientMessagesFromID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrievePatientMessagesFromIDResponse" message="tns:IClientService_RetrievePatientMessagesFromID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMessage">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/RetrieveMessage" message="tns:IClientService_RetrieveMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/RetrieveMessageResponse" message="tns:IClientService_RetrieveMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsRead">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsRead" message="tns:IClientService_MarkMessageAsRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsReadResponse" message="tns:IClientService_MarkMessageAsRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsUnread">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsUnread" message="tns:IClientService_MarkMessageAsUnread_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsUnreadResponse" message="tns:IClientService_MarkMessageAsUnread_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsResolvedBy">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsResolvedBy" message="tns:IClientService_MarkMessageAsResolvedBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsResolvedByResponse" message="tns:IClientService_MarkMessageAsResolvedBy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsResolved">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsResolved" message="tns:IClientService_MarkMessageAsResolved_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkMessageAsResolvedResponse" message="tns:IClientService_MarkMessageAsResolved_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/DeleteMessage" message="tns:IClientService_DeleteMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/DeleteMessageResponse" message="tns:IClientService_DeleteMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessageByRecipient">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreateMessageByRecipient" message="tns:IClientService_CreateMessageByRecipient_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreateMessageByRecipientResponse" message="tns:IClientService_CreateMessageByRecipient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessage">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreateMessage" message="tns:IClientService_CreateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreateMessageResponse" message="tns:IClientService_CreateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRecipients">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/ValidateRecipients" message="tns:IClientService_ValidateRecipients_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/ValidateRecipientsResponse" message="tns:IClientService_ValidateRecipients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientGroupTree">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientGroupTree" message="tns:IClientService_GetClientGroupTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientGroupTreeResponse" message="tns:IClientService_GetClientGroupTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientGroup">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientGroup" message="tns:IClientService_GetClientGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientGroupResponse" message="tns:IClientService_GetClientGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientUser">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetClientUser" message="tns:IClientService_GetClientUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetClientUserResponse" message="tns:IClientService_GetClientUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentlyLoggedInPatientProfile">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetCurrentlyLoggedInPatientProfile" message="tns:IClientService_GetCurrentlyLoggedInPatientProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetCurrentlyLoggedInPatientProfileResponse" message="tns:IClientService_GetCurrentlyLoggedInPatientProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedinPatientInfo">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetLoggedinPatientInfo" message="tns:IClientService_GetLoggedinPatientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetLoggedinPatientInfoResponse" message="tns:IClientService_GetLoggedinPatientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientProfileByID">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientProfileByID" message="tns:IClientService_GetPatientProfileByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientProfileByIDResponse" message="tns:IClientService_GetPatientProfileByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientProfileByInbox">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientProfileByInbox" message="tns:IClientService_GetPatientProfileByInbox_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientProfileByInboxResponse" message="tns:IClientService_GetPatientProfileByInbox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetailByID">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientDetailByID" message="tns:IClientService_GetPatientDetailByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientDetailByIDResponse" message="tns:IClientService_GetPatientDetailByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDietCodes">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetDietCodes" message="tns:IClientService_GetDietCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetDietCodesResponse" message="tns:IClientService_GetDietCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnoses">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetDiagnoses" message="tns:IClientService_GetDiagnoses_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetDiagnosesResponse" message="tns:IClientService_GetDiagnoses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagGroups">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetTagGroups" message="tns:IClientService_GetTagGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetTagGroupsResponse" message="tns:IClientService_GetTagGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientProfile">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/UpdatePatientProfile" message="tns:IClientService_UpdatePatientProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/UpdatePatientProfileResponse" message="tns:IClientService_UpdatePatientProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffbyID">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetStaffbyID" message="tns:IClientService_GetStaffbyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetStaffbyIDResponse" message="tns:IClientService_GetStaffbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleItemTypes">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleItemTypes" message="tns:IClientService_GetScheduleItemTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleItemTypesResponse" message="tns:IClientService_GetScheduleItemTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleReminderOffsets">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleReminderOffsets" message="tns:IClientService_GetScheduleReminderOffsets_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleReminderOffsetsResponse" message="tns:IClientService_GetScheduleReminderOffsets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleAlertTypes">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleAlertTypes" message="tns:IClientService_GetScheduleAlertTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetScheduleAlertTypesResponse" message="tns:IClientService_GetScheduleAlertTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateScheduleItemForPatient">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreateScheduleItemForPatient" message="tns:IClientService_CreateScheduleItemForPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreateScheduleItemForPatientResponse" message="tns:IClientService_CreateScheduleItemForPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateScheduleItemForStaff">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/CreateScheduleItemForStaff" message="tns:IClientService_CreateScheduleItemForStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/CreateScheduleItemForStaffResponse" message="tns:IClientService_CreateScheduleItemForStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulePageURL">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetSchedulePageURL" message="tns:IClientService_GetSchedulePageURL_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetSchedulePageURLResponse" message="tns:IClientService_GetSchedulePageURL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientScheduleItems">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetPatientScheduleItems" message="tns:IClientService_GetPatientScheduleItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetPatientScheduleItemsResponse" message="tns:IClientService_GetPatientScheduleItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffScheduleItems">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetStaffScheduleItems" message="tns:IClientService_GetStaffScheduleItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetStaffScheduleItemsResponse" message="tns:IClientService_GetStaffScheduleItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPatientScheduleItem">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/ModifyPatientScheduleItem" message="tns:IClientService_ModifyPatientScheduleItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/ModifyPatientScheduleItemResponse" message="tns:IClientService_ModifyPatientScheduleItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFacility">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetMessageFacility" message="tns:IClientService_GetMessageFacility_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetMessageFacilityResponse" message="tns:IClientService_GetMessageFacility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableMessageFacilities">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/GetAvailableMessageFacilities" message="tns:IClientService_GetAvailableMessageFacilities_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/GetAvailableMessageFacilitiesResponse" message="tns:IClientService_GetAvailableMessageFacilities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientSessionTime">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/UpdatePatientSessionTime" message="tns:IClientService_UpdatePatientSessionTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/UpdatePatientSessionTimeResponse" message="tns:IClientService_UpdatePatientSessionTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogEvent">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/LogEvent" message="tns:IClientService_LogEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/LogEventResponse" message="tns:IClientService_LogEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskEducationQuestion">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/AskEducationQuestion" message="tns:IClientService_AskEducationQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/AskEducationQuestionResponse" message="tns:IClientService_AskEducationQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEducationRating">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/SetEducationRating" message="tns:IClientService_SetEducationRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/SetEducationRatingResponse" message="tns:IClientService_SetEducationRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkGoalCompleted">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/MarkGoalCompleted" message="tns:IClientService_MarkGoalCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/MarkGoalCompletedResponse" message="tns:IClientService_MarkGoalCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFreetextGoal">
+      <wsdl:input wsaw:Action="http://www.oneview.ie/IClientService/AddFreetextGoal" message="tns:IClientService_AddFreetextGoal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.oneview.ie/IClientService/AddFreetextGoalResponse" message="tns:IClientService_AddFreetextGoal_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

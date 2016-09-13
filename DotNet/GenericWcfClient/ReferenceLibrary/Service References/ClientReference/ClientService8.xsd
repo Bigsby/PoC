@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" />
+  <xs:complexType name="ArrayOfSystemStoryboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemStoryboard" nillable="true" type="tns:SystemStoryboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemStoryboard" nillable="true" type="tns:ArrayOfSystemStoryboard" />
+  <xs:complexType name="SystemStoryboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Storyboard" nillable="true" type="tns:Storyboard" />
+      <xs:element minOccurs="0" name="StoryboardId" type="xs:long" />
+      <xs:element minOccurs="0" name="SystemStoryboardType" nillable="true" type="tns:SystemStoryboardType" />
+      <xs:element minOccurs="0" name="SystemStoryboardTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagGroupId" type="xs:long" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SystemStoryboard" nillable="true" type="tns:SystemStoryboard" />
+  <xs:complexType name="Storyboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASPatientMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSystemMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableAutoStart" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Mandatory" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RepeatCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Steps" nillable="true" type="tns:ArrayOfStep" />
+      <xs:element minOccurs="0" name="StoryboardID" type="xs:long" />
+      <xs:element minOccurs="0" name="StoryboardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoryboardType" nillable="true" type="tns:StoryboardType" />
+      <xs:element minOccurs="0" name="StoryboardTypeID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" minOccurs="0" name="Tag" nillable="true" type="q1:Tag" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" minOccurs="0" name="TagGroup" nillable="true" type="q2:TagGroup" />
+      <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Storyboard" nillable="true" type="tns:Storyboard" />
+  <xs:complexType name="ArrayOfStep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Step" nillable="true" type="tns:Step" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStep" nillable="true" type="tns:ArrayOfStep" />
+  <xs:complexType name="Step">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Complete" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EnabledCommands" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" minOccurs="0" name="Facility" nillable="true" type="q3:Facility" />
+      <xs:element minOccurs="0" name="FacilityID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PopupText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StepID" type="xs:long" />
+      <xs:element minOccurs="0" name="StoryboardID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Step" nillable="true" type="tns:Step" />
+  <xs:complexType name="StoryboardType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Story_boardType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoryboardType" nillable="true" type="tns:StoryboardType" />
+  <xs:complexType name="SystemStoryboardType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SystemStoryboardTypeEnum" type="tns:SystemStoryboardTypeEnum" />
+      <xs:element minOccurs="0" name="SystemStoryboardTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemStoryboardType" nillable="true" type="tns:SystemStoryboardType" />
+  <xs:simpleType name="SystemStoryboardTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NotLoggedIn" />
+      <xs:enumeration value="Intro" />
+      <xs:enumeration value="ScreenSaver" />
+      <xs:enumeration value="Evacuation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SystemStoryboardTypeEnum" nillable="true" type="tns:SystemStoryboardTypeEnum" />
+  <xs:complexType name="ArrayOfStoryboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Storyboard" nillable="true" type="tns:Storyboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoryboard" nillable="true" type="tns:ArrayOfStoryboard" />
+</xs:schema>

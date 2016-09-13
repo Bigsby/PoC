@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.oneview.ie" elementFormDefault="qualified" targetNamespace="http://www.oneview.ie" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.PatientEducation" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.EventLogs" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:element name="CreatePatientQuestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admissionId" type="xs:long" />
+        <xs:element minOccurs="0" name="question" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isPrivate" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePatientQuestionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="CreatePatientQuestionResult" nillable="true" type="q1:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePatientNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admissionId" type="xs:long" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePatientNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="CreatePatientNoteResult" nillable="true" type="q2:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientCareTeam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientCareTeamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientCareTeamResult" nillable="true" type="q4:ArrayOfStaffInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpectedDischargeDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpectedDischargeDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpectedDischargeDateResult" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWhiteboardInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q5:guid" />
+        <xs:element minOccurs="0" name="cultureName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="goalsDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWhiteboardInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetWhiteboardInfoResult" nillable="true" type="q6:PatientWhiteboardInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentalControlInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentalControlInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetParentalControlInfoResult" nillable="true" type="q8:ParentalControlInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetEnabled">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q9:guid" />
+        <xs:element minOccurs="0" name="value" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetEnabledResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetSafeBrowsingEnabled">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q10:guid" />
+        <xs:element minOccurs="0" name="value" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetSafeBrowsingEnabledResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_CheckPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q11:guid" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_CheckPINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PCI_CheckPINResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_ClearPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q12:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_ClearPINResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetParentalControls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q13:guid" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="value" type="q14:ParentalControl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetParentalControlsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetWhiteList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q15:guid" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="whiteList" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCI_SetWhiteListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetIncludeMyPhotosInScreenSaver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q17:guid" />
+        <xs:element minOccurs="0" name="value" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetIncludeMyPhotosInScreenSaverResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNickName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q18:guid" />
+        <xs:element minOccurs="0" name="nickName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNickNameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContactInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q19:guid" />
+        <xs:element minOccurs="0" name="contactName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contactNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContactInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPhotoChoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q20:guid" />
+        <xs:element minOccurs="0" name="pictureID" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPhotoChoiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientEducation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mrn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientEducationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientEducationResult" nillable="true" type="q21:ArrayOfPatientEducationDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientEducationByPatientId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q22:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientEducationByPatientIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientEducationByPatientIdResult" nillable="true" type="q23:ArrayOfPatientEducationDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEducation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q24:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEducationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetAllEducationResult" nillable="true" type="q25:ArrayOfPatientEducationDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkPatientEducationAsViewed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+        <xs:element minOccurs="0" name="mrn" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" nillable="true" type="q26:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkPatientEducationAsViewedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkPatientEducationAsViewedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEducation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchText" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q27:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEducationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/OneView.DataContracts.PatientEducation" minOccurs="0" name="SearchEducationResult" nillable="true" type="q28:ArrayOfEducationSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDemoEnabled">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDemoEnabledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsDemoEnabledResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCareTeamPatientListByLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientTreeItemId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCareTeamPatientListByLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetCareTeamPatientListByLocationResult" nillable="true" type="q29:ArrayOfCareTeamPatientInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginStaffMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffId" type="xs:long" />
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginStaffMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="LoginStaffMemberResult" nillable="true" type="q30:StaffInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutStaffMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutStaffMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogoutStaffMemberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedInStaffMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedInStaffMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" minOccurs="0" name="GetLoggedInStaffMemberResult" nillable="true" type="q31:Staff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurityToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="iv" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurityTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetSecurityTokenResult" nillable="true" type="q32:SecurityTokenResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientTreeLocations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientTreeLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetClientTreeLocationsResult" nillable="true" type="q33:ArrayOfLocationDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientPatients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientTreeItemId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientPatientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="GetClientPatientsResult" nillable="true" type="q34:ArrayOfClientPatientDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientPatientsWithCurrentAdmissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientTreeItemId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientPatientsWithCurrentAdmissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="GetClientPatientsWithCurrentAdmissionsResult" nillable="true" type="q35:ArrayOfClientPatientDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContentTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rootContentItemId" type="xs:long" />
+        <xs:element minOccurs="0" name="cultureName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" nillable="true" type="q36:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContentTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetContentTreeResult" nillable="true" type="q37:ContentConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuickLinkFavourites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q38:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuickLinkFavouritesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="GetQuickLinkFavouritesResult" nillable="true" type="q39:ArrayOfContentTreeItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoryboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="storyboardID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoryboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" minOccurs="0" name="GetStoryboardResult" nillable="true" type="q40:Storyboard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargePremium">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargePremiumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="GetChargePremiumResult" nillable="true" type="q41:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPhoneProductInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPhoneProductInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPhoneProductInfoResult" type="xs:boolean" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="productProperties" nillable="true" type="q42:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogFacilityStart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogFacilityEnd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+        <xs:element minOccurs="0" name="progress" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="GetClientConfigurationResult" nillable="true" type="q43:ClientConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="request" nillable="true" type="q44:ClientRegistrationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" minOccurs="0" name="RegisterClientResult" nillable="true" type="q45:ClientRegistrationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Poll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="request" nillable="true" type="q46:PollRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PollResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="PollResult" nillable="true" type="q47:PollResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnassignedPatients">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnassignedPatientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetUnassignedPatientsResult" nillable="true" type="q48:ArrayOfPersonInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompletePayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="details" nillable="true" type="q49:SecondStagePaymentDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompletePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="CompletePaymentResult" nillable="true" type="q50:PaymentCompleteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemVoucher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="voucherCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q51:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemVoucherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="RedeemVoucherResult" nillable="true" type="q52:PaymentCompleteResponse" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="productInfo" nillable="true" type="q53:ProductInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientLogoff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q54:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientLogoffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientLogoffResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientVerified">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q55:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientVerifiedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientHasActivePurchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q56:guid" />
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientHasActivePurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientHasActivePurchaseResult" type="xs:boolean" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" minOccurs="0" name="product" nillable="true" type="q57:ArrayOfProduct" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" minOccurs="0" name="purchase" nillable="true" type="q58:Purchase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePatientPurchases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q59:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePatientPurchasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" minOccurs="0" name="GetActivePatientPurchasesResult" nillable="true" type="q60:ArrayOfPurchase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductCostFromBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q61:guid" />
+        <xs:element minOccurs="0" name="cost" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductCostFromBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeductCostFromBalanceResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q62:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPatientBalanceResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardHintIfAny">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q63:guid" />
+        <xs:element minOccurs="0" name="backEndProvider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardHintIfAnyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetExistingCardHintIfAnyResult" nillable="true" type="q64:CardHintDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="personId" type="q65:guid" />
+        <xs:element minOccurs="0" name="backEndProvider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardDetailsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductInfoFromCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductInfoFromCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetProductInfoFromCodeResult" nillable="true" type="q66:ProductInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetProductsResult" nillable="true" type="q67:ArrayOfProductInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveToDoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q68:guid" />
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="facilityIds" nillable="true" type="q69:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveToDoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveToDoListResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlagStoryboardStepAsComplete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="storyboardId" type="xs:long" />
+        <xs:element minOccurs="0" name="stepIndex" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlagStoryboardStepAsCompleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerTime">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServerTimeResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSkinConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="mode" type="q70:ApplicationMode" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="config" nillable="true" type="q71:SkinConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSkinConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSkinTheme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="mode" type="q72:ApplicationMode" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" minOccurs="0" name="config" nillable="true" type="q73:SkinTheme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSkinThemeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkinConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="mode" type="q74:ApplicationMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkinConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetSkinConfigurationResult" nillable="true" type="q75:SkinConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkinConfigurationForClientType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientType" nillable="true" type="xs:string" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" nillable="true" type="q76:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkinConfigurationForClientTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetSkinConfigurationForClientTypeResult" nillable="true" type="q77:SkinConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientFavourites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q78:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientFavouritesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientFavouritesResult" nillable="true" type="q79:ArrayOfBrowserBookmark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBrowserFavourite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q80:guid" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="favourite" nillable="true" type="q81:BrowserBookmark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBrowserFavouriteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddBrowserFavouriteResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBrowserFavourite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q82:guid" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="favourite" nillable="true" type="q83:BrowserBookmark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBrowserFavouriteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientExtendedProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q84:guid" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="propertyValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encryptValue" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePatientExtendedPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePatientExtendedProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q85:guid" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePatientExtendedPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RaiseAlertMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="alertType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RaiseAlertMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RaiseAlertMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertResponses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="alertType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertResponsesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="GetAlertResponsesResult" nillable="true" type="q86:ArrayOfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+        <xs:element minOccurs="0" name="responseID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAlertResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendAlertResponseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUnseenMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUnseenMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrieveUnseenMessagesResult" nillable="true" type="q87:RetrievedMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveClientMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fromTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveClientMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrieveClientMessagesResult" nillable="true" type="q88:RetrievedMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUpdatedClientMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fromTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUpdatedClientMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrieveUpdatedClientMessagesResult" nillable="true" type="q89:RetrievedMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePatientMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q90:guid" />
+        <xs:element minOccurs="0" name="fromTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePatientMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrievePatientMessagesResult" nillable="true" type="q91:RetrievedMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePatientMessagesFromID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q92:guid" />
+        <xs:element minOccurs="0" name="fromMsgID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePatientMessagesFromIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrievePatientMessagesFromIDResult" nillable="true" type="q93:RetrievedMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="RetrieveMessageResult" nillable="true" type="q94:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsRead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkMessageAsReadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsUnread">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsUnreadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkMessageAsUnreadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsResolvedBy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsResolvedByResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkMessageAsResolvedByResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsResolved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkMessageAsResolvedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkMessageAsResolvedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessageByRecipient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="recipients" nillable="true" type="q95:ArrayOfSendTo" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priority" type="xs:int" />
+        <xs:element minOccurs="0" name="facilityID" type="xs:long" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="applicationMode" type="q96:ApplicationMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessageByRecipientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMessageByRecipientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q97:guid" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="recipients" nillable="true" type="q98:SendTo" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRecipients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="recipients" nillable="true" type="q99:ArrayOfSendTo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRecipientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValidateRecipientsResult" nillable="true" type="q100:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientGroupTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientGroupTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClientGroupTreeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClientGroupResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClientUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentlyLoggedInPatientProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentlyLoggedInPatientProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetCurrentlyLoggedInPatientProfileResult" nillable="true" type="q101:PatientProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedinPatientInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedinPatientInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetLoggedinPatientInfoResult" nillable="true" type="q102:PersonInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientProfileByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q103:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientProfileByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientProfileByIDResult" nillable="true" type="q104:PatientProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientProfileByInbox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inboxID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientProfileByInboxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientProfileByInboxResult" nillable="true" type="q105:PatientProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDetailByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q106:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientDetailByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetPatientDetailByIDResult" nillable="true" type="q107:PersonInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDietCodes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDietCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetDietCodesResult" nillable="true" type="q108:ArrayOfDiet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiagnoses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiagnosesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetDiagnosesResult" nillable="true" type="q109:ArrayOfDiagnosis" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetTagGroupsResult" nillable="true" type="q110:ArrayOfTagGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="patientProfile" nillable="true" type="q111:PatientProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePatientProfileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaffbyID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaffbyIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="GetStaffbyIDResult" nillable="true" type="q112:StaffInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleItemTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleItemTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" minOccurs="0" name="GetScheduleItemTypesResult" nillable="true" type="q113:ArrayOfScheduleItemType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleReminderOffsets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleReminderOffsetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" minOccurs="0" name="GetScheduleReminderOffsetsResult" nillable="true" type="q114:ArrayOfScheduleReminderOffset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleAlertTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identity" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleAlertTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="GetScheduleAlertTypesResult" nillable="true" type="q115:ArrayOfScheduleAlertTypeDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateScheduleItemForPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q116:guid" />
+        <xs:element minOccurs="0" name="scheduleTypeID" type="xs:long" />
+        <xs:element minOccurs="0" name="taskTitle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taskDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="scheduleFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="scheduleTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="alertID" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="alertTime" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="facilityID" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateScheduleItemForPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateScheduleItemForPatientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateScheduleItemForStaff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffID" type="xs:long" />
+        <xs:element minOccurs="0" name="scheduleTypeID" type="xs:long" />
+        <xs:element minOccurs="0" name="taskTitle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taskDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="scheduleFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="scheduleTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="alertID" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="alertTime" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="facilityID" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateScheduleItemForStaffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateScheduleItemForStaffResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulePageURL">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulePageURLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSchedulePageURLResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientScheduleItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientID" type="q117:guid" />
+        <xs:element minOccurs="0" name="fromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="toDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="maxItems" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientScheduleItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="GetPatientScheduleItemsResult" nillable="true" type="q118:ArrayOfScheduleItemDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaffScheduleItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="staffID" type="xs:long" />
+        <xs:element minOccurs="0" name="fromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="toDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="maxItems" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaffScheduleItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" minOccurs="0" name="GetStaffScheduleItemsResult" nillable="true" type="q119:ArrayOfScheduleItemDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPatientScheduleItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q120:guid" />
+        <xs:element minOccurs="0" name="scheduleId" type="xs:long" />
+        <xs:element minOccurs="0" name="scheduleTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="alertId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="alertTime" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="facilityId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPatientScheduleItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyPatientScheduleItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageFacility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="facilityID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageFacilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMessageFacilityResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableMessageFacilities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableMessageFacilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAvailableMessageFacilitiesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientSessionTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q121:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientSessionTimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.EventLogs" minOccurs="0" name="eventLog" nillable="true" type="q122:EventLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AskEducationQuestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admissionId" type="xs:long" />
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AskEducationQuestionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEducationRating">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admissionId" type="xs:long" />
+        <xs:element minOccurs="0" name="facilityId" type="xs:long" />
+        <xs:element minOccurs="0" name="rating" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEducationRatingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkGoalCompleted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientGoalId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkGoalCompletedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFreetextGoal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admissionId" type="xs:long" />
+        <xs:element minOccurs="0" name="goalText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFreetextGoalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="AddFreetextGoalResult" nillable="true" type="q123:PatientGoal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Clients" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Device" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfClientPatientDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientPatientDTO" nillable="true" type="tns:ClientPatientDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientPatientDTO" nillable="true" type="tns:ArrayOfClientPatientDTO" />
+  <xs:complexType name="ClientPatientDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bed" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="CareTeam" nillable="true" type="q1:ArrayOfCareTeamMemberInfo" />
+      <xs:element minOccurs="0" name="ClientIdentity" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Hl7Identifier" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="Patient" nillable="true" type="q2:PersonInfo" />
+      <xs:element minOccurs="0" name="PictureId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Room" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientPatientDTO" nillable="true" type="tns:ClientPatientDTO" />
+  <xs:complexType name="ArrayOfNameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValue" nillable="true" type="tns:NameValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameValue" nillable="true" type="tns:ArrayOfNameValue" />
+  <xs:complexType name="NameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameValue" nillable="true" type="tns:NameValue" />
+  <xs:complexType name="ClientConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionImplementations" nillable="true" type="tns:ArrayOfClientImplementation" />
+      <xs:element minOccurs="0" name="ActionInstances" nillable="true" type="tns:ArrayOfClientAction" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="ActiveHospital" nillable="true" type="q3:ActiveHospital" />
+      <xs:element minOccurs="0" name="ClientId" type="xs:long" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" minOccurs="0" name="ClientParent" nillable="true" type="q4:ClientTreeItem" />
+      <xs:element minOccurs="0" name="ClientTreeItemID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Device" minOccurs="0" name="Location" nillable="true" type="q5:DeviceLocation" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="PillowKeys" nillable="true" type="q6:ArrayOfPillowKey" />
+      <xs:element minOccurs="0" name="PluginImplementations" nillable="true" type="tns:ArrayOfClientImplementation" />
+      <xs:element minOccurs="0" name="PluginInstances" nillable="true" type="tns:ArrayOfClientPlugin" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfNameValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientConfiguration" nillable="true" type="tns:ClientConfiguration" />
+  <xs:complexType name="ArrayOfClientImplementation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientImplementation" nillable="true" type="tns:ClientImplementation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientImplementation" nillable="true" type="tns:ArrayOfClientImplementation" />
+  <xs:complexType name="ClientImplementation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Implementation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stateful" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientImplementation" nillable="true" type="tns:ClientImplementation" />
+  <xs:complexType name="ArrayOfClientAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientAction" nillable="true" type="tns:ClientAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientAction" nillable="true" type="tns:ArrayOfClientAction" />
+  <xs:complexType name="ClientAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientProperties" nillable="true" type="tns:ArrayOfClientProperty" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientAction" nillable="true" type="tns:ClientAction" />
+  <xs:complexType name="ArrayOfClientProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientProperty" nillable="true" type="tns:ClientProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientProperty" nillable="true" type="tns:ArrayOfClientProperty" />
+  <xs:complexType name="ClientProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClientPropertyBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClientProperty" nillable="true" type="tns:ClientProperty" />
+  <xs:complexType name="ClientPropertyBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Depth" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientPropertyBase" nillable="true" type="tns:ClientPropertyBase" />
+  <xs:complexType name="ArrayOfClientPlugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientPlugin" nillable="true" type="tns:ClientPlugin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientPlugin" nillable="true" type="tns:ArrayOfClientPlugin" />
+  <xs:complexType name="ClientPlugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientProperties" nillable="true" type="tns:ArrayOfClientProperty" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientPlugin" nillable="true" type="tns:ClientPlugin" />
+  <xs:complexType name="ClientRegistrationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identity" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoftwareVersion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientRegistrationRequest" nillable="true" type="tns:ClientRegistrationRequest" />
+  <xs:complexType name="ClientRegistrationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateStatus" type="tns:CertificateStatus" />
+      <xs:element minOccurs="0" name="MaxClients" type="xs:int" />
+      <xs:element minOccurs="0" name="Result" type="tns:ClientRegistrationCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientRegistrationResult" nillable="true" type="tns:ClientRegistrationResult" />
+  <xs:simpleType name="CertificateStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotFound" />
+      <xs:enumeration value="HostNameDoesNotMatch" />
+      <xs:enumeration value="ExceedsAllowedNumberOfClients" />
+      <xs:enumeration value="Expired" />
+      <xs:enumeration value="NotAvailable" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="CertificateError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CertificateStatus" nillable="true" type="tns:CertificateStatus" />
+  <xs:simpleType name="ClientRegistrationCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="NoDefaultTagGroup" />
+      <xs:enumeration value="CerificateError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ClientRegistrationCode" nillable="true" type="tns:ClientRegistrationCode" />
+  <xs:simpleType name="PatientMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotLoggedIn" />
+      <xs:enumeration value="LoggedIn" />
+      <xs:enumeration value="LoggedInVerified" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PatientMode" nillable="true" type="tns:PatientMode" />
+  <xs:simpleType name="SystemMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InUse" />
+      <xs:enumeration value="Idling" />
+      <xs:enumeration value="Sleeping" />
+      <xs:enumeration value="Evacuation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SystemMode" nillable="true" type="tns:SystemMode" />
+  <xs:simpleType name="ClientCommands">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Shutdown" />
+          <xs:enumeration value="Reboot" />
+          <xs:enumeration value="RefreshSkin" />
+          <xs:enumeration value="ReloadFacilities" />
+          <xs:enumeration value="RefreshSettings" />
+          <xs:enumeration value="Evacuation" />
+          <xs:enumeration value="AlertsChanged">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MessagesAvailable">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PatientChanged">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ScheduleUpdated">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ClientCommands" nillable="true" type="tns:ClientCommands" />
+</xs:schema>

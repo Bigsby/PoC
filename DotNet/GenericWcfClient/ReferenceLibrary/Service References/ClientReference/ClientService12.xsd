@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" />
+  <xs:complexType name="ContentTreeItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Blob" nillable="true" type="q1:Blob" />
+      <xs:element minOccurs="0" name="ContentCategory" nillable="true" type="tns:ContentCategory" />
+      <xs:element minOccurs="0" name="ContentCategoryID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ContentTreeItemID" type="xs:long" />
+      <xs:element minOccurs="0" name="ContentTreeItemProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionLId" nillable="true" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" minOccurs="0" name="Facility" nillable="true" type="q2:Facility" />
+      <xs:element minOccurs="0" name="FacilityID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Hidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Icon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IconID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IconInternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Kind" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedDescription" nillable="true" type="q3:LocalisedItem" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedName" nillable="true" type="q4:LocalisedItem" />
+      <xs:element minOccurs="0" name="MaxRows" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MinRows" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameLId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumColumns" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:ContentTreeItem" />
+      <xs:element minOccurs="0" name="ParentID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentalControl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Payments" minOccurs="0" name="Products" nillable="true" type="q5:ArrayOfProduct" />
+      <xs:element minOccurs="0" name="ProductsAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowWhenNoChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Template" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolBar" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentTreeItem" nillable="true" type="tns:ContentTreeItem" />
+  <xs:complexType name="ContentCategory">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Blob" nillable="true" type="q6:Blob" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:long" />
+      <xs:element minOccurs="0" name="IconID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LoggingLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentCategory" nillable="true" type="tns:ContentCategory" />
+  <xs:complexType name="ArrayOfContentTreeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContentTreeItem" nillable="true" type="tns:ContentTreeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContentTreeItem" nillable="true" type="tns:ArrayOfContentTreeItem" />
+  <xs:complexType name="ArrayOfToolbar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Toolbar" nillable="true" type="tns:Toolbar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfToolbar" nillable="true" type="tns:ArrayOfToolbar" />
+  <xs:complexType name="Toolbar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolbarFacilities" nillable="true" type="tns:ArrayOfToolbarFacility" />
+      <xs:element minOccurs="0" name="ToolbarId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Toolbar" nillable="true" type="tns:Toolbar" />
+  <xs:complexType name="ArrayOfToolbarFacility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ToolbarFacility" nillable="true" type="tns:ToolbarFacility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfToolbarFacility" nillable="true" type="tns:ArrayOfToolbarFacility" />
+  <xs:complexType name="ToolbarFacility">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" minOccurs="0" name="Facility" nillable="true" type="q7:Facility" />
+      <xs:element minOccurs="0" name="FacilityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ToolbarFacilityId" type="xs:long" />
+      <xs:element minOccurs="0" name="ToolbarId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ToolbarFacility" nillable="true" type="tns:ToolbarFacility" />
+</xs:schema>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.EventLogs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.EventLogs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="EventLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Context1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Context2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContextID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="EventLogType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HospitalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WardName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventLog" nillable="true" type="tns:EventLog" />
+  <xs:complexType name="EventLogFacility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContentCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentSubCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FacilityId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="FacilityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FacilityUsageId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsRemoteControl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SecondsUsed" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLogFacility" nillable="true" type="tns:EventLogFacility" />
+  <xs:complexType name="EventLogClient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MACAddress" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLogClient" nillable="true" type="tns:EventLogClient" />
+  <xs:complexType name="EventLogPatient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Age" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YearOfBirth" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLogPatient" nillable="true" type="tns:EventLogPatient" />
+  <xs:complexType name="EventLogADT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedPatientLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrentVisitID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MessageType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageVisitID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientDataChanged" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PriorPatientLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcessedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SequenceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowResult" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLogADT" nillable="true" type="tns:EventLogADT" />
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ServiceRequest" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ServiceRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfPatientServiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientServiceRequest" nillable="true" type="tns:PatientServiceRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientServiceRequest" nillable="true" type="tns:ArrayOfPatientServiceRequest" />
+  <xs:complexType name="PatientServiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClosedStaffId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ClosedSurveyDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="PatientAdmission" nillable="true" type="q1:PatientAdmission" />
+      <xs:element minOccurs="0" name="PatientAdmissionID" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" minOccurs="0" name="RequestClosedSurvey" nillable="true" type="q2:Survey" />
+      <xs:element minOccurs="0" name="RequestClosedSurveyId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RequestInProgress" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" minOccurs="0" name="RequestSentSurvey" nillable="true" type="q3:Survey" />
+      <xs:element minOccurs="0" name="RequestSentSurveyId" type="xs:long" />
+      <xs:element minOccurs="0" name="SentStaffId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SentSurveyDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceRequestId" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" minOccurs="0" name="SurveyAnswers" nillable="true" type="q4:ArrayOfSurveyAnswer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientServiceRequest" nillable="true" type="tns:PatientServiceRequest" />
+</xs:schema>

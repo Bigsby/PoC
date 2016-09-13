@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="TestOne.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestOne"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel >
+        <TextBox x:Name="address" HorizontalAlignment="Stretch" RelativePanel.AlignLeftWithPanel="True" RelativePanel.LeftOf="go"/>
+        <Button Grid.Column="1" Content="Go" x:Name="go" RelativePanel.AlignRightWithPanel="True"/>
+        <WebView x:Name="webBrowser" Grid.Row="1" RelativePanel.Below="address" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                 RelativePanel.AlignBottomWithPanel="True" 
+                 RelativePanel.AlignLeftWithPanel="True" 
+                 RelativePanel.AlignRightWithPanel="True"/>
+        <Border Background="LightGray" RelativePanel.AlignBottomWithPanel="True">
+            <TextBlock Text="{Binding ElementName=webBrowser, Path=DocumentTitle}"/>
+        </Border>
+    </RelativePanel>
+</Page>

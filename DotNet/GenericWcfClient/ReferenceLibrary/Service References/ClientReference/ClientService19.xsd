@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Messaging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:complexType name="Inbox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InboxID" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdated" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Inbox" nillable="true" type="tns:Inbox" />
+  <xs:complexType name="ArrayOfScheduleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleItem" nillable="true" type="tns:ScheduleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleItem" nillable="true" type="tns:ArrayOfScheduleItem" />
+  <xs:complexType name="ScheduleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertRaised" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AlertTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertType" nillable="true" type="tns:AlertType" />
+      <xs:element minOccurs="0" name="AlertTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AppointmentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FacilityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Patients" nillable="true" type="q1:ArrayOfPatient" />
+      <xs:element minOccurs="0" name="ScheduleItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ScheduleItemTypeId" nillable="true" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" minOccurs="0" name="ScheduledBy" nillable="true" type="q2:Staff" />
+      <xs:element minOccurs="0" name="ScheduledById" nillable="true" type="xs:long" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Staff" minOccurs="0" name="Staff" nillable="true" type="q3:ArrayOfStaff" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StoryboardId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleItem" nillable="true" type="tns:ScheduleItem" />
+  <xs:complexType name="AlertType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="AlertTypeMessageSinks" nillable="true" type="tns:ArrayOfAlertTypeMessageSink" />
+      <xs:element minOccurs="0" name="AvailableResponses" nillable="true" type="tns:ArrayOfAvailableResponse" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionLId" nillable="true" type="xs:long" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedDescription" nillable="true" type="q4:LocalisedItem" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameLId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlertType" nillable="true" type="tns:AlertType" />
+  <xs:complexType name="ArrayOfAlertTypeMessageSink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlertTypeMessageSink" nillable="true" type="tns:AlertTypeMessageSink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlertTypeMessageSink" nillable="true" type="tns:ArrayOfAlertTypeMessageSink" />
+  <xs:complexType name="AlertTypeMessageSink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertType" nillable="true" type="tns:AlertType" />
+      <xs:element minOccurs="0" name="AlertTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="AlertTypeMessageSinkId" type="xs:long" />
+      <xs:element minOccurs="0" name="Argument" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Culture" nillable="true" type="q5:Culture" />
+      <xs:element minOccurs="0" name="CultureId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MessageSink" nillable="true" type="tns:MessageSink" />
+      <xs:element minOccurs="0" name="MessageSinkId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlertTypeMessageSink" nillable="true" type="tns:AlertTypeMessageSink" />
+  <xs:complexType name="MessageSink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanEscalate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Implementation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageSinkId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageSink" nillable="true" type="tns:MessageSink" />
+  <xs:complexType name="ArrayOfAvailableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvailableResponse" nillable="true" type="tns:AvailableResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvailableResponse" nillable="true" type="tns:ArrayOfAvailableResponse" />
+  <xs:complexType name="AvailableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvailableResponseId" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedItem" nillable="true" type="q6:LocalisedItem" />
+      <xs:element minOccurs="0" name="ResponseText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseTextLId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvailableResponse" nillable="true" type="tns:AvailableResponse" />
+  <xs:complexType name="ArrayOfScheduleItemType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleItemType" nillable="true" type="tns:ScheduleItemType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleItemType" nillable="true" type="tns:ArrayOfScheduleItemType" />
+  <xs:complexType name="ScheduleItemType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ScheduleItemDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleItemTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="ScheduleItemTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleItemType" nillable="true" type="tns:ScheduleItemType" />
+  <xs:complexType name="ArrayOfScheduleReminderOffset">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleReminderOffset" nillable="true" type="tns:ScheduleReminderOffset" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleReminderOffset" nillable="true" type="tns:ArrayOfScheduleReminderOffset" />
+  <xs:complexType name="ScheduleReminderOffset">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReminderOffset" type="xs:int" />
+      <xs:element minOccurs="0" name="ReminderOffsetText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleReminderOffsetId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleReminderOffset" nillable="true" type="tns:ScheduleReminderOffset" />
+</xs:schema>

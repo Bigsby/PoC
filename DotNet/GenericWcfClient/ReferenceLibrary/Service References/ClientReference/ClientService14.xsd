@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Survey" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfPatientSurvey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientSurvey" nillable="true" type="tns:PatientSurvey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientSurvey" nillable="true" type="tns:ArrayOfPatientSurvey" />
+  <xs:complexType name="PatientSurvey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatientAdmissionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientSurveyId" type="xs:int" />
+      <xs:element minOccurs="0" name="Survey" nillable="true" type="tns:Survey" />
+      <xs:element minOccurs="0" name="SurveyAnswers" nillable="true" type="tns:ArrayOfSurveyAnswer" />
+      <xs:element minOccurs="0" name="SurveyCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SurveyDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SurveyId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientSurvey" nillable="true" type="tns:PatientSurvey" />
+  <xs:complexType name="Survey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SurveyId" type="xs:long" />
+      <xs:element minOccurs="0" name="SurveyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurveyQuestions" nillable="true" type="tns:ArrayOfSurveyQuestion" />
+      <xs:element minOccurs="0" name="SurveyRuleSet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurveyType" nillable="true" type="tns:SurveyType" />
+      <xs:element minOccurs="0" name="SurveyTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Survey" nillable="true" type="tns:Survey" />
+  <xs:complexType name="ArrayOfSurveyQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SurveyQuestion" nillable="true" type="tns:SurveyQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSurveyQuestion" nillable="true" type="tns:ArrayOfSurveyQuestion" />
+  <xs:complexType name="SurveyQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxLength" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionChoices" nillable="true" type="tns:ArrayOfSurveyQuestionChoice" />
+      <xs:element minOccurs="0" name="QuestionGroup" nillable="true" type="tns:SurveyQuestionGroup" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="QuestionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionType" nillable="true" type="tns:SurveyQuestionType" />
+      <xs:element minOccurs="0" name="QuestionTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurveyId" type="xs:long" />
+      <xs:element minOccurs="0" name="SurveyQuestionGroupId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyQuestion" nillable="true" type="tns:SurveyQuestion" />
+  <xs:complexType name="ArrayOfSurveyQuestionChoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SurveyQuestionChoice" nillable="true" type="tns:SurveyQuestionChoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSurveyQuestionChoice" nillable="true" type="tns:ArrayOfSurveyQuestionChoice" />
+  <xs:complexType name="SurveyQuestionChoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChoiceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChoiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionChoiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="SelectedMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyQuestionChoice" nillable="true" type="tns:SurveyQuestionChoice" />
+  <xs:complexType name="SurveyQuestionGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Survey" nillable="true" type="tns:Survey" />
+      <xs:element minOccurs="0" name="SurveyId" type="xs:long" />
+      <xs:element minOccurs="0" name="SurveyQuestionGroupId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyQuestionGroup" nillable="true" type="tns:SurveyQuestionGroup" />
+  <xs:complexType name="SurveyQuestionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuestionTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyQuestionType" nillable="true" type="tns:SurveyQuestionType" />
+  <xs:complexType name="SurveyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SurveyTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurveyTypeValue" type="tns:SurveyTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyType" nillable="true" type="tns:SurveyType" />
+  <xs:simpleType name="SurveyTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NurseRounding" />
+      <xs:enumeration value="Custom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SurveyTypes" nillable="true" type="tns:SurveyTypes" />
+  <xs:complexType name="ArrayOfSurveyAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SurveyAnswer" nillable="true" type="tns:SurveyAnswer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSurveyAnswer" nillable="true" type="tns:ArrayOfSurveyAnswer" />
+  <xs:complexType name="SurveyAnswer">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AnswerArray" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="AnswerValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionChoiceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="StaffId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SurveyAnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="SurveyQuestion" nillable="true" type="tns:SurveyQuestion" />
+      <xs:element minOccurs="0" name="SurveyQuestionChoice" nillable="true" type="tns:SurveyQuestionChoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveyAnswer" nillable="true" type="tns:SurveyAnswer" />
+</xs:schema>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="589bc21d-53f6-446d-bb37-0fc1e05412e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ovbyod.azurewebsites.net/Service/ClientService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientService.xsd" MetadataType="Schema" ID="1eebcae2-48e7-4748-8c15-369f5ec4fbf4" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ClientService.wsdl" MetadataType="Wsdl" ID="f13e3cba-fef6-4588-a70f-094834d723d4" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?wsdl" />
+    <MetadataFile FileName="ClientService1.xsd" MetadataType="Schema" ID="3f629367-9e82-4f3e-beef-07f414e0e2f0" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd12" />
+    <MetadataFile FileName="ClientService2.xsd" MetadataType="Schema" ID="d2c65e02-1e90-4412-bc10-4b788b37bd44" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd19" />
+    <MetadataFile FileName="ClientService3.xsd" MetadataType="Schema" ID="caf6a80d-1d32-4ca5-9048-2404f1e310dc" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ClientService.disco" MetadataType="Disco" ID="18e4d0f3-fe1b-4f76-aa57-f522775f98ae" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?disco" />
+    <MetadataFile FileName="ClientService1.wsdl" MetadataType="Wsdl" ID="c9ff2629-010a-4739-a146-356ed58f0b92" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ClientService4.xsd" MetadataType="Schema" ID="ef4d25ba-6673-4751-955f-7608d8255a00" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ClientService5.xsd" MetadataType="Schema" ID="5e881f14-1c2a-4c94-9cfd-978f6d0b6deb" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd14" />
+    <MetadataFile FileName="ClientService6.xsd" MetadataType="Schema" ID="dc9bbd93-7a90-4d3e-a12b-0871030bac31" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ClientService7.xsd" MetadataType="Schema" ID="1b131b51-dd6a-46c1-9a74-f375e785f6d4" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd22" />
+    <MetadataFile FileName="ClientService8.xsd" MetadataType="Schema" ID="5670c92c-6132-4778-9aa9-6355a4f89841" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd16" />
+    <MetadataFile FileName="ClientService9.xsd" MetadataType="Schema" ID="075696bc-ca43-44c8-a9fc-2f702c510506" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd11" />
+    <MetadataFile FileName="ClientService10.xsd" MetadataType="Schema" ID="c4bc0312-4644-4409-a23d-aa1112082179" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ClientService11.xsd" MetadataType="Schema" ID="dd7907cd-351c-4a63-bbac-507ca7b2080b" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ClientService12.xsd" MetadataType="Schema" ID="f221284e-c970-4dcf-a2ab-a97abcd20e1e" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd13" />
+    <MetadataFile FileName="ClientService13.xsd" MetadataType="Schema" ID="a0743a0b-7f3b-4c0d-928a-b3e6ca3a9989" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd26" />
+    <MetadataFile FileName="ClientService14.xsd" MetadataType="Schema" ID="93bd37c6-898e-4455-81a5-0b5af6ff5361" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd21" />
+    <MetadataFile FileName="ClientService15.xsd" MetadataType="Schema" ID="69f2affa-f405-4c3d-a947-6ab0f5bce49e" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ClientService16.xsd" MetadataType="Schema" ID="4115cd6e-6470-413a-bcb4-2abe24f607ba" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd23" />
+    <MetadataFile FileName="ClientService17.xsd" MetadataType="Schema" ID="8393aaa3-1813-48d6-a23c-97aed2e0b14b" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd15" />
+    <MetadataFile FileName="ClientService18.xsd" MetadataType="Schema" ID="beace7c9-3df3-41a2-977b-d89805293fe2" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ClientService19.xsd" MetadataType="Schema" ID="bb7a3ddf-9d36-4a95-a9ad-7e02b882bdee" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd17" />
+    <MetadataFile FileName="ClientService20.xsd" MetadataType="Schema" ID="c3fc9d40-96d1-425e-a0c3-5ea149cf2d63" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd25" />
+    <MetadataFile FileName="ClientService21.xsd" MetadataType="Schema" ID="e43169f1-d9ea-4997-a1a6-f22a9fbd725e" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd24" />
+    <MetadataFile FileName="ClientService22.xsd" MetadataType="Schema" ID="d20ac6be-602c-4afe-be6b-0e03e270f6dc" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd27" />
+    <MetadataFile FileName="ClientService23.xsd" MetadataType="Schema" ID="39b3d48e-9a0b-476a-823a-93ab4e2fb3b6" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ClientService24.xsd" MetadataType="Schema" ID="9875f979-071f-4711-8669-be54824b3457" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ClientService25.xsd" MetadataType="Schema" ID="1155165d-13fa-454e-a485-91b59f269637" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd18" />
+    <MetadataFile FileName="ClientService26.xsd" MetadataType="Schema" ID="aea01e87-a28b-4ae3-81ef-5cf305458459" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ClientService27.xsd" MetadataType="Schema" ID="3ce3b330-a617-4b6a-9c12-b7b151447cae" SourceId="1" SourceUrl="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd20" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

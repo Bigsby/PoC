@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "exports": {
+    "CrossImplementationLibrary/1.0.0": {
+      "type": "project",
+      "framework": ".NETStandard,Version=v1.4",
+      "compile": {
+        "bin/Debug/CrossImplementationLibrary.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/CrossImplementationLibrary.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CrossImplementationLibrary.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "InterfacesLibrary/1.0.0": {
+      "type": "project",
+      "framework": ".NETStandard,Version=v1.4",
+      "compile": {
+        "bin/Debug/InterfacesLibrary.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/InterfacesLibrary.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/InterfacesLibrary.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "IoCAutofac/1.0.0": {
+      "type": "project",
+      "framework": ".NETStandard,Version=v1.4",
+      "compile": {
+        "bin/Debug/IoCAutofac.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/IoCAutofac.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/IoCAutofac.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

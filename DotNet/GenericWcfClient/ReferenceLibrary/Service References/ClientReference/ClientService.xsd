@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Messaging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Closed" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CorrelatedID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Escalated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EscalatedBy" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="EscalatedByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastUpdated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageID" type="xs:long" />
+      <xs:element minOccurs="0" name="MessageTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageType" type="tns:MessageType" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Read" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Received" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:simpleType name="MessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Alert" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="Response" />
+      <xs:enumeration value="Reminder" />
+      <xs:enumeration value="SystemAlert" />
+      <xs:enumeration value="Facility" />
+      <xs:enumeration value="PatientQuestion" />
+      <xs:enumeration value="PatientQuestionPrivate" />
+      <xs:enumeration value="ToastNotification" />
+      <xs:enumeration value="PatientEducationReminder" />
+      <xs:enumeration value="PatientGoalReminder" />
+      <xs:enumeration value="PatientNote" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageType" nillable="true" type="tns:MessageType" />
+  <xs:complexType name="ArrayOfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" nillable="true" type="tns:Response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseID" type="xs:long" />
+      <xs:element minOccurs="0" name="ResponseText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:complexType name="RetrievedMessages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FromTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetrievedMessages" nillable="true" type="tns:RetrievedMessages" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="ArrayOfScheduleAlertTypeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleAlertTypeDto" nillable="true" type="tns:ScheduleAlertTypeDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleAlertTypeDto" nillable="true" type="tns:ArrayOfScheduleAlertTypeDto" />
+  <xs:complexType name="ScheduleAlertTypeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlertName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlertTypeId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleAlertTypeDto" nillable="true" type="tns:ScheduleAlertTypeDto" />
+  <xs:complexType name="ArrayOfScheduleItemDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleItemDto" nillable="true" type="tns:ScheduleItemDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleItemDto" nillable="true" type="tns:ArrayOfScheduleItemDto" />
+  <xs:complexType name="ScheduleItemDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUpdated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScheduleItemID" type="xs:long" />
+      <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleItemDto" nillable="true" type="tns:ScheduleItemDto" />
+</xs:schema>

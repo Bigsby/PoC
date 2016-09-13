@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Skin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkinFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkinId" type="xs:long" />
+      <xs:element minOccurs="0" name="Themes" nillable="true" type="tns:ArrayOfSkinTheme" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Skin" nillable="true" type="tns:Skin" />
+  <xs:complexType name="ArrayOfSkinTheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SkinTheme" nillable="true" type="tns:SkinTheme" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSkinTheme" nillable="true" type="tns:ArrayOfSkinTheme" />
+  <xs:complexType name="SkinTheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NavigationRulesXaml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemeID" type="xs:long" />
+      <xs:element minOccurs="0" name="ThemeIconUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemeXaml" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkinTheme" nillable="true" type="tns:SkinTheme" />
+</xs:schema>

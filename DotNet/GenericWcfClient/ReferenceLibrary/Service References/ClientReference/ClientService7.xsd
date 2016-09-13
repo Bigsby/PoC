@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Person" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Person" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="AddressDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ContactNameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ContactNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DOBDecrypted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="EmailAddressDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FirstNameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HashedEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Initial" type="ser:char" />
+      <xs:element minOccurs="0" name="InsuranceNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="InsuranceNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLogin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="LastNameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOKAddress" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NOKAddressDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOKName" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NOKNameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOKPhoneNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NOKPhoneNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOKPreferredLanguge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOKRelationship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PasswordDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PatientNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentCustomerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentReceiptEmailAddress" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PaymentReceiptEmailAddressDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonRelationships" nillable="true" type="tns:ArrayOfPersonRelationship" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PhoneNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortalUser" nillable="true" type="tns:PortalUser" />
+      <xs:element minOccurs="0" name="PreferredContactNumber" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PreferredContactNumberDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreferredName" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PreferredNameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfPersonRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonRelationship" nillable="true" type="tns:PersonRelationship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonRelationship" nillable="true" type="tns:ArrayOfPersonRelationship" />
+  <xs:complexType name="PersonRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildPerson" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="ChildPersonId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ParentAdmissionId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentPerson" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="ParentPersonId" type="ser:guid" />
+      <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="tns:PersonRelationshipType" />
+      <xs:element minOccurs="0" name="RelationshipTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonRelationship" nillable="true" type="tns:PersonRelationship" />
+  <xs:complexType name="PersonRelationshipType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RelationshipName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipNameLID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RelationshipTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonRelationshipType" nillable="true" type="tns:PersonRelationshipType" />
+  <xs:complexType name="PortalUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColourCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDependant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotificationType" nillable="true" type="tns:NotificationType" />
+      <xs:element minOccurs="0" name="NotificationTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="PersonId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="UsernameDecrypted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsernameHashed" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortalUser" nillable="true" type="tns:PortalUser" />
+  <xs:complexType name="NotificationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationType" nillable="true" type="tns:NotificationType" />
+</xs:schema>

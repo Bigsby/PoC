@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Facilities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" />
+  <xs:complexType name="Facility">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnalyticsCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnalyticsSubcategory" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Blob" nillable="true" type="q1:Blob" />
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandParameter" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts" minOccurs="0" name="Completed" nillable="true" type="q2:CompletionDto" />
+      <xs:element minOccurs="0" name="ContextData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContextType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionLId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="FacilityID" type="xs:long" />
+      <xs:element minOccurs="0" name="FacilityType" nillable="true" type="tns:FacilityType" />
+      <xs:element minOccurs="0" name="Facility_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Icon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IconID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IconInternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTranslated" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedDescription" nillable="true" type="q3:LocalisedItem" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedName" nillable="true" type="q4:LocalisedItem" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Localisation" minOccurs="0" name="LocalisedUrl" nillable="true" type="q5:LocalisedItem" />
+      <xs:element minOccurs="0" name="MediaType" nillable="true" type="tns:MediaType" />
+      <xs:element minOccurs="0" name="Media_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifiedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameLId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfFacilityTag" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlLId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Facility" nillable="true" type="tns:Facility" />
+  <xs:complexType name="FacilityType">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Blob" nillable="true" type="q6:Blob" />
+      <xs:element minOccurs="0" name="Facility_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageBlobID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacilityType" nillable="true" type="tns:FacilityType" />
+  <xs:complexType name="MediaType">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Blob" nillable="true" type="q7:Blob" />
+      <xs:element minOccurs="0" name="ImageBlobID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Media_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaType" nillable="true" type="tns:MediaType" />
+  <xs:complexType name="ArrayOfFacilityTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacilityTag" nillable="true" type="tns:FacilityTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacilityTag" nillable="true" type="tns:ArrayOfFacilityTag" />
+  <xs:complexType name="FacilityTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacilityId" type="xs:long" />
+      <xs:element minOccurs="0" name="SystemTagType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacilityTag" nillable="true" type="tns:FacilityTag" />
+  <xs:complexType name="ArrayOfFacility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Facility" nillable="true" type="tns:Facility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacility" nillable="true" type="tns:ArrayOfFacility" />
+</xs:schema>

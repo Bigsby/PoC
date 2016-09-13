@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Tags" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" />
+  <xs:complexType name="TagGroup">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.ContentTrees" minOccurs="0" name="ContentTreeItem" nillable="true" type="q1:ContentTreeItem" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuContentID" nillable="true" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Playlist" nillable="true" type="q2:Playlist" />
+      <xs:element minOccurs="0" name="PlaylistId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RootContentID" nillable="true" type="xs:long" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Skins" minOccurs="0" name="Skin" nillable="true" type="q3:Skin" />
+      <xs:element minOccurs="0" name="SkinID" nillable="true" type="xs:long" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Storyboards" minOccurs="0" name="SystemStoryboards" nillable="true" type="q4:ArrayOfSystemStoryboard" />
+      <xs:element minOccurs="0" name="TagGroupID" type="xs:long" />
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfTag" />
+      <xs:element minOccurs="0" name="TilesContentID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagGroup" nillable="true" type="tns:TagGroup" />
+  <xs:complexType name="Tag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemTagType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tag" nillable="true" type="tns:Tag" />
+  <xs:complexType name="ArrayOfTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tag" nillable="true" type="tns:Tag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTag" nillable="true" type="tns:ArrayOfTag" />
+</xs:schema>

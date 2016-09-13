@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Hospitals" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Hospitals" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Rules" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" />
+  <xs:import schemaLocation="http://ovbyod.azurewebsites.net/Service/ClientService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" />
+  <xs:complexType name="Hospital">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Rules" minOccurs="0" name="BusinessRuleActions" nillable="true" type="q1:ArrayOfBusinessRuleAction" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Clients" minOccurs="0" name="ClientTree" nillable="true" type="q2:ClientTree" />
+      <xs:element minOccurs="0" name="Configs" nillable="true" type="tns:ArrayOfHospitalConfig" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CronJobs" nillable="true" type="tns:ArrayOfHospitalCronJob" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Culture" nillable="true" type="q3:Culture" />
+      <xs:element minOccurs="0" name="DefaultCultureID" nillable="true" type="xs:long" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities.Patients" minOccurs="0" name="Favourites" nillable="true" type="q4:ArrayOfBrowserFavourite" />
+      <xs:element minOccurs="0" name="HospitalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HospitalID" type="xs:long" />
+      <xs:element minOccurs="0" name="LocalHospitalCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="Logo" nillable="true" type="q5:Blob" />
+      <xs:element minOccurs="0" name="LogoData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="LogoID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plugins" nillable="true" type="tns:ArrayOfHospitalPlugin" />
+      <xs:element minOccurs="0" name="PrimaryClientTreeID" nillable="true" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OneView.DataContracts.Entities" minOccurs="0" name="SmallLogo" nillable="true" type="q6:Blob" />
+      <xs:element minOccurs="0" name="SmallLogoData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="SmallLogoID" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hospital" nillable="true" type="tns:Hospital" />
+  <xs:complexType name="ArrayOfHospitalConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HospitalConfig" nillable="true" type="tns:HospitalConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHospitalConfig" nillable="true" type="tns:ArrayOfHospitalConfig" />
+  <xs:complexType name="HospitalConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hospital" nillable="true" type="tns:Hospital" />
+      <xs:element minOccurs="0" name="HospitalConfigID" type="xs:long" />
+      <xs:element minOccurs="0" name="HospitalID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HospitalConfig" nillable="true" type="tns:HospitalConfig" />
+  <xs:complexType name="ArrayOfHospitalCronJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HospitalCronJob" nillable="true" type="tns:HospitalCronJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHospitalCronJob" nillable="true" type="tns:ArrayOfHospitalCronJob" />
+  <xs:complexType name="HospitalCronJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionHandlerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandArg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExecuteNow" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Granularity" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Hospital" nillable="true" type="tns:Hospital" />
+      <xs:element minOccurs="0" name="HospitalCronJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="HospitalID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastExecution" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastExecutionSuccessful" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastResult" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HospitalCronJob" nillable="true" type="tns:HospitalCronJob" />
+  <xs:complexType name="ArrayOfHospitalPlugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HospitalPlugin" nillable="true" type="tns:HospitalPlugin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHospitalPlugin" nillable="true" type="tns:ArrayOfHospitalPlugin" />
+  <xs:complexType name="HospitalPlugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Default" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hospital" nillable="true" type="tns:Hospital" />
+      <xs:element minOccurs="0" name="HospitalID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="HospitalPluginID" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HospitalPlugin" nillable="true" type="tns:HospitalPlugin" />
+</xs:schema>
