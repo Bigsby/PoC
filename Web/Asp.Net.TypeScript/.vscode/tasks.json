@@ -1,0 +1,28 @@
+{
+    "version": "0.1.0",
+    "showOutput": "always",
+    "isShellCommand": true,
+    "linux": {
+        "command": "bash",
+        "args": [
+            "build.bat"
+        ]
+    },
+    "windows": {
+        "command": "cmd",
+        "args": [
+            "/C",
+            "build.bat"
+        ]
+    },
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true,
+            "problemMatcher": [
+                "$msCompile",
+                "$tsc"
+            ]
+        }
+    ]
+}
