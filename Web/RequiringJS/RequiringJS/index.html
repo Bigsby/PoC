@@ -8,15 +8,16 @@
   display: none !important;
 }
     </style> 
+    <script data-main="scripts/app.js?v2" src="scripts/lib/require.js"></script>
 </head>
 <body>
-    <script data-main="scripts/app" src="scripts/lib/require.js"></script>
+    
     <div ng-controller="shellController as shellVM" >
         <div ng-show="!shellVM.Loaded" >Loading...</div>
         <div ng-cloak>
             {{shellVM.text}}
         </div>
     </div>
-    
+
 </body>
 </html>

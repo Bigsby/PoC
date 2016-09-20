@@ -1,9 +1,10 @@
 ﻿requirejs.config({
-    "baseUrl": "scripts",
     paths: {
         "angular": "lib/angular.min",
         "jquery": "lib/jquery.min",
-        "components": "components"
+        "text": "lib/require-text",
+        "json": "lib/require-json",
+        "components": "../data/components.json"
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });
@@ -11,12 +12,18 @@
 requirejs(["angular"], function () {
     angular.module("theApp", []);
     
-    requirejs(["components"], function (components) {
+    requirejs(["json!components"], function (components) {
+        var componentsToLoad = [];
         angular.forEach(components, function (component) {
-            requirejs(["./services/" + component.id + "Service", "./controllers/" + component.id + "Controller"], function (shellService, shellController) {
-                angular.bootstrap(document, ["theApp"]);
-            });
+            if (component.hasService)
+                componentsToLoad.push("services/" + component.id + "Service");
+
+            if (component.hasController)
+                componentsToLoad.push("controllers/" + component.id + "Controller");
         });
-        
+
+        requirejs(componentsToLoad, function () {
+            angular.bootstrap(document, ["theApp"]);
+        });
     });
 });

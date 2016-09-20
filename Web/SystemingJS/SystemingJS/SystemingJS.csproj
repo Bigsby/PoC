@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E9411243-2FB7-43EC-A833-7AF65BBE96C5}</ProjectGuid>
+    <ProjectGuid>{1A2B198E-D950-49F1-B7A4-E528CC7901B0}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RequiringJS</RootNamespace>
-    <AssemblyName>RequiringJS</AssemblyName>
+    <RootNamespace>SystemingJS</RootNamespace>
+    <AssemblyName>SystemingJS</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="data\components.json" />
+    <None Include="data\components.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -78,13 +78,9 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
-    <Content Include="scripts\controllers\shellController.js" />
     <Content Include="scripts\lib\angular.min.js" />
-    <Content Include="scripts\lib\jquery.min.js" />
-    <Content Include="scripts\lib\require-json.js" />
-    <Content Include="scripts\lib\require-text.js" />
-    <Content Include="scripts\lib\require.js" />
-    <Content Include="scripts\services\shellService.js" />
+    <Content Include="scripts\lib\system-json.js" />
+    <Content Include="scripts\lib\system.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,9 +100,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55477</DevelopmentServerPort>
+          <DevelopmentServerPort>52301</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55477/</IISUrl>
+          <IISUrl>http://localhost:52301/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
