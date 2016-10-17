@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace RaptorDBing
 {
@@ -11,16 +12,30 @@ namespace RaptorDBing
     {
         static void Main(string[] args)
         {
-            var db = new RaptorDB.RaptorDB<ComparableStudent>(@"C:\Git\Bigsby\PoC\DotNet\NoSQLing\RaptorDBing\data", false);
+            var db = RaptorDB.RaptorDB.Open("data");
+
+            var student = new Student
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "John Cleese"
+            };
             
+            db.Save(Guid.Parse(student.Id), student);
+
+            foreach (var item in 
+                db.Query<Student>("").Rows)
+                WriteLine("Student: " + item.Name);
+
+            db.Query<Student>("");
+
         }
     }
 
-    public class ComparableStudent : Student, IComparable<Student>
-    {
-        public int CompareTo(Student other)
-        {
-            return Id.CompareTo(other.Id);
-        }
-    }
+    //public class ComparableStudent : Student, IComparable<Student>
+    //{
+    //    public int CompareTo(Student other)
+    //    {
+    //        return Id.CompareTo(other.Id);
+    //    }
+    //}
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GenericWcfClient
 {
-    public static class Caller<TService>
+    public static class Caller<TService> where TService : class
     {
         public static void Call(Expression<Action<TService>> func)
         {

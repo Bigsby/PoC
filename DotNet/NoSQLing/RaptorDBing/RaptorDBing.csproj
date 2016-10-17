@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RaptorDB, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RaptorDB.2.6\lib\net40\RaptorDB.dll</HintPath>
+    <Reference Include="RaptorDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RaptorDB.DocumentStore.3.1.21\lib\RaptorDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RaptorDB.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RaptorDB.DocumentStore.3.1.21\lib\RaptorDB.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Raptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
