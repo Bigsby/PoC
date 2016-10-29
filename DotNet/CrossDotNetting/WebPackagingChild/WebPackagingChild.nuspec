@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Bigs.WebPackaging.Child</id>
+    <version>1.0.0</version>
+    <title>Bigs.WebPackaging.Child</title>
+    <authors>Bigsby</authors>
+    <owners>Bigsby</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Testing nesting of packages</description>
+  </metadata>
+</package>
