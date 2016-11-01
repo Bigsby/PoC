@@ -1,29 +1,48 @@
-﻿(function () {
-    "use strict";
+﻿var appName = "theApp";
 
+(function () {
+    "use strict";
+    var apiUrl = "../data";
     requirejs.config({
         paths: {
-            "angular": "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min"
+            "angular": "lib/angular.min",
+            "angularRouter": "lib/angular_1_router",
+            "text": "lib/require-text",
+            "json": "lib/require-json",
+            "api": apiUrl
         }
     });
-    requirejs(["angular"], function() {
-        var app = angular.module("theApp", ["ngComponentRouter"]);
-        app.value("$routerRootComponent", "appContainer");
-        app.component("")
-        app.component("appContainer", {
-            templateUrl: "shell.html",
-            $routeConfig: [
-                {
-                    path: "/one",
-                    component: "pageOne",
-                    name: "One"
-                },
-                {
-                    path: "/two",
-                    component: "pageTwo",
-                    name: "Two"
-                }
-            ]
+
+    requirejs(["angular"], function () {
+
+        requirejs(["json!api/structure/shell.json", "angularRouter"], function (shell) {
+            
+            var app = angular.module(appName, ["ngComponentRouter"]);
+            app.value("$routerRootComponent", "appContainer");
+            
+            var routes = [];
+
+            angular.forEach(shell.sections, function (section) {
+                app.component(section.id, {
+                    templateUrl: "data/templates/" + section.id + ".html",
+                    controller: function () {
+                        this.message = "This is " + section.name + " message"
+                    }
+                });
+
+                routes.push({
+                    path: "/" + section.id,
+                    component: section.id,
+                    name: section.name
+                });
+            });
+
+            app.component("appContainer", {
+                templateUrl: "data/templates/shell.html",
+                $routeConfig: routes
+            });
+
+            angular.bootstrap(document, [appName]);
         });
     });
 })();

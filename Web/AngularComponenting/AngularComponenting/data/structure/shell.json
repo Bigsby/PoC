@@ -1,0 +1,13 @@
+﻿{
+  "title": "This is the shell title",
+  "sections": [
+    {
+      "id": "one",
+      "name": "One"
+    },
+    {
+      "id": "two",
+      "name": "Two"
+    }
+  ]
+}

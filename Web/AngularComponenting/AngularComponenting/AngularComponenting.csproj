@@ -66,7 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\templates\home.html" />
+    <Content Include="data\templates\one.html" />
+    <Content Include="data\templates\two.html" />
     <Content Include="packages.config" />
+    <Content Include="data\structure\shell.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,7 +81,13 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
-    <Content Include="shell.html" />
+    <Content Include="scripts\lib\angular-animate.min.js" />
+    <Content Include="scripts\lib\angular.min.js" />
+    <Content Include="scripts\lib\angular_1_router.js" />
+    <Content Include="scripts\lib\require-json.js" />
+    <Content Include="scripts\lib\require-text.js" />
+    <Content Include="scripts\lib\require.js" />
+    <Content Include="data\templates\shell.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
