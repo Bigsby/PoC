@@ -1,0 +1,13 @@
+﻿{
+  "title": "This the title",
+  "sections": [
+    {
+      "id": "news",
+      "name": "News"
+    },
+    {
+      "id": "about",
+      "name": "About"
+    }
+  ]
+}
