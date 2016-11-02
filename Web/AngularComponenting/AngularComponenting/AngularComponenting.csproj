@@ -66,6 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\templates\appFooter.html" />
+    <Content Include="data\templates\appHeader.html" />
     <Content Include="data\templates\home.html" />
     <Content Include="data\templates\one.html" />
     <Content Include="data\templates\two.html" />
