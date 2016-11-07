@@ -1,0 +1,5 @@
+﻿<div>Scopes List</div>
+<ul>
+    <li ng-repeat="scope in $ctrl.scopes">
+        <a ng-link="['Collections', {scope: scope.id}]">{{scope.name}}</a></li>
+</ul>

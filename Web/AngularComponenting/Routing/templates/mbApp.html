@@ -1,0 +1,20 @@
+﻿<div>Header
+    <ul>
+        <li><a ng-link="['./Simple']">Simple</a></li>
+        <li><a ng-link="['./Level1', 'Level1Home']">Level1</a>
+           <ul>
+               <li><a ng-link="['./Level1', 'Level1Home']">Level 1.Home</a></li>
+               <li><a ng-link="['./Level1', 'Level1']">Level 1.1</a></li>
+               <li><a ng-link="['./Level1', 'Level2']">Level 1.2</a></li>
+               <li><a ng-link="['./ParaSimple']">No Parameter</a></li>
+               <li><a ng-link="['./ParaSimple', {id: 3}]">Query Parameter</a></li>
+               <li><a ng-link="['./ParaRoute', {id: 2}]">Parameter 2</a></li>
+               <li><a ng-link="['./ParaDeep', 'Home']">Para Deep</a></li>
+               <li><a ng-link="['./ParaDeep', 'Detail', {id: 3}]">Deep 2</a></li>
+               <li><a ng-link="['./Scopes', 'Home']">Scopes</a></li>
+           </ul>
+        </li>
+    </ul>
+    </div>
+<ng-outlet></ng-outlet>
+<div>Footer</div>

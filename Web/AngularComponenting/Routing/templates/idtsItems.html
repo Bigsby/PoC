@@ -1,0 +1,4 @@
+﻿<div>Ids CollectionList</div>
+<ul>
+    <li ng-repeat="item in $ctrl.items"><a ng-link="['ItemDetails', { item: item.id, collection: $ctrl.collection, scope: $ctrl.scope }]">{{$ctrl.scope + ' ' + $ctrl.collection + ' ' + item.name}}</a></li>
+</ul>

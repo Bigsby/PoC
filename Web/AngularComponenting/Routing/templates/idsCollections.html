@@ -1,0 +1,6 @@
+﻿<div>Sturcture List</div>
+<ul>
+    <li ng-repeat="collection in $ctrl.collections">
+        <a ng-link="['Items', { collection: collection.id, scope: $ctrl.scope }]">{{collection.name}}</a>
+    </li>
+</ul>
