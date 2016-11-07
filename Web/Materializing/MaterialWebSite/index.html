@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Material testing</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+</head>
+<body ng-app="BlankApp" ng-cloak>
+    <md-toolbar layout="row" class="md-toolbar-tools">
+        <h1>Angular Material - Starter App</h1>
+    </md-toolbar>
+
+    <md-input-container>
+        <label>text input</label>
+        <input name="lastName" ng-model="lastName" >
+        <!--<div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+            <div ng-message="required">This is required!</div>
+            <div ng-message="md-maxlength">That's too long!</div>
+            <div ng-message="minlength">That's too short!</div>
+        </div>-->
+    </md-input-container>
+    <md-input-container>
+        <label>password </label>
+        <input name="password" type="password" required ng-model="pass" md-maxlength="10" minlength="4">
+        <!--<div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+            <div ng-message="required">This is required!</div>
+            <div ng-message="md-maxlength">That's too long!</div>
+            <div ng-message="minlength">That's too short!</div>
+        </div>-->
+    </md-input-container>
+    <mb-button>A button</mb-button>
+
+    <script type="text/javascript">
+        
+        /**
+         * You must include the dependency on 'ngMaterial'
+         */
+        angular.module('BlankApp', ['ngMaterial']);
+    </script>
+</body>
+</html>
