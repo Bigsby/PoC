@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F9AF65EE-B5BF-4745-875E-ACF1ED960742}</ProjectGuid>
+    <ProjectGuid>{A6E825ED-E44D-4D59-A271-7B348E04C830}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MaterialWebSite</RootNamespace>
-    <AssemblyName>MaterialWebSite</AssemblyName>
+    <RootNamespace>EggHeadIntroduction</RootNamespace>
+    <AssemblyName>EggHeadIntroduction</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="package.json" />
+    <Content Include="shell.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,18 +77,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="scripts\angular-animate.min.js" />
-    <Content Include="scripts\angular-aria.min.js" />
-    <Content Include="scripts\angular-material.min.js" />
-    <Content Include="scripts\angular-messages.min.js" />
-    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\lib\angular-animate.min.js" />
+    <Content Include="scripts\lib\angular-aria.min.js" />
+    <Content Include="scripts\lib\angular-material.min.js" />
+    <Content Include="scripts\lib\angular-messages.min.js" />
+    <Content Include="scripts\lib\angular-sanitize.min.js" />
+    <Content Include="scripts\lib\angular.min.js" />
+    <Content Include="scripts\lib\angular_1_router.js" />
+    <Content Include="scripts\lib\require-json.js" />
+    <Content Include="scripts\lib\require-text.js" />
+    <Content Include="scripts\lib\require.js" />
     <Content Include="styles\angular-material.min.css" />
+    <Content Include="templates\app.html" />
+    <Content Include="templates\first.html" />
+    <Content Include="templates\fourth.html" />
+    <Content Include="templates\second.html" />
+    <Content Include="templates\third.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -102,9 +112,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54895</DevelopmentServerPort>
+          <DevelopmentServerPort>52167</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54895/</IISUrl>
+          <IISUrl>http://localhost:52167/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

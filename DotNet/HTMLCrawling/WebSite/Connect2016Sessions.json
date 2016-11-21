@@ -1,0 +1,657 @@
+[{
+		"Title" : "Embed visual analytics in customer-facing apps",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/177",
+		"Duration" : "00:25:09",
+		"Relevance" : 0
+	}, {
+		"Title" : " Introduction to Azure HDInsight – using Hadoop with your applications",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/184",
+		"Duration" : "00:12:56",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server on Linux: overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/101",
+		"Duration" : "00:06:17",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server + Node.js: what’s new",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/160",
+		"Duration" : "00:12:36",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server C#: what’s new",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/151",
+		"Duration" : "00:12:18",
+		"Relevance" : 2
+	}, {
+		"Title" : "Microsoft Graph Extensibility",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/213",
+		"Duration" : "00:09:16",
+		"Relevance" : 1
+	}, {
+		"Title" : "Universal Windows Platform (UWP) App Development and the Windows Store",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Windows-Development-Panel-with-QA",
+		"Duration" : "00:52:44",
+		"Relevance" : 2
+	}, {
+		"Title" : "What's new in Azure DevTest Labs",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/122",
+		"Duration" : "00:08:29",
+		"Relevance" : 1
+	}, {
+		"Title" : "Live Unit Testing",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/171",
+		"Duration" : "00:07:42",
+		"Relevance" : 0
+	}, {
+		"Title" : "Overview of the Office Platform",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/183",
+		"Duration" : "00:17:41",
+		"Relevance" : 0
+	}, {
+		"Title" : ".NET Productivity Improvements",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/149",
+		"Duration" : "00:12:06",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new for Desktop Developers in Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/117",
+		"Duration" : "00:10:56",
+		"Relevance" : 0
+	}, {
+		"Title" : "Visual Studio 2017 Linux development with C++",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/119",
+		"Duration" : "00:11:43",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introducing Visual Studio for Mac",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/209",
+		"Duration" : "00:12:54",
+		"Relevance" : 0
+	}, {
+		"Title" : "npm and continuous delivery in Package Management",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/143",
+		"Duration" : "00:08:47",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introduction to Microsoft R",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/220",
+		"Duration" : "00:11:55",
+		"Relevance" : 0
+	}, {
+		"Title" : "Azure Infrastructure as a service & Azure Resource Manager Overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/217",
+		"Duration" : "00:14:04",
+		"Relevance" : 0
+	}, {
+		"Title" : "Analytics with the Power BI client JavaScript API",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/215",
+		"Duration" : "00:13:49",
+		"Relevance" : 0
+	}, {
+		"Title" : "Simpler Azure Management Libraries for .NET",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/211",
+		"Duration" : "00:09:33",
+		"Relevance" : 0
+	}, {
+		"Title" : "Deep Learning on Azure with GPUs",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/210",
+		"Duration" : "00:10:14",
+		"Relevance" : 0
+	}, {
+		"Title" : "Extending Microsoft Teams",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/208",
+		"Duration" : "00:07:15",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Database In-Memory technologies",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/207",
+		"Duration" : "00:05:47",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build, Debug, Deploy ASP.NET Core Apps with Docker",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/206",
+		"Duration" : "00:19:02",
+		"Relevance" : 0
+	}, {
+		"Title" : "Creating, Configuring the Azure Container Registry",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/205",
+		"Duration" : "00:15:17",
+		"Relevance" : 0
+	}, {
+		"Title" : "Continuous integration and deployment of multi-container Docker apps to Azure Container…",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/204",
+		"Duration" : "00:08:51",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new in Visual Studio Code",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/203",
+		"Duration" : "00:27:08",
+		"Relevance" : 0
+	}, {
+		"Title" : "Improving App Quality with UI Automation",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/202",
+		"Duration" : "00:08:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "Application Insights Diagnostic Preview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/201",
+		"Duration" : "00:09:06",
+		"Relevance" : 0
+	}, {
+		"Title" : "Getting Started with Visual Studio Tools for Tizen (Preview)",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/200",
+		"Duration" : "00:08:30",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introducing Linux on Azure App Service",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/199",
+		"Duration" : "00:28:11",
+		"Relevance" : 0
+	}, {
+		"Title" : "Using the Desktop Bridge to bring desktop apps to the Windows Store",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/198",
+		"Duration" : "00:10:14",
+		"Relevance" : 0
+	}, {
+		"Title" : "Windows Device Portal",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/197",
+		"Duration" : "00:04:50",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build holistic integration solutions using Azure Logic Apps and API Management",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/196",
+		"Duration" : "00:11:46",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introducing the Azure Bot Service",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/195",
+		"Duration" : "00:07:16",
+		"Relevance" : 0
+	}, {
+		"Title" : "Manual & Exploratory testing",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/193",
+		"Duration" : "00:12:37",
+		"Relevance" : 0
+	}, {
+		"Title" : "DocumentDB: overview and offline development experience",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/192",
+		"Duration" : "00:08:06",
+		"Relevance" : 0
+	}, {
+		"Title" : "Improvements to Bash on Windows and the Windows Console",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/191",
+		"Duration" : "00:17:43",
+		"Relevance" : 0
+	}, {
+		"Title" : "Azure Application Platform Overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/190",
+		"Duration" : "00:06:58",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server + Python: what’s new",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/189",
+		"Duration" : "00:12:11",
+		"Relevance" : 0
+	}, {
+		"Title" : "Scalable machine learning with R and Spark",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/187",
+		"Duration" : "00:11:29",
+		"Relevance" : 0
+	}, {
+		"Title" : "A tour through Azure command-line tools",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/186",
+		"Duration" : "00:10:44",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's New with ASP.NET Core 1.1",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/185",
+		"Duration" : "00:06:43",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server + PHP: what’s new",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/182",
+		"Duration" : "00:10:51",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introduction to the Microsoft Translator API",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/181",
+		"Duration" : "00:11:07",
+		"Relevance" : 0
+	}, {
+		"Title" : "Cortana Intelligence overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/180",
+		"Duration" : "00:07:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "TFVC With IntelliJ",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/179",
+		"Duration" : "00:14:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "TFS Database Import Service for Visual Studio Team Services",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/178",
+		"Duration" : "00:19:37",
+		"Relevance" : 0
+	}, {
+		"Title" : "Open-source Power BI visuals",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/176",
+		"Duration" : "00:27:15",
+		"Relevance" : 0
+	}, {
+		"Title" : "Analytics for Apps: Landing and Loading Data into SQL Data Warehouse",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/175",
+		"Duration" : "00:08:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "Smart, scalable apps in Azure Database Services",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/174",
+		"Duration" : "00:31:16",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server on Linux: use SQL Tools with SQL Server",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/173",
+		"Duration" : "00:14:42",
+		"Relevance" : 0
+	}, {
+		"Title" : "Get Started with .NET and Docker",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/172",
+		"Duration" : "00:07:17",
+		"Relevance" : 0
+	}, {
+		"Title" : "Validate architecture dependencies with Visual Studio",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/170",
+		"Duration" : "00:09:55",
+		"Relevance" : 0
+	}, {
+		"Title" : "Visual Studio Marketplace",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/169",
+		"Duration" : "00:06:33",
+		"Relevance" : 0
+	}, {
+		"Title" : "Security in Your Continuous Integration Pipeline",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/168",
+		"Duration" : "00:12:41",
+		"Relevance" : 0
+	}, {
+		"Title" : "Release Management – Azure Deployments",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/167",
+		"Duration" : "00:09:44",
+		"Relevance" : 0
+	}, {
+		"Title" : "Release Management – Improvements",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/166",
+		"Duration" : "00:10:05",
+		"Relevance" : 0
+	}, {
+		"Title" : "Azure Container Service, the most open container orchestration service yet",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/165",
+		"Duration" : "00:03:40",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's New in TypeScript 2.0 & 2.1",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/164",
+		"Duration" : "00:07:26",
+		"Relevance" : 0
+	}, {
+		"Title" : "Store application data with Azure Data Lake Store",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/163",
+		"Duration" : "00:14:10",
+		"Relevance" : 0
+	}, {
+		"Title" : "Introduction to Azure Data Lake Analytics – adding big data to your applications made easy",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/162",
+		"Duration" : "00:06:21",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's New in Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/159",
+		"Duration" : "00:10:54",
+		"Relevance" : 0
+	}, {
+		"Title" : "Data Science and Web Development with Python in Visual Studio",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/158",
+		"Duration" : "00:08:57",
+		"Relevance" : 0
+	}, {
+		"Title" : "Office add-ins",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/157",
+		"Duration" : "00:13:16",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build client-side web parts with the  SharePoint Framework",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/156",
+		"Duration" : "00:13:39",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build & Release Pricing & Licensing",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/155",
+		"Duration" : "00:04:57",
+		"Relevance" : 0
+	}, {
+		"Title" : "Azure SQL Database overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/154",
+		"Duration" : "00:08:06",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Database elastic pools for SaaS apps",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/153",
+		"Duration" : "00:10:12",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server + Java: what’s new",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/152",
+		"Duration" : "00:09:00",
+		"Relevance" : 0
+	}, {
+		"Title" : "Database Continuous Integration and Deployment with Visual Studio SQL Server Data Tools in…",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/150",
+		"Duration" : "00:09:53",
+		"Relevance" : 0
+	}, {
+		"Title" : "Web Development in Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/148",
+		"Duration" : "00:07:52",
+		"Relevance" : 0
+	}, {
+		"Title" : "Get Started with .NET Framework and Docker",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/147",
+		"Duration" : "00:07:28",
+		"Relevance" : 0
+	}, {
+		"Title" : "Office 365 Actionable messages with  Connectors and Email",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/146",
+		"Duration" : "00:09:18",
+		"Relevance" : 0
+	}, {
+		"Title" : "Xamarin + Azure: Cloud Connected Android, iOS, and Windows Apps",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/145",
+		"Duration" : "00:09:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "Xamarin.Forms: Native Android, iOS, and Windows apps in C#",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/144",
+		"Duration" : "00:09:50",
+		"Relevance" : 0
+	}, {
+		"Title" : "Kubernetes support in Azure Container Service (preview)",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/142",
+		"Duration" : "00:06:48",
+		"Relevance" : 0
+	}, {
+		"Title" : "New JavaScript Experience in VS 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/141",
+		"Duration" : "00:09:56",
+		"Relevance" : 0
+	}, {
+		"Title" : "Dive into the new world of Windows Server and Hyper-V containers",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/140",
+		"Duration" : "00:16:35",
+		"Relevance" : 0
+	}, {
+		"Title" : "U-SQL – A new language to process big data using C#/SQL",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/139",
+		"Duration" : "00:22:46",
+		"Relevance" : 0
+	}, {
+		"Title" : "Azure Search overview",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/138",
+		"Duration" : "00:09:38",
+		"Relevance" : 0
+	}, {
+		"Title" : "Welcome to Azure Notebooks",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/137",
+		"Duration" : "00:09:18",
+		"Relevance" : 0
+	}, {
+		"Title" : "SQL Server on Linux: High Availability and security on Linux",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/136",
+		"Duration" : "00:14:27",
+		"Relevance" : 0
+	}, {
+		"Title" : "The Visual Studio Build Tools",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/135",
+		"Duration" : "00:02:38",
+		"Relevance" : 0
+	}, {
+		"Title" : "Visual C++ and the Visual Studio Installer",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/134",
+		"Duration" : "00:05:36",
+		"Relevance" : 0
+	}, {
+		"Title" : "Skype for Business Development",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/133",
+		"Duration" : "00:07:13",
+		"Relevance" : 0
+	}, {
+		"Title" : "End-to-end flow of developing applications for Azure",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/132",
+		"Duration" : "00:09:04",
+		"Relevance" : 0
+	}, {
+		"Title" : "R Tools for Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/131",
+		"Duration" : "00:12:36",
+		"Relevance" : 0
+	}, {
+		"Title" : "Installing Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/130",
+		"Duration" : "00:05:15",
+		"Relevance" : 0
+	}, {
+		"Title" : "CMake support in Visual Studio",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/129",
+		"Duration" : "00:09:45",
+		"Relevance" : 0
+	}, {
+		"Title" : "C++ Productivity Improvements",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/128",
+		"Duration" : "00:10:59",
+		"Relevance" : 0
+	}, {
+		"Title" : "C++ Standards Conformance",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/127",
+		"Duration" : "00:07:23",
+		"Relevance" : 0
+	}, {
+		"Title" : "What’s New in the .NET Platform",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/126",
+		"Duration" : "00:08:09",
+		"Relevance" : 0
+	}, {
+		"Title" : "Use Microsoft Graph to  reach users on hybrid Exchange 2016",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/125",
+		"Duration" : "00:15:50",
+		"Relevance" : 0
+	}, {
+		"Title" : "Excel REST API features and roadmap",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/124",
+		"Duration" : "00:08:09",
+		"Relevance" : 0
+	}, {
+		"Title" : "C++ IDE Performance Improvements in Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/121",
+		"Duration" : "00:04:20",
+		"Relevance" : 0
+	}, {
+		"Title" : "Open Folder for C++ Developers",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/120",
+		"Duration" : "00:11:03",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's New in F# 4.1",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/118",
+		"Duration" : "00:08:35",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new in Entity Framework Core",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/116",
+		"Duration" : "00:06:46",
+		"Relevance" : 0
+	}, {
+		"Title" : "Microsoft Graph SDKs",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/115",
+		"Duration" : "00:07:28",
+		"Relevance" : 0
+	}, {
+		"Title" : "Learning with Xamarin Workbooks",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/114",
+		"Duration" : "00:08:24",
+		"Relevance" : 0
+	}, {
+		"Title" : "Xamarin Inspector & Profiler for Visual Studio Enterprise",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/113",
+		"Duration" : "00:07:54",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new for Unity developers?",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/111",
+		"Duration" : "00:05:42",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new for UWP developers in Visual Studio 2017?",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/110",
+		"Duration" : "00:11:27",
+		"Relevance" : 0
+	}, {
+		"Title" : "Vcpkg a tool to build open source C++ libraries",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/109",
+		"Duration" : "00:10:29",
+		"Relevance" : 0
+	}, {
+		"Title" : "Faster C++ Links with Visual Studio 2017",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/108",
+		"Duration" : "00:05:27",
+		"Relevance" : 0
+	}, {
+		"Title" : "C++ development with Visual Studio Code",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/107",
+		"Duration" : "00:07:26",
+		"Relevance" : 0
+	}, {
+		"Title" : "What's new in .NET Core 1.1?",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/106",
+		"Duration" : "00:05:26",
+		"Relevance" : 0
+	}, {
+		"Title" : "New Features in C# 7.0",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/105",
+		"Duration" : "00:06:17",
+		"Relevance" : 0
+	}, {
+		"Title" : "Instant Analytics in Azure Application Insights",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/123",
+		"Duration" : "00:08:22",
+		"Relevance" : 0
+	}, {
+		"Title" : "Microsoft Graph Update",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/104",
+		"Duration" : "00:07:19",
+		"Relevance" : 0
+	}, {
+		"Title" : "Jumpstart Mobile Testing with Xamarin Test Recorder",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/103",
+		"Duration" : "00:05:49",
+		"Relevance" : 0
+	}, {
+		"Title" : "Application Performance Management with Azure Application Insights",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/112",
+		"Duration" : "00:07:45",
+		"Relevance" : 0
+	}, {
+		"Title" : "Monitor Web Apps using Azure Application Insights",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/100",
+		"Duration" : "00:09:40",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build Intelligent Applications with Office",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Office-Development-Panel-with-QA",
+		"Duration" : "00:57:11",
+		"Relevance" : 0
+	}, {
+		"Title" : "Intelligent Data-Driven Apps with Bots",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Intelligent-App--Data-Panel-with-QA",
+		"Duration" : "00:58:18",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build Microservice Applications with Microsoft Azure",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Microsoft-Azure-2-Panel-with-QA",
+		"Duration" : "00:56:16",
+		"Relevance" : 0
+	}, {
+		"Title" : "Build and Integrate Applications Faster Using Azure App Service",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Microsoft-Azure-Panel-with-QA",
+		"Duration" : "00:56:19",
+		"Relevance" : 0
+	}, {
+		"Title" : "Application Lifecycle Management and DevOps",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/ALM--DevOps-Panel-with-QA",
+		"Duration" : "00:56:29",
+		"Relevance" : 0
+	}, {
+		"Title" : "The Future of Mobile Development",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Mobile-Development-Panel-with-QA",
+		"Duration" : "00:54:10",
+		"Relevance" : 0
+	}, {
+		"Title" : "The Future of .NET",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/NET-Panel-with-QA",
+		"Duration" : "00:56:02",
+		"Relevance" : 0
+	}, {
+		"Title" : "Visual Studio Development Tools",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Visual-Studio-Panel-with-QA",
+		"Duration" : "01:00:29",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: Microsoft Azure with Corey Sanders",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-Microsoft-Azure-with-Corey-Sanders",
+		"Duration" : "00:28:16",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: Visual Studio with Julia Liuson & John Montgomery",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-Visual-Studio-with-Julia-Liuson--John-Montgomery",
+		"Duration" : "00:30:48",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: Intelligent App + Data with Rohan Kumar & Tiffany Wissner",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-Intelligent-App--Data-with-Rohan-Kumar--Tiffany-Wissner",
+		"Duration" : "00:29:51",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: .NET with Scott Hunter, Chris Sells (Google) and Hong-Seok (Samsung)",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-NET-with-Scott-Hunter",
+		"Duration" : "00:29:26",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: ALM & DevOps with Brian Harry & Jamie Cool",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-Brian-Harry-and-Jamie-Cool",
+		"Duration" : "00:29:53",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: Xamarin Platform with Nat Friedman & Miguel de Icaza",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Live-QA-Nat-Friedman-and-Miguel-de-Icaza",
+		"Duration" : "00:30:21",
+		"Relevance" : 0
+	}, {
+		"Title" : "Live Q&A: Scott Guthrie",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Scott-Guthrie-Unplugged-Live-QA",
+		"Duration" : "00:30:38",
+		"Relevance" : 0
+	}, {
+		"Title" : "Post keynote recap with Dan & Seth",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Post-keynote-recap-with-Dan-and-Seth",
+		"Duration" : "00:02:53",
+		"Relevance" : 0
+	}, {
+		"Title" : "Keynotes: Scott Guthrie & Scott Hanselman",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Keynotes-Scott-Guthrie-and-Scott-Hanselman",
+		"Duration" : "02:56:27",
+		"Relevance" : 0
+	}, {
+		"Title" : "Pre-show with Dan Fernandez and Seth Juarez",
+		"Url" : "https://channel9.msdn.com//Events/Connect/2016/Pre-show-with-Channel-9",
+		"Duration" : "00:08:02",
+		"Relevance" : 0
+	}
+]

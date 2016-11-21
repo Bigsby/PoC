@@ -1,0 +1,21 @@
+﻿
+<div layout="column" layout-fill>
+    <md-toolbar class="md-toolbar-tools">
+        <h1>Angular Material - Starter App</h1>
+    </md-toolbar>
+
+    <div layout="row" flex>
+        <md-sidenav class="md-whitefra-4dp" md-is-locked-open="true" flex>
+            <md-list ng-init="items = [ 'First', 'Second', 'Third', 'Fourth' ]" flex>
+                <md-lis-item ng-repeat="item in items" layout="row">
+                    <md-button flex ng-link="[item]">
+                        <h1>{{item}} Item</h1>
+                    </md-button>
+                </md-lis-item>
+            </md-list>
+        </md-sidenav>
+        <md-content style="background-color:aqua" flex>
+            <ng-outlet></ng-outlet>
+        </md-content>
+    </div>
+</div>

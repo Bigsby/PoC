@@ -1,0 +1,19 @@
+﻿{
+  "styles": [
+    {
+      "path": "angular-material.min.css",
+      "order": 0
+    }
+  ],
+  "scripts": {
+    "path": "lib/angular.min",
+    "dependants": [
+      "lib/angular-sanitize.min",
+      "lib/angular-animate.min",
+      "lib/angular_1_router",
+      "lib/angular-aria.min",
+      "lib/angular-material.min",
+      "lib/angular-messages.min"
+    ]
+  }
+}
