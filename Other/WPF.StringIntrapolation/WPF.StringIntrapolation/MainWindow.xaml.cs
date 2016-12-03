@@ -21,6 +21,11 @@ namespace WPF.StringIntrapolation
         }
     }
 
+    public static class Strings
+    {
+        public const string ItemText = "This is the {Name}";
+    }
+
     public class Item
     {
         public string Name { get; set; }

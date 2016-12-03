@@ -11,7 +11,7 @@
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <TextBlock Text="{Binding Converter={StaticResource IntrapolationConverter}, ConverterParameter='This is the {Name}'}"/>
+            <TextBlock Text="{Binding Converter={StaticResource IntrapolationConverter}, ConverterParameter={x:Static local:Strings.ItemText}}"/>
             <TextBlock Text="{Binding Converter={StaticResource IntrapolationConverter}, ConverterParameter='This is the {Child.Name}'}"/>
         </StackPanel>
     </Grid>
