@@ -7,7 +7,7 @@ namespace WPF.StringIntrapolation
 {
     public class IntrapolationConverter : IValueConverter
     {
-        private static Regex _replaceRegex = new Regex(@"(\{@?(?:[A-Za-z_][A-Za-z0-9_]+)(?:\.@?(?:[A-Za-z_][A-Za-z0-9_]+))*\})", RegexOptions.Compiled);
+        private static Regex _replaceRegex = new Regex(@"(\{(?:[A-Za-z_][A-Za-z0-9_]+)(?:\.(?:[A-Za-z_][A-Za-z0-9_]+))*\})", RegexOptions.Compiled);
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var format = parameter as string;
@@ -16,8 +16,6 @@ namespace WPF.StringIntrapolation
 
             return _replaceRegex.Replace(format, match => Process(value, match));
         }
-
-        public int @a { get; set; }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

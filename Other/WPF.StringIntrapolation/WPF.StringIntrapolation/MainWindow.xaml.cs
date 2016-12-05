@@ -15,7 +15,11 @@ namespace WPF.StringIntrapolation
                 Name = "Parent",
                 Child = new Item
                 {
-                    Name = "Child"
+                    Name = "Child",
+                    Child = new Item
+                    {
+                        Name = "Grandchild"
+                    }
                 }
             };
         }
