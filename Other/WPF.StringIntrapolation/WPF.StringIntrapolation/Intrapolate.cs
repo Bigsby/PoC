@@ -8,15 +8,10 @@ namespace WPF.StringIntrapolation
     [MarkupExtensionReturnType(typeof(string))]
     public class Intrapolate : MarkupExtension
     {
-        public Intrapolate()
-        {
-
-        }
+        public Intrapolate() { }
 
         public Intrapolate(string format)
-        {
-            Format = format;
-        }
+        { Format = format; }
 
         private readonly static IntrapolationConverter converter = new IntrapolationConverter();
         public override object ProvideValue(IServiceProvider serviceProvider)
@@ -24,7 +19,8 @@ namespace WPF.StringIntrapolation
             var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
             var target = targetProvider.TargetObject as FrameworkElement;
 
-            var binding = new Binding {
+            var binding = new Binding
+            {
                 ConverterParameter = Format,
                 Converter = converter
             };
