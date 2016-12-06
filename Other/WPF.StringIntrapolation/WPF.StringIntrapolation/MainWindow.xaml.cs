@@ -9,7 +9,6 @@ namespace WPF.StringIntrapolation
     {
         public MainWindow()
         {
-            InitializeComponent();
             DataContext = new Item
             {
                 Name = "Parent",
@@ -18,10 +17,16 @@ namespace WPF.StringIntrapolation
                     Name = "Child",
                     Child = new Item
                     {
-                        Name = "Grandchild"
+                        Name = "Grandchild",
+                        Child = new Item
+                        {
+                            Name = "Grangrandchild"
+                        }
                     }
                 }
             };
+
+            InitializeComponent();
         }
     }
 
