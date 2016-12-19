@@ -9,15 +9,25 @@ namespace WPF.StringIntrapolation
     {
         public MainWindow()
         {
-            InitializeComponent();
             DataContext = new Item
             {
+                Format = "This is the formatted version {Child.Name}",
                 Name = "Parent",
                 Child = new Item
                 {
-                    Name = "Child"
+                    Name = "Child",
+                    Child = new Item
+                    {
+                        Name = "Grandchild",
+                        Child = new Item
+                        {
+                            Name = "Grangrandchild"
+                        }
+                    }
                 }
             };
+
+            InitializeComponent();
         }
     }
 
@@ -28,6 +38,7 @@ namespace WPF.StringIntrapolation
 
     public class Item
     {
+        public string Format { get; set; }
         public string Name { get; set; }
         public Item Child { get; set; }
     }

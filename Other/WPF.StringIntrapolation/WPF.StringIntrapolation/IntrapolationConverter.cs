@@ -7,7 +7,7 @@ namespace WPF.StringIntrapolation
 {
     public class IntrapolationConverter : IValueConverter
     {
-        private static Regex _replaceRegex = new Regex(@"(\{[^\}]+\})", RegexOptions.Compiled);
+        private static Regex _replaceRegex = new Regex(@"(\{(?:[A-Za-z_][A-Za-z0-9_]+)(?:\.(?:[A-Za-z_][A-Za-z0-9_]+))*\})", RegexOptions.Compiled);
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var format = parameter as string;
