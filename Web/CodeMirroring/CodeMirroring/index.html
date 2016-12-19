@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Frontend Playground</title>
+    <link rel="stylesheet" type="text/css" href="styles/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="styles/show-hint.css"/>
+    <script type="text/javascript" src="lib/codemirror.js"></script>
+    <script type="text/javascript" src="lib/xml.js"></script>
+    <script type="text/javascript" src="lib/css.js"></script>
+    <script type="text/javascript" src="lib/javascript.js"></script>
+    <script type="text/javascript" src="lib/htmlmixed.js"></script>
+    <script src="lib/anyword-hint.js"></script>
+    <script src="lib/show-hint.js"></script>
+    <script src="lib/xml-hint.js"></script>
+    <script src="lib/html-hint.js"></script>
+    <script src="lib/css-hint.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            background-color:cyan;
+        }
+    </style>
+    <textarea id="editor"></textarea>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+            lineNumbers: true,
+            mode: "htmlmixed",
+            extraKeys: {"Ctrl-Space": "autocomplete"},
+            autofocus:true
+        });
+    </script>
+</body>
+
+</html>
