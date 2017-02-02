@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Angular UI Router</title>
+    <meta charset="utf-8" />
+    <style>
+        .red {
+            font-weight: bold;
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button ui-sref="home" ui-sref-active="red">Home</button>
+        <button ui-sref="one" ui-sref-active="red">One</button>
+        <button ui-sref="two" ui-sref-active="red">Two</button>
+    </div>
+    <br />
+    <ui-view></ui-view>
+    <script src="scripts/lib/angular.min.js"></script>
+    <script src="scripts/lib/angular-sanitize.min.js"></script>
+    <script src="scripts/lib/angular-ui-router.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <!--<script src="scripts/lib/require.js" data-main="scripts/app2"></script>-->
+</body>
+</html>

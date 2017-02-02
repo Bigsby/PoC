@@ -11,8 +11,8 @@ namespace TwitterClient
     {
         static void Main(string[] args)
         {
-            var key = ConfigurationManager.AppSettings["twitterKey"];
-            var secret = ConfigurationManager.AppSettings["twitterSecret"];
+            //var key = ConfigurationManager.AppSettings["twitterKey"];
+            //var secret = ConfigurationManager.AppSettings["twitterSecret"];
 
             Task.Run(async () =>
             {
@@ -22,7 +22,7 @@ namespace TwitterClient
                 //var response = await client.PostAsync("https://api.twitter.com/oauth2/token", new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded"));
 
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "AAAAAAAAAAAAAAAAAAAAAA8rxwAAAAAAWODkx9SO8%2BQEfXIXp%2FP3DZMZrCQ%3DyQvlG6QtZv1gQXfuFKc9ap9NcJnCdvmXJhpD8wLxGb9lM9AMbM");
-                var responseString = await client.GetStringAsync("https://api.twitter.com/1.1/statuses/user_timeline.json?count=100&screen_name=qwatti");
+                var responseString = await client.GetStringAsync("https://api.twitter.com/1.1/statuses/user_timeline.json?count=10&screen_name=qwattiesports");
 
 
                 WriteLine(responseString);
