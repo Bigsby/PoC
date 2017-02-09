@@ -1,0 +1,15 @@
+﻿<!--<div ng-repeat="lang in $ctrl.languages">
+    <highlight language="{{lang.mime}}"></highlight>
+</div>-->
+<style>
+    .CodeMirror {
+        height: auto;
+    }
+</style>
+<div ng-repeat="(projId, proj) in $ctrl.files">
+    <p>{{proj.name}}</p>
+    <div ng-repeat="langId in proj.languages">
+        <h2>{{projId + '.' + langId}}</h2>
+        <code-highlight style="height: auto" language="{{$ctrl.languages[langId].mime}}" src="{{langId + '/' + projId + '.' + langId}}"></highlight>
+    </div>
+</div>
