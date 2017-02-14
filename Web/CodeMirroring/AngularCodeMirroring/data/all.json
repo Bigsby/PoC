@@ -365,17 +365,11 @@
   "codeMirror": {
     "baseUrl": "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/",
     "css": [
-      "https",
       "codemirror.min",
-      "theme/ambiance.min",
-      "addon/hint/show-hint.min"
+      "theme/ttcn.min"
     ],
     "script": [
       "codemirror.min",
-      "addon/edit/matchbrackets.min",
-      "addon/comment/continuecomment.min",
-      "addon/comment/comment.min",
-      "addon/hint/show-hint.min",
       "mode/javascript/javascript.min",
       "mode/python/python.min",
       "mode/mllike/mllike.min",

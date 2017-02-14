@@ -44,7 +44,8 @@
                     CodeMirror(element[0], {
                         mode: attrs.language,
                         value: response.data,
-                        theme: "ambiance",
+                        lineNumbers: true,
+                        theme: "ttcn",
                         readOnly: "nocursor"
                     });
                 });

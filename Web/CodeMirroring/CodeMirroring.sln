@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMirroring", "CodeMirror
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularCodeMirroring", "AngularCodeMirroring\AngularCodeMirroring.csproj", "{4ABA6FA7-9BEC-4EF9-9D4B-32A625AC5556}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monacoing", "Monacoing\Monacoing.csproj", "{9A261DA3-484E-4186-A423-BE30F05A819D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4ABA6FA7-9BEC-4EF9-9D4B-32A625AC5556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ABA6FA7-9BEC-4EF9-9D4B-32A625AC5556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ABA6FA7-9BEC-4EF9-9D4B-32A625AC5556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A261DA3-484E-4186-A423-BE30F05A819D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A261DA3-484E-4186-A423-BE30F05A819D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A261DA3-484E-4186-A423-BE30F05A819D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A261DA3-484E-4186-A423-BE30F05A819D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
