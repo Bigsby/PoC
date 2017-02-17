@@ -1,0 +1,16 @@
+{
+  "name": "angular2ing",
+  "version": "1.0.0",
+  "description": "Just a simple Angular 2 test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bigsby",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.1.6"
+  }
+}
