@@ -237,3 +237,6 @@ _Pvt_Extensions
 
 # Local configs
 *[lL]ocal.config
+
+# Android project .bak
+*.csproj.bak
