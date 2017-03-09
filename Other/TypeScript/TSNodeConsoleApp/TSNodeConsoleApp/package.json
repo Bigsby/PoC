@@ -1,0 +1,9 @@
+{
+  "name": "tsnode-console-app",
+  "version": "0.0.0",
+  "description": "TSNodeConsoleApp",
+  "main": "app.js",
+  "author": {
+    "name": "bigsby"
+  }
+}
