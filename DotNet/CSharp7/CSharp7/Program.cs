@@ -5,6 +5,7 @@ namespace CSharp7
 {
     class Program
     {
+        //https://msdn.microsoft.com/en-us/magazine/mt790184.aspx
         static void Main(string[] args)
         {
             //Tuples
