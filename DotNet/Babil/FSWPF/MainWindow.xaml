@@ -1,0 +1,15 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:win="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+    Title="F# doing WPF" Height="350" Width="525">
+    <Grid>
+        <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="This is an F# WPF App"/>
+            <TextBlock x:Name="dynamicText"/>
+            <TextBlock Text="{Binding Count}"/>
+            <Button x:Name="theButton" Content="Click me!" Command="{Binding ClickCommand}"/>
+            <Button x:Name="sameButton" Content="No Change"/>
+        </StackPanel>
+    </Grid>
+</Window>
