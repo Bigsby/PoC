@@ -1,0 +1,15 @@
+{
+    "firstRequires": [
+        "cdn/angular.js/1.6.3/angular.min"
+    ],
+    "secondRequires": [
+        "cdn/angular.js/1.6.3/angular-sanitize",
+        "cdn/angular-ui-router/1.0.0-rc.1/angular-ui-router.min"
+    ],
+    "angularModules": [
+        "ngSanitize",
+        "ui.router"
+    ],
+    "scripts": [],
+    "styles": []
+}
