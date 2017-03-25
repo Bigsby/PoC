@@ -1,0 +1,64 @@
+{
+    "config": {
+        "paths": {
+            "prism": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min",
+            "prism-core": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-core.min",
+            "prism-line-numbers": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min",
+            "prism-bash": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-bash.min",
+            "prism-basic": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-basic.min",
+            "prism-batch": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-batch.min",
+            "prism-clike": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-clike.min",
+            "prism-c": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-c.min",
+            "prism-cpp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-cpp.min",
+            "prism-csharp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-csharp.min",
+            "prism-fsharp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-fsharp.min"
+        },
+        "shim": {
+            "prism-core": [
+                "prism"
+            ],
+            "prism-line-numbers": [
+                "prism-core"
+            ],
+            "prism-bash": [
+                "prism"
+            ],
+            "prism-basic": [
+                "prism"
+            ],
+            "prism-batch": [
+                "prism"
+            ],
+            "prism-clike": [
+                "prism-core"
+            ],
+            "prism-c":[
+                "prism-clike"
+            ],
+            "prism-cpp": [
+                "prism-c"
+            ],
+            "prism-csharp": [
+                "prism-clike"
+            ],
+            "prism-fsharp": [
+                "prism"
+            ]
+        }
+    },
+    "requires": [
+        "prism-line-numbers",
+        "prism-bash",
+        "prism-basic",
+        "prism-batch",
+        "prism-clike",
+        "prism-c",
+        "prism-cpp",
+        "prism-csharp",
+        "prism-fsharp"
+    ],
+    "styles":[
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min.css"
+    ]
+}
