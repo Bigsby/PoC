@@ -3,7 +3,8 @@
         "paths": {
             "angular": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min",
             "angular-sanitize": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.min",
-            "angular-ui-router": "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min"
+            "angular-ui-router": "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min",
+            "ga": "https://cdnjs.cloudflare.com/ajax/libs/angulartics-google-analytics/0.4.0/angulartics-ga.min"
         },
         "shim": {
             "angular-sanitize": [
@@ -11,15 +12,21 @@
             ],
             "angular-ui-router": [
                 "angular"
+            ],
+            "ga":[
+                "angular"
             ]
         }
     },
     "requires": [
         "angular",
         "angular-sanitize",
-        "angular-ui-router"
+        "angular-ui-router",
+        "ga"
     ],
-    "styles": [
-        "styles/coreStyles.css"
-    ]
+    "angularModules": [
+        "ngSanitize",
+        "ui.router"
+    ],
+    "angularAppName": "bigsbyApp"
 }

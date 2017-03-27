@@ -42,7 +42,7 @@
                 "prism-clike"
             ],
             "prism-fsharp": [
-                "prism"
+                "prism-core"
             ]
         }
     },
@@ -57,6 +57,7 @@
         "prism-csharp",
         "prism-fsharp"
     ],
+    "angularModules": [],
     "styles":[
         "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css",
         "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min.css"

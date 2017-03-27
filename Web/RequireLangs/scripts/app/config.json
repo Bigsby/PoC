@@ -1,0 +1,123 @@
+{
+    "config": {
+        "paths": {
+            "prism": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min",
+            "prism-core": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-core.min",
+            "prism-line-numbers": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min",
+            "prism-bash": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-bash.min",
+            "prism-basic": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-basic.min",
+            "prism-batch": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-batch.min",
+            "prism-clike": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-clike.min",
+            "prism-javascript": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-javascript.min",
+            "prism-c": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-c.min",
+            "prism-cpp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-cpp.min",
+            "prism-python": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-python.min",
+            "prism-csharp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-csharp.min",
+            "prism-fsharp": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-fsharp.min",
+            "prism-go": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-go.min",
+            "prism-ruby": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-ruby.min",
+            "prism-java": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-java.min",
+            "prism-perl": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-perl.min",
+            "prism-powershell": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-powershell.min",
+            "prism-php": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-php.min",
+            "prism-markup": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-markup.min",
+            "prism-textfile": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-textile.min"
+        },
+        "shim": {
+            "prism-core": [
+                "prism"
+            ],
+            "prism-line-numbers": [
+                "prism-core"
+            ],
+            "prism-bash": [
+                "prism"
+            ],
+            "prism-basic": [
+                "prism"
+            ],
+            "prism-batch": [
+                "prism"
+            ],
+            "prism-clike": [
+                "prism-core"
+            ],
+            "prism-javascript": [
+                "prism-clike"
+            ],
+            "prism-c": [
+                "prism-clike"
+            ],
+            "prism-cpp": [
+                "prism-c"
+            ],
+            "prism-python": [
+                "prism-core"
+            ],
+            "prism-csharp": [
+                "prism-clike"
+            ],
+            "prism-fsharp": [
+                "prism-clike"
+            ],
+            "prism-go": [
+                "prism-clike"
+            ],
+            "prism-ruby": [
+                "prism-clike"
+            ],
+            "prism-java": [
+                "prism-clike"
+            ],
+            "prism-perl": [
+                "prism-core"
+            ],
+            "prism-powershell": [
+                "prism-core"
+            ],
+            "prism-php": [
+                "prism-clike"
+            ],
+            "prism-markup": [
+                "prism-core"
+            ],
+            "prism-textfile": [
+                "prism-markup"
+            ]
+        }
+    },
+    "requires": [
+        "prism-line-numbers",
+        "prism-bash",
+        "prism-basic",
+        "prism-batch",
+        "prism-javascript",
+        "prism-cpp",
+        "prism-python",
+        "prism-csharp",
+        "prism-fsharp",
+        "prism-go",
+        "prism-ruby",
+        "prism-java",
+        "prism-perl",
+        "prism-powershell",
+        "prism-php",
+        "prism-textfile"
+    ],
+    "angularModules": [],
+    "styles": [
+        "styles/appStyles",
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min",
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min"
+    ],
+    "initialData": [
+        "languages",
+        "projects",
+        "programs",
+        "tags",
+        "implementations",
+        "runtimes",
+        "ides"
+    ],
+    "ga": "UA-94110702-1"
+}
