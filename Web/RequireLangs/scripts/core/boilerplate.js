@@ -10,7 +10,7 @@ requirejs.config({
     },
 });
 
-requirejs(["json!coreConfig", "json!appConfig", "app/appBuilder"], function (coreConfig, appConfig, appBuilder) {
+requirejs(["json!coreConfig", "json!appConfig"], function (coreConfig, appConfig) {
 
     var head = document.getElementsByTagName("head")[0];
     appConfig.styles.forEach(function (fileName) {
@@ -41,38 +41,44 @@ requirejs(["json!coreConfig", "json!appConfig", "app/appBuilder"], function (cor
             }
         }
 
-        appBuilder.ProcessData(data);
+        requirejs(["appBuilder"], function (appBuilder) {
 
-        var app = angular.module(coreConfig.angularAppName, coreConfig.angularModules.concat(appConfig.angularModules));
-        app.value("data", data);
 
-        if (appConfig.ga)
-            app.run(function ($window, $transitions, $location) {
-                if ($window.ga) {
-                    $window.ga("create", appConfig.ga, "auto");
-                    $transitions.onSuccess({}, () => {
-                        $window.ga("send", "pageview", $location.path());
-                    });
+
+            appBuilder.ProcessData(data);
+
+
+            var app = angular.module(coreConfig.angularAppName, coreConfig.angularModules.concat(appConfig.angularModules));
+            app.value("data", data);
+
+            if (appConfig.ga)
+                app.run(function ($window, $transitions, $location) {
+                    if ($window.ga) {
+                        $window.ga("create", appConfig.ga, "auto");
+                        $transitions.onSuccess({}, () => {
+                            $window.ga("send", "pageview", $location.path());
+                        });
+                    }
+                });
+
+            window.templatePath = function (name) {
+                return "templates/" + name + ".html";
+            };
+
+            appBuilder.RegisterComponents(app);
+
+            app.config(["$httpProvider", "$sceProvider", "$stateProvider", "$urlRouterProvider", "$locationProvider",
+                function ($httpProvider, $sceProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+                    $httpProvider.defaults.useXDomain = true;
+                    $sceProvider.enabled(false);
+
+                    appBuilder.RegisterStates($stateProvider);
+
+                    $urlRouterProvider.otherwise("/");
                 }
-            });
+            ]);
 
-        window.templatePath = function (name) {
-            return "templates/" + name + ".html";
-        };
-
-        appBuilder.RegisterComponents(app);
-
-        app.config(["$httpProvider", "$sceProvider", "$stateProvider", "$urlRouterProvider", "$locationProvider",
-            function ($httpProvider, $sceProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
-                $httpProvider.defaults.useXDomain = true;
-                $sceProvider.enabled(false);
-
-                appBuilder.RegisterStates($stateProvider);
-
-                $urlRouterProvider.otherwise("/");
-            }
-        ]);
-
-        angular.bootstrap(document, [coreConfig.angularAppName]);
+            angular.bootstrap(document, [coreConfig.angularAppName]);
+        });
     });
 });

@@ -12,7 +12,6 @@
       "http://es6-features.org"
     ],
     "highlight": "javascript",
-    "mime": "text/javascript",
     "runtimes": [
       "node",
       "web_browsers"
@@ -34,7 +33,6 @@
     ],
     "link": "http://www.cplusplus.com/",
     "highlight": "cpp",
-    "mime": "text/x-c++src",
     "runtimes": [
       "native"
     ],
@@ -232,7 +230,7 @@
       "specific_runtime"
     ],
     "link": "https://msdn.microsoft.com/en-us/library/aa903378(v=vs.71).aspx",
-    "highlight": "basic",
+    "highlight": "vbnet",
     "mime": "text/x-vb",
     "current": true
   }

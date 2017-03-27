@@ -94,7 +94,7 @@
                 restrict: "E",
                 link: function ($scope, element, attrs) {
                     var pre = document.createElement("pre");
-                    if (attrs.lineNumbers)
+                    if (attrs.linenumbers)
                         pre.className = "line-numbers";
                     var code = document.createElement("code");
                     code.className = "language-" + attrs.language;
