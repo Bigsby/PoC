@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Testing Vue.js</title>
+    <link rel="stylesheet" href="styles/coreStyles.css" />
+    <script src=" https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Testing Vue.js</h1>
+    </header>
+    <section class="content">
+        <section class="innerContent">
+            <div id="app">
+                {{ message }}
+            </div>
+            <div id="app-2">
+                <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+            </div>
+            <div id="app-3">
+                <p v-if="seen">Now you see me</p>
+            </div>
+
+            <div id="app-4">
+                <ol>
+                    <li v-for="todo in todos">
+                        {{ todo.text }}
+                    </li>
+                </ol>
+            </div>
+
+            <div id="app-5">
+                <p>{{ message }}</p>
+                <button v-on:click="reverseMessage">Reverse Message</button>
+            </div>
+
+            <div id="app-6">
+                <p>{{ message }}</p>
+                <input v-model="message">
+            </div>
+
+            <div id="app-7">
+                <ol>
+                    <!-- Now we provide each todo-item with the todo object    -->
+                    <!-- it's representing, so that its content can be dynamic -->
+                    <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+                </ol>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <span class="copy">&copy; 2017 Bigsby</span>
+        <a class="link" target="_blank" href="http://bigsbyspot.org">about the author</a>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
