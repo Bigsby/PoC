@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cryptoing"
+             x:Class="Cryptoing.MainPage">
+
+    <StackLayout>
+        <Label Text="Welcome to Xamarin Forms Crypto Test!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+        <Button Text="Go Encrypt" x:Name="theButton"/>
+    </StackLayout>
+
+</ContentPage>
