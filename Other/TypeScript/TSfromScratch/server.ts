@@ -31,18 +31,17 @@ const server = http.createServer((request, response) => {
     if (fs.existsSync(filePath))
         fs.readFile(filePath, function (error, content) {
             if (error) {
-                if (error.code == 'ENOENT') {
+                if (error.code == "ENOENT")
                     notFound();
-                }
                 else {
                     response.writeHead(500);
-                    response.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n');
+                    response.end("Sorry, check with the site admin for error: " + error.code + " ..\n");
                     response.end();
                 }
             }
             else {
-                response.writeHead(200, { 'Content-Type': contentType });
-                response.end(content, 'utf-8');
+                response.writeHead(200, { "Content-Type": contentType });
+                response.end(content, "utf-8");
             }
         });
     else
