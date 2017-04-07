@@ -1,0 +1,17 @@
+{
+  "name": "tsfromscracth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "first.js",
+  "scripts": {
+    "start:debug": "ts-node --inspect=5858 --debug-brk --ignore false server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^7.0.12",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  }
+}
