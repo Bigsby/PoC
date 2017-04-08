@@ -4,6 +4,7 @@ button, input, select, textarea{
     padding: 5px;
     font-size: 1.5em;
     border-radius: 10px;
+    border-width: 0px;
     margin: 5px;
     transition: transform .2s ease-in;
     -webkit-transition: transform .2s ease-in;
@@ -13,7 +14,7 @@ input:focus, button:focus, select:focus, textarea:focus{
     outline: none;
     transform: scale(1.1, 1.2);
     -webkit-transform:  scale(1.1, 1.2);
-    border: 2px solid #2951BD;
+    box-shadow: 2px 2px 2px #2951BD;
 }
 
 button:not([disabled]):hover, input:not([disabled]):hover, select:not([disabled]):hover, textarea:not([disabled]):hover{
@@ -45,7 +46,7 @@ button:active, input:active, select.active, textarea:active{
     transition: 0s;
     transform: scale(1, 1);
     -webkit-transform:  scale(1, 1);
-    box-shadow: 2px 2px 4px #2951BD;
+    box-shadow: 2px 2px 2px #2951BD;*/
 }
 
 input[type=checkbox] {
