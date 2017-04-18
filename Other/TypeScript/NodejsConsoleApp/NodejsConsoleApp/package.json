@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-console-app",
+  "version": "0.0.0",
+  "description": "NodejsConsoleApp",
+  "main": "app.js",
+  "author": {
+    "name": "bigsb"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.12"
+  }
+}
