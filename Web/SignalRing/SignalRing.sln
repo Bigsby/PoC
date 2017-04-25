@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingalRing.ConsoleClient", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglarRing.WebClient", "SinglarRing.WebClient\SinglarRing.WebClient.csproj", "{DB5BB8DC-9F45-49CC-B228-B447AFF5EACF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRing.Definitions", "SignalRing.Definitions\SignalRing.Definitions.csproj", "{A4ED02A9-4CFE-4062-9925-E9C8F0DB2F64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB5BB8DC-9F45-49CC-B228-B447AFF5EACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB5BB8DC-9F45-49CC-B228-B447AFF5EACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB5BB8DC-9F45-49CC-B228-B447AFF5EACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4ED02A9-4CFE-4062-9925-E9C8F0DB2F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4ED02A9-4CFE-4062-9925-E9C8F0DB2F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4ED02A9-4CFE-4062-9925-E9C8F0DB2F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4ED02A9-4CFE-4062-9925-E9C8F0DB2F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -80,5 +80,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SignalRing.Definitions\SignalRing.Definitions.csproj">
+      <Project>{a4ed02a9-4cfe-4062-9925-e9c8f0db2f64}</Project>
+      <Name>SignalRing.Definitions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

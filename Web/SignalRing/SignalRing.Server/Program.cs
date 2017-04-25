@@ -4,6 +4,8 @@ using Microsoft.Owin.Hosting;
 using Owin;
 
 using static System.Console;
+using SignalRing.Definitions;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace SignalRing.Server
 {
@@ -23,7 +25,7 @@ namespace SignalRing.Server
                 {
                     input = ReadLine();
                     if (input != "quit")
-                        GlobalHost.ConnectionManager.GetHubContext<TheHub>().Clients.All.receive("theName", input);
+                        GlobalHost.ConnectionManager.GetHubContext<TheHub>().Clients.All.receive(input);
                 }
             }
         }
@@ -37,16 +39,27 @@ namespace SignalRing.Server
         }
     }
 
-    public class TheHub : Hub
+    [HubName(Naming.HubName)]
+    public class TheHub : Hub<IHubClient>, IHubServer
     {
-        public void Ping(string name)
+        public void Send(string message)
         {
-            Clients.All.ping(name);
+            Clients.Others.Receive("Another sent: " + message);
         }
 
-        public void Send(string name, string message)
+        public override Task OnConnected()
         {
-            Clients.All.receive(name, message);
+            return base.OnConnected();
+        }
+
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            return base.OnDisconnected(stopCalled);
+        }
+
+        public override Task OnReconnected()
+        {
+            return base.OnReconnected();
         }
     }
 }
