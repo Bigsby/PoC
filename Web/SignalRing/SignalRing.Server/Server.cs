@@ -9,7 +9,7 @@ using Microsoft.AspNet.SignalR.Hubs;
 
 namespace SignalRing.Server
 {
-    class Program
+    class Server
     {
         const string url = "http://*:3000";
 
