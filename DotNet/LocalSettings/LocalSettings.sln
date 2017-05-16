@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalSettings", "LocalSettings\LocalSettings.csproj", "{9156A92D-C3F8-4B73-ABB9-A6C6523BAF81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformSettings", "TransformSettings\TransformSettings.csproj", "{FA1EF4B8-4427-48EE-AE2E-C58E74A260AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9156A92D-C3F8-4B73-ABB9-A6C6523BAF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9156A92D-C3F8-4B73-ABB9-A6C6523BAF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9156A92D-C3F8-4B73-ABB9-A6C6523BAF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9156A92D-C3F8-4B73-ABB9-A6C6523BAF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1EF4B8-4427-48EE-AE2E-C58E74A260AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1EF4B8-4427-48EE-AE2E-C58E74A260AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1EF4B8-4427-48EE-AE2E-C58E74A260AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1EF4B8-4427-48EE-AE2E-C58E74A260AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

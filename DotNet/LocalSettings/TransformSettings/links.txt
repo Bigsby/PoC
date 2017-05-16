@@ -1,0 +1,10 @@
+﻿http://sedodream.com/2010/11/18/XDTWebconfigTransformsInNonwebProjects.aspx
+
+http://sedodream.com/2010/04/26/ConfigTransformationsOutsideOfWebAppBuilds.aspx
+
+http://stackoverflow.com/questions/8006393/force-add-despite-the-gitignore-file
+
+Web.config Transformation Syntax for Web Project Deployment Using Visual Studio
+https://msdn.microsoft.com/en-us/library/dd465326.aspx
+
+http://www.hanselman.com/blog/managingmultipleconfigurationfileenvironmentswithprebuildevents.aspx
