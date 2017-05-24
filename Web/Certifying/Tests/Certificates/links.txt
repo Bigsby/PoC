@@ -1,0 +1,24 @@
+https://dotnetcodr.com/security-and-cryptography/
+https://dotnetcodr.com/2015/06/04/https-and-x509-certificates-in-net-part-3-how-to-install-certificates-and-use-them-with-iis/
+https://stackoverflow.com/questions/31728866/how-to-restrict-specific-pages-to-certificate-authentication
+http://www.tugberkugurlu.com/archive/working-with-iis-express-self-signed-certificate-asp-net-web-api-and-httpclient
+https://blogs.msdn.microsoft.com/wsdevsol/2015/03/26/how-to-use-a-shared-user-certificate-for-https-authentication-in-an-enterprise-application/
+
+https://blogs.msdn.microsoft.com/wsdevsol/2014/07/31/programmatically-create-and-configure-a-client-certificate-for-use-in-your-windows-runtime-based-app/
+
+https://blogs.windows.com/buildingapps/2015/11/23/demystifying-httpclient-apis-in-the-universal-windows-platform/#s2FCW03RiuDFrKgF.97
+
+Setting Up a Certificate Authority
+https://msdn.microsoft.com/en-us/library/ms755466(v=vs.85).aspx
+
+https://blogs.msdn.microsoft.com/alejacma/2008/09/05/how-to-create-a-certificate-request-with-certenroll-and-net-c/
+
+Certificate Enrollment API
+https://msdn.microsoft.com/en-us/library/aa374863(VS.85).aspx
+
+http://www.thewindowsclub.com/manage-trusted-root-certificates-windows
+
+https://noise.paulos.cz/post/windows10-14283-HttpClient-improvements/
+
+https://pfelix.wordpress.com/2012/02/26/enabling-https-with-self-hosted-asp-net-web-api/
+

@@ -1,0 +1,27 @@
+CREATE ROOT CERTIFICATE:
+makecert -r -n "CN=BigsbyRootCert" -pe -sv BigsbyRootCert.pvk -a sha1 -len 2048 -b 01/01/2017 -e 01/01/2020 -cy authority BigsbyRootCert.cer
+
+pvk2pfx -pvk BigsbyRootCert.pvk -spc BigsbyRootCert.cer -pfx BigsbyRootCert.pfx
+
+CREATE LOCALHOST SSL CERTIFICATE
+makecert -ic BigsbyRootCert.cer -iv BigsbyRootCert.pvk -pe -sv BigsbyLocalhost.pvk -a sha1 -n "CN=localhost" -len 2048 -b 01/01/2017 -e 01/01/2020 -sky exchange BigsbyLocalhost.cer -eku 1.3.6.1.5.5.7.3.1
+
+pvk2pfx -pvk BigsbyLocalhost.pvk -spc BigsbyLocalhost.cer -pfx BigsbyLocalhost.pfx
+
+CREATE LOCALSITE SSL CERTIFICATE
+makecert -ic BigsbyRootCert.cer -iv BigsbyRootCert.pvk -pe -sv BigsbyLocalSite.pvk -a sha1 -n "CN=site.local" -len 2048 -b 01/01/2017 -e 01/01/2020 -sky exchange BigsbyLocalSite.cer -eku 1.3.6.1.5.5.7.3.1
+
+pvk2pfx -pvk BigsbyLocalSite.pvk -spc BigsbyLocalSite.cer -pfx BigsbyLocalSite.pfx
+
+CREATE CLIENT CERTIFICATE
+makecert -ic BigsbyRootCert.cer -iv BigsbyRootCert.pvk -pe -sv BigsbyClientCert.pvk -a sha1 -n “CN=bigsbylocalclient” -len 2048 -b 01/01/2017 -e 01/01/2020 -sky exchange BigsbyClientCert.cer -eku 1.3.6.1.5.5.7.3.2
+
+pvk2pfx -pvk BigsbyClientCert.pvk -spc BigsbyClientCert.cer -pfx BigsbyClientCert.pfx
+
+ADD CERTIFICATE TO URLACL
+netsh http add sslcert ipport=0.0.0.0:9001 certhash=DC08C34AD9FD09F7A41EF4D645F67801E13BF832 appid={5a5af382-a21c-4f41-bbf8-e16a3ca97f12}
+netsh http add sslcert ipport=0.0.0.0:9001 certhash=dc08c34ad9fd09f7a41ef4d645f67801e1ebfb32 appid={5a5af382-a21c-4f41-bbf8-e16a3ca97f12}
+netsh http add sslcert ipport=0.0.0.0:9001 certhash=DC08C34AD9FD09F7A41EF4D645F67801E13BF832 appid={214124cd-d05b-4309-9af9-9caa44b2b74a}
+
+DC08C34AD9FD09F7A41EF4D645F67801E13BF832
+dc08c34ad9fd09f7a41ef4d645f67801e1ebfb32
