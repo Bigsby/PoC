@@ -19,56 +19,61 @@ This are the steps taken to implement client certificates cross-platforms:
         URL reservation successfully added
         ```
    2. Create Console Applicaiton Project for Self-Hosted Server - Console App (.Net Framework) - *SelfHostedServer*
-   3. Install Web API NuGet packages
-      - **Microsoft.AspNet.WebApi.OwinSelfHost**
+   3. Install - **Microsoft.AspNet.WebApi.OwinSelfHost** NuGet packages
+      1. Right-click *SelftHostedServer* - *References*
+      2. Select *Manage NuGet Packages...*
+      3. Select *Browse* tab, on top
+      4. Input "Microsoft.AspNet.WebApi.OwinSelfHost" in the search box
+      5. Select *Microsoft.AspNet.WebApi.OwinSelfHost* from the list bellow search
+      6. Click *Install* on the right pane
    4. Add web application boilerplating in application startup:
-     ``` csharp
-    using Owin;
-    using Microsoft.Owin.Hosting;
-    using System.Web.Http;
-    using static System.Console;
+        ``` csharp
+        using Owin;
+        using Microsoft.Owin.Hosting;
+        using System.Web.Http;
+        using static System.Console;
 
-    namespace SelfHostedServer
-    {
-        class SelftHostedServer
+        namespace SelfHostedServer
         {
-            private const string _baseAddress = "http://*:9080/";
-
-            static void Main(string[] args)
+            class SelftHostedServer
             {
-                var so = new StartOptions(_baseAddress);
-                using (WebApp.Start(so, appBuilder =>
-                {
-                    var config = new HttpConfiguration();
+                private const string _baseAddress = "http://*:9080/";
 
-                    config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
-
-                    appBuilder.UseWebApi(config);
-                }))
+                static void Main(string[] args)
                 {
-                    WriteLine("Listenning to " + _baseAddress);
-                    WriteLine("Press RETURN to exit");
-                    ReadLine();
+                    var so = new StartOptions(_baseAddress);
+                    using (WebApp.Start(so, appBuilder =>
+                    {
+                        var config = new HttpConfiguration();
+
+                        config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
+
+                        appBuilder.UseWebApi(config);
+                    }))
+                    {
+                        WriteLine("Listenning to " + _baseAddress);
+                        WriteLine("Press RETURN to exit");
+                        ReadLine();
+                    }
                 }
             }
         }
-    }
-     ```
+        ```
     5. Add a simple API Controller:
-    ```csharp
-    using System.Web.Http;
+        ```csharp
+        using System.Web.Http;
 
-    namespace SelfHostedServer.Controllers
-    {
-        public class SimpleController : ApiController
+        namespace SelfHostedServer.Controllers
         {
-            public string Get()
+            public class SimpleController : ApiController
             {
-                return "In Simple Controller";
+                public string Get()
+                {
+                    return "In Simple Controller";
+                }
             }
         }
-    }
-    ```
+        ```
     6. Run and test
        1. Run the application hitting **F5**. A console windows shows displaying:
        ```
@@ -236,7 +241,7 @@ This are the steps taken to implement client certificates cross-platforms:
                 ![](images/ChromeUnsecureIcon.PNG)
             2. **Mozilla Firefox**, before downloading any content, will show a warning saying the connection is not secure:
 
-                ![](FirefoxUnsecure.PNG)
+                ![](images/FirefoxUnsecure.PNG)
                 Clicking *Advanced* will allow to create a security exception and, only them download the content but, still, displaying visual indication that the connection is not secure:
 
                 ![](images/FirefoxUnsecureIcon.PNG)
@@ -285,9 +290,9 @@ This are the steps taken to implement client certificates cross-platforms:
 
     4. Add Reference to **System.Net.Http.WebRequest** to *ConsoleClient* project by:
         1. *Right-click* *ConsoleClient* *References*
-
-            ![](images/AddWebRequestReference.PNG)
-        2. Check *System.Net.Http.WebRequest* and click *OK*
+        2. Select *Assemblies* - *Framework*, on the left pane
+        3. Check *System.Net.Http.WebRequest*, on the middle pane
+        4. Cick *OK*
     5. Add client certificate to HTTP request, adding an *HttpMessageHandler* to the *HttpClient* constructor:
         ```csharp
         using System;
@@ -340,7 +345,7 @@ This are the steps taken to implement client certificates cross-platforms:
                 public string Get()
                 {
                     var certificate = RequestContext.ClientCertificate;
-                    return $"In Simple Controller with {certificate.SubjectName.Name} certificate.";
+                    return $"In Simple Controller with {certificate?.SubjectName.Name} certificate.";
                 }
             }
         }
@@ -360,7 +365,96 @@ This are the steps taken to implement client certificates cross-platforms:
             Press RETURN to exit
             ```
 6. Request for Client Certificate Negotiation
+    1.  Install - **Microsoft.Owin.Security** NuGet packages
+        1. Right-click *SelftHostedServer* - *References*
+        2. Select *Manage NuGet Packages...*
+        3. Select *Browse* tab, on top
+        4. Input "Microsoft.Owin.Security" in the search box
+        5. Select *Microsoft.Owin.Security* from the list bellow search
+        6. Click *Install* on the right pane
+    2. Implement Client Certificate Authenticate Middlware
+        ```csharp
+        using Microsoft.Owin.Security;
+        using Microsoft.Owin.Security.Infrastructure;
+        using System.Security.Claims;
+        using System.Security.Cryptography.X509Certificates;
+        using System.Threading.Tasks;
+        using Microsoft.Owin;
+
+        namespace SelfHostedServer.Security
+        {
+            class ClientCertificateAuthMiddleware : AuthenticationMiddleware<ClientCertificateAuthenticationOptions>
+            {
+                public ClientCertificateAuthMiddleware(OwinMiddleware next, ClientCertificateAuthenticationOptions options) : base(next, options)
+                { }
+
+                protected override AuthenticationHandler<ClientCertificateAuthenticationOptions> CreateHandler()
+                {
+                    return new ClientCertificateAuthenticationHandler();
+                }
+
+                class ClientCertificateAuthenticationHandler : AuthenticationHandler<ClientCertificateAuthenticationOptions>
+                {
+                    protected override Task<AuthenticationTicket> AuthenticateCoreAsync()
+                    {
+                        var clientCertificate = Context.Get<X509Certificate2>("ssl.ClientCertificate");
+
+                        if (null == clientCertificate)
+                            return Task.FromResult<AuthenticationTicket>(null);
+
+                        return Task.FromResult(new AuthenticationTicket(
+                            new ClaimsIdentity(Options.AuthenticationType),
+                            new AuthenticationProperties()));
+                    }
+                }
+            }
+
+            class ClientCertificateAuthenticationOptions : AuthenticationOptions
+            {
+                public ClientCertificateAuthenticationOptions() : base("X.509")
+                { }
+            }
+        }
+        ```
+    3. Add Middleware to OWIN chain
+        ```csharp
+        using Owin;
+        using Microsoft.Owin.Hosting;
+        using System.Web.Http;
+        using static System.Console;
+        using SelfHostedServer.Security;
+
+        namespace SelfHostedServer
+        {
+            class SelftHostedServer
+            {
+                private const string _baseAddress = "https://*:9443/";
+
+                static void Main(string[] args)
+                {
+                    var so = new StartOptions(_baseAddress);
+                    using (WebApp.Start(so, appBuilder =>
+                    {
+                        var config = new HttpConfiguration();
+                        
+                        config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
+
+                        appBuilder.Use<ClientCertificateAuthMiddleware>(new ClientCertificateAuthenticationOptions());
+                        appBuilder.UseWebApi(config);
+                    }))
+                    {
+                        WriteLine("Listenning to " + _baseAddress);
+                        WriteLine("Press RETURN to exit");
+                        ReadLine();
+                    }
+                }
+            }
+        }
+        ```
+    4. Run and test
+
 7. Add Client Certificate to browsers requests
+
 8. Make Certificates Trusted
 
     Since the certificates are handled at the Tranport Layer Security (**TLS**), the Operating System handling the transport needs to trust the certificates' *issuer* to trust the certificate itself. For the *World Wide Web* servers, certificates need to be issued by a well-know Certificate Authority (**CA**), e.g., GoDaddy, VeriSign, etc..

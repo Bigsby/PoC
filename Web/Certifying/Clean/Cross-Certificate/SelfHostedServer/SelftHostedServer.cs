@@ -2,6 +2,7 @@
 using Microsoft.Owin.Hosting;
 using System.Web.Http;
 using static System.Console;
+using SelfHostedServer.Security;
 
 namespace SelfHostedServer
 {
@@ -18,6 +19,7 @@ namespace SelfHostedServer
                 
                 config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
 
+                appBuilder.Use<ClientCertificateAuthMiddleware>();
                 appBuilder.UseWebApi(config);
             }))
             {
