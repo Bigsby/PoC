@@ -1,3 +1,6 @@
+## Certiifcates in Owin Self-hosted Web API
+Here are described the steps to secure an OWIN Self-hosted Web API using certificate both on the **Server** and on the **Client**.
+
 ## Requirements
 
 - **Visual Studio** 2015 or later, any edition
@@ -358,4 +361,5 @@ This are the steps taken to implement client certificates cross-platforms:
             ```
 6. Request for Client Certificate Negotiation
 7. Add Client Certificate to browsers requests
+8. Make Certificate Trusted
     
