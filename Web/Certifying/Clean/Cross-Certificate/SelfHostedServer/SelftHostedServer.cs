@@ -7,7 +7,7 @@ namespace SelfHostedServer
 {
     class SelftHostedServer
     {
-        private const string _baseAddress = "http://*:9080/";
+        private const string _baseAddress = "https://*:9443/";
 
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace SelfHostedServer
             using (WebApp.Start(so, appBuilder =>
             {
                 var config = new HttpConfiguration();
-
+                
                 config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
 
                 appBuilder.UseWebApi(config);

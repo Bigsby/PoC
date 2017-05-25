@@ -6,7 +6,8 @@ namespace SelfHostedServer.Controllers
     {
         public string Get()
         {
-            return "In Simple Controller";
+            var certificate = RequestContext.ClientCertificate;
+            return $"In Simple Controller with {certificate.SubjectName.Name} certificate.";
         }
     }
 }
