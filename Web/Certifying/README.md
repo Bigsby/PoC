@@ -139,11 +139,11 @@ This are the steps taken to implement client certificates cross-platforms:
         
         A pop up will show asking for the password (and confirmation) for the certificate's private key
 
-        ![](PrivateKeyPassword.png)
+        ![](PrivateKeyPassword.PNG)
 
         Enter the password just inserted
 
-        ![](EnterPrivateKeyPassword.png)
+        ![](EnterPrivateKeyPassword.PNG)
 
         Two files are created:
         - *Localhost.cer*
@@ -252,11 +252,11 @@ This are the steps taken to implement client certificates cross-platforms:
 
         A pop up will show asking for the password (and confirmation) for the certificate's private key
 
-        ![](PrivateKeyPassword.png)
+        ![](PrivateKeyPassword.PNG)
 
         Enter the password just inserted
 
-        ![](EnterPrivateKeyPassword.png)
+        ![](EnterPrivateKeyPassword.PNG)
 
         Two files are created:
         - *ClientCertificate.cer*
