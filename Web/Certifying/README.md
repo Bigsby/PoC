@@ -361,5 +361,6 @@ This are the steps taken to implement client certificates cross-platforms:
             ```
 6. Request for Client Certificate Negotiation
 7. Add Client Certificate to browsers requests
-8. Make Certificate Trusted
-    
+8. Make Certificates Trusted
+
+    Since the certificates are handled at the Tranport Layer Security (**TLS**), the Operating System handling the transport needs to trust the certificates' *issuer* to trust the certificate itself. For the *World Wide Web* servers, certificates need to be issued by a well-know Certificate Authority (**CA**), e.g., GoDaddy, VeriSign, etc..
