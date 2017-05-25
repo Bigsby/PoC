@@ -139,11 +139,11 @@ This are the steps taken to implement client certificates cross-platforms:
         
         A pop up will show asking for the password (and confirmation) for the certificate's private key
 
-        ![](PrivateKeyPassword.PNG)
+        ![](images/PrivateKeyPassword.PNG)
 
         Enter the password just inserted
 
-        ![](EnterPrivateKeyPassword.PNG)
+        ![](images/EnterPrivateKeyPassword.PNG)
 
         Two files are created:
         - *Localhost.cer*
@@ -230,16 +230,16 @@ This are the steps taken to implement client certificates cross-platforms:
         8. Test on the browser(s)
             1. **Google Chrome** will download the content but will display visual indication the certificate is not trusted:
 
-                ![](ChromeUnsecureIcon.PNG)
+                ![](images/ChromeUnsecureIcon.PNG)
             2. **Mozilla Firefox**, before downloading any content, will show a warning saying the connection is not secure:
 
                 ![](FirefoxUnsecure.PNG)
                 Clicking *Advanced* will allow to create a security exception and, only them download the content but, still, displaying visual indication that the connection is not secure:
 
-                ![](FirefoxUnsecureIcon.PNG)
+                ![](images/FirefoxUnsecureIcon.PNG)
             3. **Microsoft Edge** will just download the content and show a indication the communication is encrypted:
 
-                ![](EdgeEncryptedIcon.PNG)
+                ![](images/EdgeEncryptedIcon.PNG)
             
         
 
@@ -252,11 +252,11 @@ This are the steps taken to implement client certificates cross-platforms:
 
         A pop up will show asking for the password (and confirmation) for the certificate's private key
 
-        ![](PrivateKeyPassword.PNG)
+        ![](images/PrivateKeyPassword.PNG)
 
         Enter the password just inserted
 
-        ![](EnterPrivateKeyPassword.PNG)
+        ![](images/EnterPrivateKeyPassword.PNG)
 
         Two files are created:
         - *ClientCertificate.cer*
@@ -283,7 +283,7 @@ This are the steps taken to implement client certificates cross-platforms:
     4. Add Reference to **System.Net.Http.WebRequest** to *ConsoleClient* project by:
         1. *Right-click* *ConsoleClient* *References*
 
-            ![](AddWebRequestReference.PNG)
+            ![](images/AddWebRequestReference.PNG)
         2. Check *System.Net.Http.WebRequest* and click *OK*
     5. Add client certificate to HTTP request, adding an *HttpMessageHandler* to the *HttpClient* constructor:
         ```csharp
