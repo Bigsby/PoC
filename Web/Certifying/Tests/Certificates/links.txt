@@ -22,3 +22,11 @@ https://noise.paulos.cz/post/windows10-14283-HttpClient-improvements/
 
 https://pfelix.wordpress.com/2012/02/26/enabling-https-with-self-hosted-asp-net-web-api/
 
+Makecert.exe (Certificate Creation Tool)
+https://msdn.microsoft.com/en-us/library/bfsktky3(vs.100).aspx
+
+https://support.microsoft.com/en-us/help/291010/requirements-for-domain-controller-certificates-from-a-third-party-ca
+
+Certutil
+https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx
+

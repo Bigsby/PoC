@@ -25,3 +25,5 @@ netsh http add sslcert ipport=0.0.0.0:9001 certhash=DC08C34AD9FD09F7A41EF4D645F6
 
 DC08C34AD9FD09F7A41EF4D645F67801E13BF832
 dc08c34ad9fd09f7a41ef4d645f67801e1ebfb32
+
+makecert -r -n "CN=localhost" -pe -sv Localhost.pvk Localhost.cer
