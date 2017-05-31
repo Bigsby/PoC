@@ -10,7 +10,7 @@ namespace ConsoleClient
         private const string _baseAddress = "https://localhost:9443";
         static void Main(string[] args)
         {
-            var store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
+            var store = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
             var query = store.Certificates.Find(X509FindType.FindBySubjectName, "ClientCertificate", false);
             var certificate = query[0];

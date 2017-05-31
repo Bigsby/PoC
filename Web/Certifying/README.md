@@ -418,35 +418,33 @@ This are the steps taken to implement client certificates cross-platforms:
         ```
     3. Add Middleware to OWIN chain
         ```csharp
-        using Owin;
-        using Microsoft.Owin.Hosting;
-        using System.Web.Http;
-        using static System.Console;
-        using SelfHostedServer.Security;
+        using System.Security.Cryptography.X509Certificates;
+        using System.Threading.Tasks;
+        using Microsoft.Owin;
 
-        namespace SelfHostedServer
+        namespace SelfHostedServer.Security
         {
-            class SelftHostedServer
+            class ClientCertificateAuthMiddleware : OwinMiddleware
             {
-                private const string _baseAddress = "https://*:9443/";
+                private const string _sslClientCertificateKey = "ssl.ClientCertificate";
+                public ClientCertificateAuthMiddleware(OwinMiddleware next) : base(next)
+                { }
 
-                static void Main(string[] args)
+                public override async Task Invoke(IOwinContext context)
                 {
-                    var so = new StartOptions(_baseAddress);
-                    using (WebApp.Start(so, appBuilder =>
+                    var clientCertificate = context.Get<X509Certificate2>("ssl.ClientCertificate");
+                    if (null == clientCertificate)
                     {
-                        var config = new HttpConfiguration();
-                        
-                        config.Routes.MapHttpRoute("default", "api/{controller}/{action}");
-
-                        appBuilder.Use<ClientCertificateAuthMiddleware>(new ClientCertificateAuthenticationOptions());
-                        appBuilder.UseWebApi(config);
-                    }))
-                    {
-                        WriteLine("Listenning to " + _baseAddress);
-                        WriteLine("Press RETURN to exit");
-                        ReadLine();
+                        context.Response.StatusCode = 403;
+                        context.Response.ReasonPhrase = "No Client Certificate Provided";
                     }
+                    else if (clientCertificate.Thumbprint != "AF57A0F6E385546DDFEA7F96242FA88C4DAAEA53")
+                    {
+                        context.Response.StatusCode = 403;
+                        context.Response.ReasonPhrase = "Wrong Client Certificate Provided";
+                    }
+                    else
+                        await Next.Invoke(context).ConfigureAwait(false);
                 }
             }
         }

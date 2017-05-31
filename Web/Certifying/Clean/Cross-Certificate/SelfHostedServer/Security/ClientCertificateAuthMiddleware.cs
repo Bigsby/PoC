@@ -8,8 +8,7 @@ namespace SelfHostedServer.Security
     {
         private const string _sslClientCertificateKey = "ssl.ClientCertificate";
         public ClientCertificateAuthMiddleware(OwinMiddleware next) : base(next)
-        {
-        }
+        { }
 
         public override async Task Invoke(IOwinContext context)
         {
