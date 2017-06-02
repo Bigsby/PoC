@@ -8,16 +8,19 @@ namespace CrossClient
 {
     public static class HttpInvoker
     {
-        const string _baseUrl = "https://localhost:60593/";
+        const string _baseUrl = "https://localhost:9000/";
 
-        public static string Invoke()
+        public static async Task<string> Invoke(string url)
         {
-            var client = new HttpClient()
+            var handler = new HttpClientHandler();
+            handler.ClientCertificateOptions = ClientCertificateOption.Automatic;
+
+            var client = new HttpClient(handler)
             {
                 BaseAddress = new Uri(_baseUrl)
             };
 
-            return client.GetStringAsync("api/Simple/Get").Result;
+            return await client.GetStringAsync(url).ConfigureAwait(false);
         }
     }
 

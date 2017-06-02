@@ -1,15 +1,14 @@
 ﻿using Windows.Security.Cryptography.Certificates;
 using Windows.UI.Xaml.Controls;
-using Windows.Web.Http.Filters;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Windows.Web.Http;
 using Windows.Security.Cryptography.Core;
 using Windows.Security.Cryptography;
 using Windows.Storage.Streams;
 using System.Collections.Generic;
 using Windows.Storage;
+using CrossClient;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,35 +24,38 @@ namespace UWPClient
             this.InitializeComponent();
             theButton.Click += async (s, e) =>
             {
-               // var request = await CreteRequest().ConfigureAwait(false);
+                var response = await HttpInvoker.Invoke("api/deviceregistration?identity=asdfasdf").ConfigureAwait(false);
+                // var request = await CreteRequest().ConfigureAwait(false);
 
                 ////var response = CrossClient.HttpInvoker.Invoke();
-                var certificate = await GetClientCertificate();
-                ////await VerifyCertificateKeyAccess(certificate);
+                //var certificate = await GetClientCertificate();
+                ////////await VerifyCertificateKeyAccess(certificate);
 
-                var filter = new HttpBaseProtocolFilter();
-                filter.AllowUI = true;
-                filter.ClientCertificate = certificate;
+                //var filter = new HttpBaseProtocolFilter();
+                //filter.AllowUI = true;
+                //filter.ClientCertificate = certificate;
 
-                //foreach (var error in Enum.GetValues(typeof(ChainValidationResult)))
-                //    try
-                //    {
-                //        filter.IgnorableServerCertificateErrors.Add((ChainValidationResult)error);
-                //    }
-                //    catch
-                //    {
-                //    }
-                ////{
-                ////    var chainError = (ChainValidationResult)error;
-                ////    if (chainError != ChainValidationResult.Success && chainError != ChainValidationResult.Revoked)
+                ////foreach (var error in Enum.GetValues(typeof(ChainValidationResult)))
+                ////    try
+                ////    {
                 ////        filter.IgnorableServerCertificateErrors.Add((ChainValidationResult)error);
-                ////}
+                ////    }
+                ////    catch
+                ////    {
+                ////    }
+                //////{
+                //////    var chainError = (ChainValidationResult)error;
+                //////    if (chainError != ChainValidationResult.Success && chainError != ChainValidationResult.Revoked)
+                //////        filter.IgnorableServerCertificateErrors.Add((ChainValidationResult)error);
+                //////}
 
-                ////var certStream = typeof(MainPage).GetTypeInfo().Assembly.GetManifestResourceStream("UWPClient.BigsbyClientCert.cer");
+                //////var certStream = typeof(MainPage).GetTypeInfo().Assembly.GetManifestResourceStream("UWPClient.BigsbyClientCert.cer");
 
-                ////filter.ClientCertificate = new Certificate(certStream.AsOutputStream());
-                var client = new HttpClient(filter);
-                var response = await client.GetStringAsync(new Uri("https://localhost:9001/api/Simple/Get"));
+                //////filter.ClientCertificate = new Certificate(certStream.AsOutputStream());
+                //var client = new Windows.Web.Http.HttpClient(filter);
+                //var response = await client.GetStringAsync(new Uri("https://localhost:9000/api/deviceregistration?identity=asdfasdf"));
+
+
 
                 var stop = "here";
             };
