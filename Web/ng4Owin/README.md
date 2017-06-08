@@ -216,6 +216,7 @@ Angular 4 & OWIN Web Api
                 *Notes*: 
                 - In this moment, every time a file is saved in the Angular App project, **ng** (Angular CLI) re-compiles, re-packages and re-loads the browser;
                 - **ng serve** does not compile and package into the file system but to an in-memory process. *Building*, is a seperate process, addressed later.
+
 6. Setup Angular App editor:
     1. In Visual Studio
         - Toggle *Show All Files* (![](images/vsShowAll.PNG))
@@ -224,7 +225,10 @@ Angular 4 & OWIN Web Api
             - ```src``` folder
             - all files in ```Client``` root expect the ones starting with a dot (.)
 
-            *Note*: **DOT NOT include ```node_modules``` folder**. It's not useful and takes ages to include the 20k+ files (180MB+).
+            *Note*: 
+            - **DOT NOT include ```node_modules``` folder**. It's not useful and takes ages to include the 20k+ files (180MB+).
+
+            - **TypeScript** files are included in the project as *TypeScritpCompile* build action. To prevent **F5** from building them, set all the included files build action to *None*.
     2. In Visual Studio Code
         - Open Visual Studio Code and open ```Client``` folder, or
         - In the command go to ```Client``` folder and run
@@ -246,4 +250,132 @@ Angular 4 & OWIN Web Api
         ```
         And the, after saving the file, the browser should automatically refresh and display ```Welcome to ng4Owin!!``` in the on top.
 
-7. Add a client Service to call the Web Api
+7. Set CORS on Web Api
+    
+    CORS (Cross-Origin Resource Sharing) is necessary, at least, for now, because the server (Web Api) and the client (Angular applicaiton) will be running on different servers (ports).
+    1. Add NuGet Package: Microsoft.Owin.Cors
+    2. Add CORS in ```Startup.cs```
+        ```csharp
+        using Microsoft.Owin.FileSystems;
+        using Microsoft.Owin.StaticFiles;
+        using Owin;
+        using System.Web.Http;
+
+        namespace ng4Owin
+        {
+            public class Startup
+            {
+                public void Configuration(IAppBuilder app)
+                {
+                    app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
+                    var apiConfig = new HttpConfiguration();
+                    apiConfig.Routes.MapHttpRoute("default", "api/{controller}/{action}");
+                    app.UseWebApi(apiConfig);
+
+                    var fileSystem = new PhysicalFileSystem(@".\wwwroot");
+                    var fileServerOptions = new FileServerOptions
+                    {
+                        FileSystem = fileSystem
+                    };
+                    app.UseFileServer(fileServerOptions);
+
+                    app.Run(context => {
+                        context.Response.ContentType = "text/plain";
+                        return context.Response.WriteAsync("OWIN here!");
+                    });
+                }
+            }
+        }
+        ```
+
+
+8. Add a client Service to call the Web Api
+    1. In the command line, in ```Client``` folder run
+        ```
+        ng generate service Simple
+        ```
+        That outputs:
+        ```
+        installing service
+        create src\app\simple.service.spec.ts
+        create src\app\simple.service.ts
+        WARNING Service is generated but not provided, it must be provided to be used
+        ```
+    2. ```src/app/app.module.ts```, import ```HttpModule``` and add ```SimpleService``` to the providers array
+        ```typescript
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { HttpModule } from "@angular/http";
+
+        import { AppRoutingModule } from './app-routing.module';
+        import { AppComponent } from './app.component';
+        import { SimpleService } from "./simple.service";
+
+        @NgModule({
+            declarations: [
+                AppComponent
+            ],
+            imports: [
+                BrowserModule,
+                HttpModule,
+                AppRoutingModule
+            ],
+            providers: [
+                SimpleService
+            ],
+            bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+        ```
+    3. Implement the Http call in ```src/app/simple.service.ts```
+        ```typescript
+        import { Injectable } from '@angular/core';
+        import { Http } from "@angular/http";
+        import 'rxjs/add/operator/toPromise';
+
+        const apiBaseUrl = "http://localhost:60478/api/";
+
+        @Injectable()
+        export class SimpleService {
+
+            constructor(private http: Http) { }
+
+            get(): Promise<string> {
+                return this.http.get(`${apiBaseUrl}Simple/Get`)
+                    .toPromise()
+                    .then(response => response.text());
+            }
+        }
+        ```
+    4. Use ```SimpleService``` in ```AppComponent```, ```src/app/app.component.ts```
+        ```typescript
+        import { Component } from '@angular/core';
+        import { SimpleService } from "./simple.service";
+
+        @Component({
+            selector: 'app-root',
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.css']
+        })
+        export class AppComponent {
+            constructor(private simpleService: SimpleService) { }
+            data = "Nothing yet";
+            callService(): void {
+                this.simpleService.get().then(serviceData => this.data = serviceData);
+            }
+        }
+        ```
+    5. Change ```AppComponent``` template to display trigger the service call and display service response data:
+        ```html
+        <p>Data from Api: {{data}}</p>
+        <button (click)="callService()">Call Service</button>
+        ```
+    6. Test. Assuming Web project (**F5** in Visual Studio) and Angular (**ng serve** in the command line) are running, the browser should display first:
+        ![](images/simpleBeforeCall.PNG)
+        
+        and, after clicking ```Call Service``` button, should display:
+        ![](images/simpleAfterCall.PNG)
+
+9. Build Angular application to ```wwwroot``` folder (static files root for web application).
+    1. 

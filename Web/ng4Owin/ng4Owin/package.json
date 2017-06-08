@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "scripts": { "start": "\"cd Client && ng build -op=\".\\..\\wwwroot\"\"" },
+  "-vs-binding": { "AfterBuild": [ "start" ] }
+}

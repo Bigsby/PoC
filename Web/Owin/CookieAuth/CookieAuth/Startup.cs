@@ -1,28 +1,30 @@
-﻿using Microsoft.Owin.FileSystems;
-using Microsoft.Owin.StaticFiles;
+﻿using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
+using Microsoft.Owin.Security.Cookies;
+using System.Collections.Generic;
 
-namespace ng4Owin
+[assembly: OwinStartup(typeof(CookieAuth.Startup))]
+
+namespace CookieAuth
 {
     public class Startup
     {
+        public static List<string> requestedTypes = new List<string>();
         public void Configuration(IAppBuilder app)
         {
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            var cookieOptions = new CookieAuthenticationOptions
+            {
+                AuthenticationType = "myApp"
+            };
+
+            app.UseCookieAuthentication(cookieOptions);
 
             var apiConfig = new HttpConfiguration();
             apiConfig.Routes.MapHttpRoute("default", "api/{controller}/{action}");
             app.UseWebApi(apiConfig);
-
-            var fileSystem = new PhysicalFileSystem(@".\wwwroot");
-            var fileServerOptions = new FileServerOptions
+            app.Run(context =>
             {
-                FileSystem = fileSystem
-            };
-            app.UseFileServer(fileServerOptions);
-
-            app.Run(context => {
                 context.Response.ContentType = "text/plain";
                 return context.Response.WriteAsync("OWIN here!");
             });
