@@ -1,0 +1,161 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+::selection {
+    background-color: #212935;
+    color: #fff;
+}
+
+button,
+button:active {
+    background-color: #212935;
+    color: #fff;
+    border: solid 1px #212935;
+    font-size: 1.5em;
+    padding: 8px 16px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    outline: 0;
+    outline-width: 0;
+    margin: 4px;
+}
+
+button.danger {
+    background-color: red;
+    border: solid 1px red;
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
+button:hover:enabled,
+button:active:enabled,
+button:focus {
+    background-color: #ccc;
+    color: #000;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+button.action {
+    border-radius: 50%;
+}
+
+div.form-field {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 20px;
+}
+
+div.form-field input,
+div.form-field textarea {
+    border: 0;
+    border-bottom: solid 1px #212935;
+    outline: 0;
+    outline-width: 0;
+}
+
+div.form-field textarea {
+    border: solid 1px #212935;
+    border-top: 0;
+    min-height: 5em;
+}
+
+div.form-field textarea:focus {
+    border: 0;
+    font-size: 1.2em;
+    border: solid 1px #212935;
+    border-top: 0;
+}
+
+div.form-field input:focus {
+    border: 0;
+    font-size: 1.5em;
+    border-bottom: solid 1px #212935;
+}
+
+div.form-field input:focus~label {
+    font-weight: bold;
+}
+
+div.form-field textarea:focus~label {
+    font-weight: bold;
+}
+
+div.form-field.horizontal {
+    display: block;
+}
+
+div.form-field.ordered {
+    flex-direction: column;
+}
+
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 6px;
+}
+
+div.form-field input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+div.form-field input[type=file]+label {
+    font-size: 1.25em;
+    color: white;
+    padding: 8px 16px;
+    background-color: #212935;
+    display: inline-block;
+    cursor: pointer;
+    width: auto !important;
+}
+
+div.form-field input[type=file]:focus+label,
+div.form-field input[type=file]+label:hover {
+    background-color: #ccc;
+}
+
+div.form-field table {
+    border-top: solid 1px #212935;
+    width: 100%;
+    border-spacing: 0;
+}
+
+div.form-field .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.form-field table td.actions {
+    font-size: .7em;
+    width: 2.5em;
+}
+
+div.form-field table tr td:last-child {
+    width: 80%;
+}
+
+div.form-field table td {
+    border-bottom: solid 1px #212935;
+}

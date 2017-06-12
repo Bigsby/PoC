@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <button>Click</button>
+    <button disabled>Click</button>
+    <br/>
+    <button class="action">
+        <i class="fa fa-plus"></i>
+    </button>
+    <button class="action">
+        <i class="fa fa-pencil-square-o"></i>
+    </button>
+    <button class="action danger">
+        <i class="fa fa-trash-o"></i>
+    </button>
+    <br/>
+    <div class="form-field">
+        <input id="text" />
+        <label for="text">Field</label>
+    </div>
+    <div class="form-field horizontal">
+        <input id="check" type="checkbox" />
+        <label for="check">Field</label>
+    </div>
+    <div class="form-field">
+        <div>
+            <div class="form-field horizontal">
+                <input id="radio1" type="radio" name="radios" />
+                <label for="radio1" value="one">Radio 1</label>
+            </div>
+            <div class="form-field horizontal">
+                <input id="radio2" type="radio" name="radios" />
+                <label for="radio2" value="two">Radio 2</label>
+            </div>
+        </div>
+        <label>Field</label>
+    </div>
+    <div class="form-field">
+        <textarea id="texta"></textarea>
+        <label for="texta">Field</label>
+    </div>
+    <div class="form-field">
+        <input id="file" type="file" />
+        <label for="file">Choose File...</label>
+        <label for="file">Field</label>
+    </div>
+    <div class="form-field ordered">
+        <div class="header">
+            <label>Field</label>
+            <button class="action">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <table class="items">
+            <tr>
+                <td class="actions">
+                    <button class="action">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button class="action danger">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+                <td>item 1</td>
+            </tr>
+            <tr>
+                <td class="actions">
+                    <button class="action">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button class="action danger">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+                <td>item 2</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
