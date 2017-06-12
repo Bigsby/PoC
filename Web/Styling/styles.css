@@ -34,6 +34,16 @@ button.danger {
     border: solid 1px red;
 }
 
+button.success {
+    background-color: #199919;
+    border: solid 1px #199919;
+}
+
+button.warning {
+    background-color: #DAA520;
+    border: solid 1px #DAA520;
+}
+
 button:active {
     transform: translateY(4px);
 }
@@ -43,6 +53,18 @@ button:active:enabled,
 button:focus {
     background-color: #ccc;
     color: #000;
+}
+
+button.danger:hover {
+    color: red;
+}
+
+button.success:hover {
+    color: #199919;
+}
+
+button.warning:hover {
+    color: #DAA520;
 }
 
 button[disabled] {
