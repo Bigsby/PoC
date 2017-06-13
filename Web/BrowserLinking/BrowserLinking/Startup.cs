@@ -13,7 +13,7 @@ namespace BrowserLinking
     {
         public void Configuration(IAppBuilder app)
         {
-            BrowserLinkLoaderExtensions.UseBrowserLink(app);
+            
             var apiConfig = new HttpConfiguration();
             apiConfig.Routes.MapHttpRoute("default", "api/{controller}/{action}");
             app.UseWebApi(apiConfig);
