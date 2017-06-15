@@ -22,50 +22,76 @@ body {
     color: @base-background-color;
 }
 
-
-button:active {
-    transform: translateY(4px);
-}
-
-button.round{
-    background-color: transparent;
-    font-size: 2em;
+button {
+    font-size: 1.5em;
     border: 0;
     outline: 0;
-    padding: 0;
+    padding: 5px;
+    background-color: @base-color;
+    color: @base-background-color;
 
-    &:hover, &:active{
+    &:hover{
         cursor: pointer;
+        background-color: @active-color;
+        color: @base-background-color;
+    }
 
-        span i:first-child {
-            color: @active-color;
+    &:active {
+        transform: translateY(4px);
+    }
+
+    &.danger {
+        background-color: @danger-color;
+        color: @base-background-color;
+        border: solid 1px @danger-color;
+        &:hover{
+            color: @danger-color;
+            background-color: @active-color;
+        }
+    }
+
+    &.round {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+
+        i:first-child {
+            color: @base-color;
         }
 
-        &.success i:last-child {
+        i:last-child {
+            color: @base-background-color;
+        }
+
+        &:hover, &:focus { 
+            i:last-child {
+                color: @base-color;
+            }
+        }
+
+        &.success i:first-child{
             color: @success-color;
         }
 
-        &.danger i:last-child {
+        &.danger i:first-child{
             color: @danger-color;
         }
-    }
 
-    &.success i:first-child{
-        color: @success-color;
-    }
+        &:hover, &:focus{
+            background-color: transparent;
 
-    // &.success:hover {
-    //     & > i:first-child {
-    //         background-color: @active-color;
-    //     }
+            span i:first-child {
+                color: @active-color;
+            }
 
-    //     & > i:last-child {
-    //         color: @success-color;
-    //     }
-    // }
+            &.success i:last-child {
+                color: @success-color;
+            }
 
-    &.danger i:first-child{
-        color: @danger-color;
+            &.danger i:last-child {
+                color: @danger-color;
+            }
+        }
     }
 }
 
