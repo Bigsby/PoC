@@ -1,13 +1,118 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .success:hover,
+        .danger:hover,
+        .warning:hover {
+            cursor: pointer;
+        }
+
+        .success i:first-child {
+            color: green;
+            transition: color .3s ease-out;
+        }
+
+        .success i:last-child {
+            color: #fff;
+            transition: color .3s ease-out;
+        }
+
+        .success:hover i:first-child {
+            color: #ccc;
+        }
+
+        .success:hover i:last-child {
+            color: green;
+        }
+
+        .danger i:first-child {
+            color: red;
+            transition: color .3s ease-out;
+        }
+
+        .danger:hover i:last-child {
+            color: #fff;
+            transition: color .3s ease-out;
+        }
+
+        .danger:hover i:first-child {
+            color: #ccc;
+        }
+
+        .danger:hover i:last-child {
+            color: red;
+        }
+
+        .warning i:first-child {
+            color: gold;
+            transition: color .3s ease-out;
+        }
+
+        .warning:hover i:last-child {
+            color: #fff;
+            transition: color .3s ease-out;
+        }
+
+        .warning:hover i:first-child {
+            color: #ccc;
+        }
+
+        .warning:hover i:last-child {
+            color: #000;
+        }
+
+        @keyframes spinner {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(-360deg);
+            }
+        }
+
+        .tospin {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+
+            animation-name: spinner;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+
+            transform-style: preserve-3d;
+        }
+    </style>
 </head>
+
 <body>
 
     <i class="fa fa-car"></i>
-    <i class="fa fa-car" style="font-size:48px;"></i>
+    <i class="fa fa-car fa-pulse" style="font-size:48px;"></i>
     <i class="fa fa-car" style="font-size:60px;color:red;"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x fa-spin" style="color:red"></i>
+    <button style="font-size: 20px">
+        <i class="fa fa-sign-in" aria-hidden="true"></i> Sign In
+    </button>
+    <span class="fa-stack fa-lg success">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="fa-stack fa-lg danger">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+    </span>
+
+    <span class="fa-stack fa-lg warning">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+    </span>
+
+    <div class="tospin"></div>
 
 </body>
+
 </html>
