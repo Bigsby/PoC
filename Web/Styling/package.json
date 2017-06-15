@@ -1,0 +1,17 @@
+{
+  "name": "styling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lessw": "watch-less -c -d ./styles -e .css",
+    "lessh": "watch-less --help"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.7.2",
+    "watch-less": "0.0.4"
+  }
+}

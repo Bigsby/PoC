@@ -1,0 +1,46 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #212935;
+  background-color: #FFF;
+}
+::selection {
+  background-color: #212935;
+  color: #FFF;
+}
+button:active {
+  transform: translateY(4px);
+}
+button.round {
+  background-color: transparent;
+  font-size: 2em;
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+button.round:hover,
+button.round:active {
+  cursor: pointer;
+}
+button.round:hover span i:first-child,
+button.round:active span i:first-child {
+  color: #CCC;
+}
+button.round:hover.success i:last-child,
+button.round:active.success i:last-child {
+  color: #199919;
+}
+button.round:hover.danger i:last-child,
+button.round:active.danger i:last-child {
+  color: red;
+}
+button.round.success i:first-child {
+  color: #199919;
+}
+button.round.danger i:first-child {
+  color: red;
+}

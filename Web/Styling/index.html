@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <title>Test CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
@@ -16,7 +15,22 @@
     <button class="danger">Click</button>
     <button class="warning">Click</button>
     <br/>
-    <button class="action">
+
+    <button class="round success">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+        </span>
+    </button>
+
+    
+    <button class="round danger">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+        </span>
+    </button>
+    <!--<button class="action">
         <i class="fa fa-plus"></i>
     </button>
     <button class="action">
@@ -30,7 +44,7 @@
     </button>
     <button class="action success">
         <i class="fa fa-check"></i>
-    </button>
+    </button>-->
     <br/>
     <div class="form-field">
         <input id="text" />
