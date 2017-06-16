@@ -14,16 +14,22 @@ body {
 }
 button {
   font-size: 1.5em;
-  border: 0;
   outline: 0;
   padding: 5px;
   background-color: #212935;
   color: #FFF;
+  border: solid 1px #212935;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
-button:hover {
-  cursor: pointer;
+button:hover:enabled,
+button:focus:enabled {
+  color: #212935;
   background-color: #CCC;
-  color: #FFF;
+}
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.3;
 }
 button:active {
   transform: translateY(4px);
@@ -33,8 +39,19 @@ button.danger {
   color: #FFF;
   border: solid 1px red;
 }
-button.danger:hover {
+button.danger:hover:enabled,
+button.danger:focus:enabled {
   color: red;
+  background-color: #CCC;
+}
+button.success {
+  background-color: #199919;
+  color: #FFF;
+  border: solid 1px #199919;
+}
+button.success:hover:enabled,
+button.success:focus:enabled {
+  color: #199919;
   background-color: #CCC;
 }
 button.round {
@@ -44,12 +61,18 @@ button.round {
 }
 button.round i:first-child {
   color: #212935;
+  transition: color 0.3s ease-out;
 }
 button.round i:last-child {
   color: #FFF;
+  transition: color 0.3s ease-out;
 }
-button.round:hover i:last-child,
-button.round:focus i:last-child {
+button.round:hover:enabled,
+button.round:focus:enabled {
+  background-color: transparent;
+}
+button.round:hover:enabled i:last-child,
+button.round:focus:enabled i:last-child {
   color: #212935;
 }
 button.round.success i:first-child {
@@ -58,19 +81,116 @@ button.round.success i:first-child {
 button.round.danger i:first-child {
   color: red;
 }
-button.round:hover,
-button.round:focus {
+button.round:hover:enabled,
+button.round:focus:enabled {
   background-color: transparent;
 }
-button.round:hover span i:first-child,
-button.round:focus span i:first-child {
+button.round:hover:enabled span i:first-child,
+button.round:focus:enabled span i:first-child {
   color: #CCC;
 }
-button.round:hover.success i:last-child,
-button.round:focus.success i:last-child {
+button.round:hover:enabled.success i:last-child,
+button.round:focus:enabled.success i:last-child {
   color: #199919;
+  background-color: transparent;
 }
-button.round:hover.danger i:last-child,
-button.round:focus.danger i:last-child {
+button.round:hover:enabled.danger i:last-child,
+button.round:focus:enabled.danger i:last-child {
+  background-color: transparent;
   color: red;
+}
+div.form-field {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 20px;
+}
+div.form-field input:focus ~ label,
+div.form-field textarea:focus ~ label {
+  font-weight: bold;
+}
+div.form-field input,
+div.form-field textarea {
+  border: 0;
+  border-bottom: solid 1px #212935;
+  outline: 0;
+  font-size: 1em;
+  outline-width: 0;
+  transition: font-size 0.3s ease-out;
+}
+div.form-field input:focus {
+  border: 0;
+  font-size: 1.5em;
+  border-bottom: solid 1px #212935;
+}
+div.form-field textarea {
+  border: solid 1px #212935;
+  border-top: 0;
+  min-height: 5em;
+}
+div.form-field textarea:focus {
+  border: 0;
+  font-size: 1.2em;
+  border: solid 1px #212935;
+  border-top: 0;
+}
+div.form-field.horizontal {
+  display: block;
+}
+div.form-field.ordered {
+  flex-direction: column;
+}
+div.form-field input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+div.form-field input[type=file] + label {
+  font-size: 1.25em;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #212935;
+  border: solid 1px #212935;
+  display: inline-block;
+  cursor: pointer;
+  width: auto !important;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+div.form-field input[type=file]:focus + label,
+div.form-field input[type=file] + label:hover {
+  background-color: #CCC;
+  color: #212935;
+}
+div.form-field table {
+  border-top: solid 1px #212935;
+  width: 100%;
+  border-spacing: 0;
+}
+div.form-field table td {
+  border-bottom: solid 1px #212935;
+}
+div.form-field table td.actions {
+  font-size: .7em;
+}
+div.form-field table tr td:last-child {
+  padding-left: 1em;
+  width: 90%;
+}
+div.form-field .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+div.form-field .header button {
+  font-size: 1em;
+}
+input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 6px;
 }

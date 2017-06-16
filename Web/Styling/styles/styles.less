@@ -7,6 +7,10 @@
 @warning-color: #DAA520;
 @active-color: #CCC;
 
+.transition(@property){
+    transition: @property .3s ease-out;
+}
+
 body {
     font-family: Verdana, sans-serif;
     font-size: 16px;
@@ -22,18 +26,31 @@ body {
     color: @base-background-color;
 }
 
+.button(@fore-color, @back-color){
+    background-color: @fore-color;
+    color: @back-color;
+    border: solid 1px @fore-color;
+    &:hover:enabled, &:focus:enabled {
+        color: @fore-color;
+        background-color: @active-color;
+    }
+}
+
+.color-transitions() {
+    .transition(color);
+    .transition(background-color);
+}
+
 button {
     font-size: 1.5em;
-    border: 0;
     outline: 0;
     padding: 5px;
-    background-color: @base-color;
-    color: @base-background-color;
+    .button(@base-color, @base-background-color);
+    .color-transitions();
 
-    &:hover{
-        cursor: pointer;
-        background-color: @active-color;
-        color: @base-background-color;
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.3;
     }
 
     &:active {
@@ -41,13 +58,11 @@ button {
     }
 
     &.danger {
-        background-color: @danger-color;
-        color: @base-background-color;
-        border: solid 1px @danger-color;
-        &:hover{
-            color: @danger-color;
-            background-color: @active-color;
-        }
+        .button(@danger-color, @base-background-color);
+    }
+
+    &.success{
+        .button(@success-color, @base-background-color);
     }
 
     &.round {
@@ -57,13 +72,16 @@ button {
 
         i:first-child {
             color: @base-color;
+            .transition(color);
         }
 
         i:last-child {
             color: @base-background-color;
+            .transition(color);
         }
 
-        &:hover, &:focus { 
+        &:hover:enabled, &:focus:enabled { 
+            background-color: transparent;
             i:last-child {
                 color: @base-color;
             }
@@ -77,7 +95,7 @@ button {
             color: @danger-color;
         }
 
-        &:hover, &:focus{
+        &:hover:enabled, &:focus:enabled {
             background-color: transparent;
 
             span i:first-child {
@@ -86,174 +104,120 @@ button {
 
             &.success i:last-child {
                 color: @success-color;
+                background-color: transparent;
             }
 
             &.danger i:last-child {
+                background-color: transparent;
                 color: @danger-color;
             }
         }
     }
 }
 
-// button,
-// button:active {
-//     background-color: @base-color;
-//     color: @base-background-color;
-//     border: solid 1px @base-color;
-//     font-size: 1.5em;
-//     padding: 8px 16px;
-//     cursor: pointer;
-//     outline: 0;
-//     outline-width: 0;
-//     margin: 4px;
-// }
+div.form-field {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 20px;
 
-// button.danger {
-//     background-color: @danger-color;
-//     border: solid 1px @danger-color;
-// }
+    input:focus~label, textarea:focus~label {
+        font-weight: bold;
+    }
 
+    input, textarea {
+        border: 0;
+        border-bottom: solid 1px @base-color;
+        outline: 0;
+        font-size: 1em;
+        outline-width: 0;
+        .transition(font-size);
+    }
 
-// button.success {
-//     background-color: @success-color;
-//     border: solid 1px @success-color;
-// }
+    input:focus {
+        border: 0;
+        font-size: 1.5em;
+        border-bottom: solid 1px @base-color;
+    }
 
-// button.warning {
-//     background-color: @warning-color;
-//     border: solid 1px @warning-color;
-// }
+    textarea {
+        border: solid 1px @base-color;
+        border-top: 0;
+        min-height: 5em;
 
-// button:hover:enabled,
-// button:active:enabled,
-// button:focus {
-//     background-color: @active-color;
-//     color: @base-color;
-// }
+        &:focus {
+            border: 0;
+            font-size: 1.2em;
+            border: solid 1px @base-color;
+            border-top: 0;
+        }
+    }
 
-// button.danger:hover {
-//     color: @danger-color;
-// }
+    &.horizontal {
+        display: block;
+    }
 
-// button.success:hover {
-//     color: @success-color;
-// }
+    &.ordered {
+        flex-direction: column;
+    }
 
-// button.warning:hover {
-//     color: @warning-color;
-// }
+    input[type=file] {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
 
-// button[disabled] {
-//     cursor: not-allowed;
-//     opacity: 0.3;
-// }
+        &+label {
+            font-size: 1.25em;
+            color: @base-background-color;
+            padding: 8px 16px;
+            background-color: @base-color;
+            border: solid 1px @base-color;
+            display: inline-block;
+            cursor: pointer;
+            width: auto !important;
+            .color-transitions();
+        }
 
-// button.action {
-//     border-radius: 50%;
-// }
+        &:focus+label, &+label:hover{
+            background-color: @active-color;
+            color: @base-color;
+        }
+    }
 
-// div.form-field {
-//     display: flex;
-//     flex-direction: column-reverse;
-//     margin: 20px;
-// }
+    table {
+        border-top: solid 1px @base-color;
+        width: 100%;
+        border-spacing: 0;
 
-// div.form-field input,
-// div.form-field textarea {
-//     border: 0;
-//     border-bottom: solid 1px @base-color;
-//     outline: 0;
-//     outline-width: 0;
-// }
+        td {
+            border-bottom: solid 1px @base-color;
+            &.actions {
+                font-size: .7em;
+            }
+        }
 
-// div.form-field textarea {
-//     border: solid 1px @base-color;
-//     border-top: 0;
-//     min-height: 5em;
-// }
+        tr td:last-child {
+            padding-left: 1em;
+            width: 90%;
+        }
+    }
 
-// div.form-field textarea:focus {
-//     border: 0;
-//     font-size: 1.2em;
-//     border: solid 1px @base-color;
-//     border-top: 0;
-// }
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            font-size: 1em;
+        }
+    }
+}
 
-// div.form-field input:focus {
-//     border: 0;
-//     font-size: 1.5em;
-//     border-bottom: solid 1px @base-color;
-// }
-
-// div.form-field input:focus~label {
-//     font-weight: bold;
-// }
-
-// div.form-field textarea:focus~label {
-//     font-weight: bold;
-// }
-
-// div.form-field.horizontal {
-//     display: block;
-// }
-
-// div.form-field.ordered {
-//     flex-direction: column;
-// }
-
-// input[type=checkbox] {
-//     width: 24px;
-//     height: 24px;
-//     position: relative;
-//     top: 6px;
-// }
-
-// div.form-field input[type=file] {
-//     width: 0.1px;
-//     height: 0.1px;
-//     opacity: 0;
-//     overflow: hidden;
-//     position: absolute;
-//     z-index: -1;
-// }
-
-// div.form-field input[type=file]+label {
-//     font-size: 1.25em;
-//     color: @base-background-color;
-//     padding: 8px 16px;
-//     background-color: @base-color;
-//     display: inline-block;
-//     cursor: pointer;
-//     width: auto !important;
-// }
-
-// div.form-field input[type=file]:focus+label,
-// div.form-field input[type=file]+label:hover {
-//     background-color: @active-color;
-// }
-
-// div.form-field table {
-//     border-top: solid 1px @base-color;
-//     width: 100%;
-//     border-spacing: 0;
-// }
-
-// div.form-field .header {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
-// div.form-field table td.actions {
-//     font-size: .7em;
-//     width: 2.5em;
-// }
-
-// div.form-field table tr td:last-child {
-//     width: 80%;
-// }
-
-// div.form-field table td {
-//     border-bottom: solid 1px @base-color;
-// }
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 6px;
+}
