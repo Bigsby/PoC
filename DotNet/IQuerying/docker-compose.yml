@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  iquerying:
+    image: iquerying
+    build:
+      context: .\IQuerying
+      dockerfile: Dockerfile
