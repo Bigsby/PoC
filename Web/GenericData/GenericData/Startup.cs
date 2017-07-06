@@ -34,7 +34,6 @@ namespace GenericData
             //apiConfig.Services.Replace(typeof(ValueProviderFactory), new CustomValueProviderFactory());
             app.UseWebApi(apiConfig);
 
-
             app.Run(context =>
             {
                 context.Response.ContentType = "text/plain";
@@ -56,16 +55,57 @@ namespace GenericData
 
             public object GetService(Type serviceType)
             {
+                //if (serviceType == typeof(IActionValueBinder))
+                //    return new CustomActionValueBinder();
+
                 if (serviceType == typeof(ModelMetadataProvider))
-                    return new 
+                    return new GenericModelMetadataProvider();
+
                 return null;
             }
 
             public IEnumerable<object> GetServices(Type serviceType)
             {
-                return new object[0];
+                if (serviceType == typeof(ModelValidatorProvider))
+                    yield return new CustomModelValidatorProvider();
+
+                if (serviceType == typeof(ModelBinderProvider))
+                    yield return new CustomModelBinderProvider();
+
+                if (serviceType == typeof(ValueProviderFactory))
+                    yield return new CustomValueProviderFactory();
+
+                if (serviceType == typeof(ModelMetadataProvider))
+                    yield return new GenericModelMetadataProvider();
+
+                yield break;
             }
         }
+
+        
+
+        //class CustomActionValueBinder : IActionValueBinder
+        //{
+        //    public HttpActionBinding GetBinding(HttpActionDescriptor actionDescriptor)
+        //    {
+        //        return new HttpActionBinding {
+        //            ActionDescriptor = actionDescriptor,
+        //            ParameterBindings = new HttpParameterBinding[] {
+        //                new HttpParameterBinding{
+        //                }
+        //            }
+        //        };
+        //        throw new NotImplementedException();
+        //    }
+        //}
+
+        //class CustomHttpParameterBinding : HttpParameterBinding
+        //{
+        //    public override Task ExecuteBindingAsync(ModelMetadataProvider metadataProvider, HttpActionContext actionContext, CancellationToken cancellationToken)
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
 
         class CustomModelBinderProvider : ModelBinderProvider
         {
