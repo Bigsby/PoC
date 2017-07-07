@@ -41,23 +41,7 @@ namespace DynamicCollection.Controller
                 yield break;
 
             foreach (var filePath in Directory.GetFiles(folderPath))
-            {
-                var fileContent = File.ReadAllText(filePath);
-                yield return new Item {
-                    id = Path.GetFileNameWithoutExtension(filePath),
-                    InnerObject = ParseContent(fileContent)
-                };
-            }   
-        }
-
-        private static JToken ParseContent(string content)
-        {
-            var result = JToken.Parse(content);
-            foreach (var property in result)
-            {
-                //property.
-            }
-            return result;
+                yield return ReadItem(filePath, Path.GetFileNameWithoutExtension(filePath));
         }
 
         public static Item GetItem(string collection, string id)
@@ -65,10 +49,17 @@ namespace DynamicCollection.Controller
             var filePath = HostingEnvironment.MapPath($"~/App_Data/{collection}/{id}.json");
             if (!File.Exists(filePath))
                 return null;
+
+            return ReadItem(filePath, id);
+        }
+
+        private static Item ReadItem(string filePath, string id)
+        {
             var fileContent = File.ReadAllText(filePath);
-            return new Item {
+            return new Item
+            {
                 id = id,
-                InnerObject = JToken.Parse(fileContent)
+                InnerObject = JObject.Parse(fileContent)
             };
         }
     }
