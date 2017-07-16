@@ -1,5 +1,17 @@
 ﻿{
   "name": "item one two",
   "value": 4,
-  "anotherProp": "anotherProp"
+  "anotherProp": "anotherProp",
+  "items": [ "one", "two" ],
+  "itemProp": {
+    "someProp": "value"
+  },
+  "innerItemss": [
+    {
+      "name": "sub item one"
+    },
+    {
+      "name": "sub item two"
+    }
+  ]
 }
