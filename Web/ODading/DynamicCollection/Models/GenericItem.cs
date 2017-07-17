@@ -20,16 +20,6 @@ namespace DynamicCollection.Models
             }
         }
 
-        internal static IEdmModel GetModel()
-        {
-            var builder = new ODataModelBuilder();
-            var itemType = builder.EntityType<GenericItem>();
-            itemType.HasKey(i => i.id);
-            itemType.HasDynamicProperties(i => i.DynamicProperties);
-            builder.EntitySet<GenericItem>("data");
-            return builder.GetEdmModel();
-        }
-
         private static IDictionary<string, object> ConvertDynamicProperties(string id, JObject token)
         {
             var result = new Dictionary<string, object>();
