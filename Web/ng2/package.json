@@ -13,5 +13,8 @@
     "@types/node": "^7.0.12",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "popmotion": "^7.5.3"
   }
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>SVG Anim test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popmotion/4.3.4/popmotion.global.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <a id="a" class="counter"></a>
+    <script>
+        const counter = document.querySelector('#a .counter');
+
+        popmotion.tween({
+            onUpdate: (v) => counter.innerHTML = v
+        }).sta
+    </script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 ﻿using static System.Console;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace GenericTesting
 {
@@ -12,7 +13,14 @@ namespace GenericTesting
             foreach (var number in numbers.Take(10))
                 WriteLine($"- {number}");
 
+            _items = _items.Union(new[] { new Item() });
             ReadLine();
+
         }
+
+        static IEnumerable<Item> _items;
     }
+
+    public class Item
+    { }
 }
