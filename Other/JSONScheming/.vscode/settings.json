@@ -1,0 +1,13 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/*.mjson"
+            ],
+            "url": "./music-schema.json"
+        }
+    ],
+    "files.associations": {
+        "*.mjson": "json"
+    }
+}
