@@ -1,0 +1,4 @@
+<p><label for="search">Search</label><input id="search" #searchbox (keyup)="search(searchbox.value)" [(ngModel)]="searchTerm" /></p>
+<ul>
+  <li *ngFor="let package of packages">{{package.name}}</li>
+</ul>
