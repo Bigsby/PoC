@@ -345,6 +345,30 @@
         },
         "note": {
             "type": "object"
+        },
+        "voice-type":{
+            "type": "string",
+            "enum":[
+                "notes",
+                "harmony",
+                "rythm",
+                "lyrics"
+            ]
+        },
+        "voice": {
+            "type": "object"
+        },
+        "system": {
+            "type":"object",
+            "properties": {
+                "parts":{
+                    "description": "The parts of the score",
+                    "type": "array",
+                    "items":{
+                        "$ref": "#/definitions/part"
+                    }
+                }
+            }
         }
     },
     "allOf": [
