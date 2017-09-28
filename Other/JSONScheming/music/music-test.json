@@ -1,0 +1,23 @@
+{
+    "$schema": "./music-schema.json#",
+    "metadata": {
+      
+    },
+    "signatures": {
+      
+    }
+    // "metadata": {
+    //     "title": "Take the 'A' Train",
+    //     "composers": "Billy Strayhorn",
+    //     "authors": "bigsby",
+    //     "creationDate": "2017-09-26"
+    // },
+    // "signatures": {
+    //     "key": "C",
+    //     "timeSignature": "4/4",
+    //     "tempo": {
+    //         "unit": "1/4",
+    //         "value": 120
+    //     }
+    // }
+}
