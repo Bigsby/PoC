@@ -20,16 +20,16 @@
             "title": "Time, tempo and key signatures.",
             "properties": {
                 "timeSignature": {
-                    "$ref": "#timeSignature",
+                    "$ref": "timeSignature",
                     "default": "4/4",
                     "description": "The time signature for the current section."
                 },
                 "tempo": {
-                    "$ref": "#tempo",
+                    "$ref": "tempo",
                     "description": "The tempo of the current section."
                 },
                 "key": {
-                    "$ref": "#key",
+                    "$ref": "key",
                     "description": "The key for the current section."
                 }
             }
@@ -58,7 +58,7 @@
                     "type": "object",
                     "properties": {
                         "note": {
-                            "$ref": "#noteDuration"
+                            "$ref": "noteDuration"
                         },
                         "dotted": {
                             "type": "boolean",
@@ -77,7 +77,7 @@
                     "type": "object",
                     "properties": {
                         "unit": {
-                            "$ref": "#noteDuration",
+                            "$ref": "noteDuration",
                             "default": "1/4"
                         },
                         "value": {
@@ -126,13 +126,13 @@
         "clef": {
             "$id": "clef",
             "oneOf": [{
-                    "$ref": "#clefs"
+                    "$ref": "clefs"
                 },
                 {
                     "type": "object",
                     "properties": {
                         "note": {
-                            "$ref": "#clefs"
+                            "$ref": "clefs"
                         },
                         "line": {
                             "type": "integer",
