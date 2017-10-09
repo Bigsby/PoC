@@ -18,7 +18,10 @@ namespace CustomEF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Item>().HasKey(e => e.Name);
+            var item = modelBuilder.Entity<Item>(b => {
+                b.HasKey(i => i.Name);
+                b.ToCollection("asdf");
+            });
         }
     }
 }

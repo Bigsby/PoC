@@ -14,9 +14,40 @@ using System.Linq.Expressions;
 using Remotion.Linq.Clauses;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CustomEF
 {
+    public class SimpleEntityQueryModelVisitor : EntityQueryModelVisitor
+    {
+        private static IEnumerable<TEntity> EntityQuery<TEntity>(
+           QueryContext queryContext,
+           IEntityType entityType,
+           IKey key,
+           Func<IEntityType, ValueBuffer, object> materializer,
+           bool queryStateManager)
+           where TEntity : class
+           => ((InMemoryQueryContext)queryContext).Store
+               .GetTables(entityType)
+               .SelectMany(
+                   t =>
+                       t.Rows.Select(
+                           vs =>
+                           {
+                               var valueBuffer = new ValueBuffer(vs);
+
+                               return (TEntity)queryContext
+                                    .QueryBuffer
+                                    .GetEntity(
+                                        key,
+                                        new EntityLoadInfo(
+                                            valueBuffer,
+                                            vr => materializer(t.EntityType, vr)),
+                                        queryStateManager,
+                                        throwOnNullKey: false);
+                           }));
+    }
+
     public class SimpleEntityQueryableExpressionVisitor : EntityQueryableExpressionVisitor
     {
         private readonly IModel _model;
@@ -38,19 +69,20 @@ namespace CustomEF
             var entityType = QueryModelVisitor.QueryCompilationContext.FindEntityType(_querySource)
                                  ?? _model.FindEntityType(elementType);
 
-            //if (QueryModelVisitor.QueryCompilationContext
-            //    .QuerySourceRequiresMaterialization(_querySource))
-            //{
-            //    var materializer = _materializerFactory.CreateMaterializer(entityType);
 
-            //    return Expression.Call(
-            //        InMemoryQueryModelVisitor.EntityQueryMethodInfo.MakeGenericMethod(elementType),
-            //        EntityQueryModelVisitor.QueryContextParameter,
-            //        Expression.Constant(entityType),
-            //        Expression.Constant(entityType.FindPrimaryKey()),
-            //        materializer,
-            //        Expression.Constant(QueryModelVisitor.QueryCompilationContext.IsTrackingQuery));
-            //}
+            if (QueryModelVisitor.QueryCompilationContext
+                .QuerySourceRequiresMaterialization(_querySource))
+            {
+                var materializer = _materializerFactory.CreateMaterializer(entityType);
+
+                return Expression.Call(
+                    InMemoryQueryModelVisitor.EntityQueryMethodInfo.MakeGenericMethod(elementType),
+                    EntityQueryModelVisitor.QueryContextParameter,
+                    Expression.Constant(entityType),
+                    Expression.Constant(entityType.FindPrimaryKey()),
+                    materializer,
+                    Expression.Constant(QueryModelVisitor.QueryCompilationContext.IsTrackingQuery));
+            }
 
             return Expression.Call(
                 InMemoryQueryModelVisitor.ProjectionQueryMethodInfo,
@@ -175,6 +207,32 @@ namespace CustomEF
             ((IDbContextOptionsBuilderInfrastructure)optionsBuilder).AddOrUpdateExtension(extension);
 
             return optionsBuilder;
+        }
+    }
+
+    internal static class SimpleModelBuilder
+    {
+    }
+
+    public static class ModelBuilderExtensions
+    {
+        private const string DefaultDatabaseName = "data";
+        private const string DatabaseAnnotation = "Simple_Database";
+        private const string CollectionAnnotation = "Simple_Collection";
+
+        public static EntityTypeBuilder<T> ToCollection<T>(this EntityTypeBuilder<T> etBuilder, string collection)
+            where T : class
+        {
+            etBuilder.Metadata.AddAnnotation(CollectionAnnotation, collection);
+            return etBuilder;
+        }
+
+        public static EntityTypeBuilder<T> ToCollection<T>(this EntityTypeBuilder<T> etBuilder, string database, string collection)
+            where T : class
+        {
+            etBuilder.Metadata.AddAnnotation(DatabaseAnnotation, database);
+            etBuilder.Metadata.AddAnnotation(CollectionAnnotation, collection);
+            return etBuilder;
         }
     }
 }
