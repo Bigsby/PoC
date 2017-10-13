@@ -1,0 +1,22 @@
+﻿{
+  "setup": [
+  ],
+  "tests": [
+    {
+      "url": "http://localhost:5000/api/values",
+      "method": "GET",
+      "payload": "",
+      "code": 200,
+      "assertions": [
+        {
+          "jpath": "$.[*]",
+          "length": 2
+        },
+        {
+          "jpath": "$.[?(@>'value1')]",
+          "length": 1
+        }
+      ]
+    }
+  ]
+}
