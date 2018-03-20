@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Testing musical web fonts</title>
+    <style>
+        @font-face {
+            font-family: "bravura";
+            src: url("bravura.otf");
+        }
+        
+        body {
+            font-family: "bravura";
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td.character {
+            font-size: 2em;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    font-face: Bravura.otf
+    <div id="display"></div>
+    <table>
+        <thead>
+            <tr id="displayHead">
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="displayBody">
+
+        </tbody>
+    </table>
+    <script>
+        var first = parseInt("E00", 16); // 45303030
+        var last = parseInt("F5F", 16); // 46464646
+
+        var gapStart = parseInt("ee4", 16);
+        var gapEnd = parseInt("f3f", 16);
+
+        var headThead = document.getElementById("displayHead");
+        for (let headIndex = 0; headIndex < 16; headIndex++) {
+            var newTh = document.createElement("th");
+            newTh.innerText = headIndex.toString(16);
+            headThead.appendChild(newTh);
+        }
+
+
+        var displayTbody = document.getElementById("displayBody");
+        for (let rowIndex = first; rowIndex <= last; rowIndex++) {
+
+            if (rowIndex > gapStart && rowIndex < gapEnd) continue;
+            var rowHexa = rowIndex.toString(16);
+            var newRow = document.createElement("tr");
+            var indexTd = document.createElement("td");
+            indexTd.innerText = rowHexa;
+            newRow.appendChild(indexTd);
+
+            for (let columnIndex = 0; columnIndex < 16; columnIndex++) {
+                var columnHexa = columnIndex.toString(16);
+                var newTd = document.createElement("td");
+                newTd.className = "character";
+                newTd.innerHTML = "&#x" + rowHexa + columnHexa + ";";
+                newTd.title = rowHexa + columnHexa;
+                newRow.appendChild(newTd);
+            }
+
+            displayTbody.appendChild(newRow);
+        }
+    </script>
+</body>
+
+</html>
