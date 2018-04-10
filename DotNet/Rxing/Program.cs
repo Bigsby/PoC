@@ -9,7 +9,7 @@ namespace Rxing
         static void Main(string[] args)
         {
             Observable.Interval(TimeSpan.FromMilliseconds(500))
-                .CancelWithin(TimeSpan.FromSeconds(1.5))
+                .ReverseThrottle(TimeSpan.FromSeconds(1.5))
                 .Subscribe(i => System.Console.WriteLine(i));
             System.Console.WriteLine("Subscribed!");
             Console.ReadLine();
@@ -19,30 +19,27 @@ namespace Rxing
 
     public static class MyExtension
     {
-        public static IObservable<T> CancelWithin<T>(this IObservable<T> observable, TimeSpan interval, Action<T> rejected = null)
+        public static IObservable<T> ReverseThrottle<T>(this IObservable<T> observable, TimeSpan interval)
         {
-            return new CancelIntervalObservable<T>(observable, interval, rejected);
+            return new ReverseThrottleObservable<T>(observable, interval);
         }
 
-        class CancelIntervalObservable<T> : IObservable<T>
+        class ReverseThrottleObservable<T> : IObservable<T>
         {
             private bool _canNext = true;
             private readonly IObservable<T> _observable;
             private readonly TimeSpan _interval;
-            private Action<T> _rejected;
 
-            public CancelIntervalObservable(IObservable<T> source, TimeSpan interval, Action<T> rejected = null)
+            public ReverseThrottleObservable(IObservable<T> source, TimeSpan interval)
             {
                 _interval = interval;
-                _rejected = rejected;
                     
                 _observable = Observable.Create<T>(o => source.Subscribe(
                     value =>
                     {
-                        if (!_canNext) {
-                            _rejected?.Invoke(value);
+                        if (!_canNext) 
                             return;
-                        }
+                        
                         _canNext = false;
                         Observable.Timer(_interval).Subscribe(_ => _canNext = true);
                         o.OnNext(value);
