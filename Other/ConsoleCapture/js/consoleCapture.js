@@ -1,0 +1,56 @@
+const readline = require('readline');
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+process.stdout.write("\u001b[?25l"); // hide cursor
+process.stdout.write(`Window: ${process.stdout.columns}x${process.stdout.rows}\n`);
+process.stdin.on('keypress', (str, key) => {
+    process.stdout.write("\033[K"); // clear till end of line
+    if (key.ctrl && key.name == "c") {
+        process.exit();
+    } else {
+        process.stdout.write("You clicked: ");
+        process.stdout.write("\x1b[46m");
+        process.stdout.write("\x1b[30m");
+        if (key.ctrl) {
+            process.stdout.write("Ctrl + ");
+        }
+        if (key.shift) {
+            process.stdout.write("Shift + ");
+        }
+        if (key.meta) {
+            process.stdout.write("Alt + ");
+        }
+        process.stdout.write(`${key.name}\n`);
+        process.stdout.write("\x1b[40m");
+        process.stdout.write("\x1b[37m");
+        process.stdout.write("\033[1A"); // go up one line
+    }
+});
+
+// Reset = "\x1b[0m"
+// Bright = "\x1b[1m"
+// Dim = "\x1b[2m"
+// Underscore = "\x1b[4m"
+// Blink = "\x1b[5m"
+// Reverse = "\x1b[7m"
+// Hidden = "\x1b[8m"
+
+// FgBlack = "\x1b[30m"
+// FgRed = "\x1b[31m"
+// FgGreen = "\x1b[32m"
+// FgYellow = "\x1b[33m"
+// FgBlue = "\x1b[34m"
+// FgMagenta = "\x1b[35m"
+// FgCyan = "\x1b[36m"
+// FgWhite = "\x1b[37m"
+
+// BgBlack = "\x1b[40m"
+// BgRed = "\x1b[41m"
+// BgGreen = "\x1b[42m"
+// BgYellow = "\x1b[43m"
+// BgBlue = "\x1b[44m"
+// BgMagenta = "\x1b[45m"
+// BgCyan = "\x1b[46m"
+// BgWhite = "\x1b[47m"
+
+//https://stackoverflow.com/questions/10585683/how-do-you-edit-existing-text-and-move-the-cursor-around-in-the-terminal
