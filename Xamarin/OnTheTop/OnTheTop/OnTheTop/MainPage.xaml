@@ -9,6 +9,7 @@
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
         <Switch IsToggled="{Binding ShowImage}"/>
+        <Entry Text="{Binding Title}"/>
         <Entry Text="{Binding Text}"/>
         <Button Text="Click to Notify" Command="{Binding Notify}" />
     </StackLayout>

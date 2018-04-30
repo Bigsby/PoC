@@ -11,6 +11,7 @@ namespace OnTheTop
 
     public sealed class NotifyViewModel
     {
+        public string Title { get; set; }
         public string Text { get; set; }
         public Action Action { get; set; }
         public string ImageUrl { get; set; }

@@ -14,8 +14,8 @@ namespace OnTheTop
             BindingContext = new MainPageViewModel(this)
             {
                 Phrase = _notifier.Phrase,
-                Text = "This is a text to be displayed in the toast notifications",
-                
+                Title = "The Title",
+                Text = "This is a text to be displayed in the toast notifications"
             };
 
         }
@@ -32,15 +32,17 @@ namespace OnTheTop
             }
 
             public string Phrase { get; set; }
+            public string Title { get; set; }
             public string Text { get; set; }
             public bool ShowImage { get; set; }
             public event PropertyChangedEventHandler PropertyChanged;
 
             public ICommand Notify => new Command(() => _notifier.Notify(new NotifyViewModel
             {
+                Title = Title,
                 Text = Text,
-                ImageUrl = "https://i.pinimg.com/originals/8d/0a/c7/8d0ac7252339ddfe2caf4990043f0bfe.png"
-                //ImageUrl = ShowImage ? "http://vignette.wikia.nocookie.net/lego/images/2/2d/LEGO_logo.jpg" : null,
+                //ImageUrl = "https://i.pinimg.com/originals/8d/0a/c7/8d0ac7252339ddfe2caf4990043f0bfe.png"
+                ImageUrl = ShowImage ? "http://vignette.wikia.nocookie.net/lego/images/2/2d/LEGO_logo.jpg" : null,
                 //Action = () =>
                 //    Device.BeginInvokeOnMainThread(() =>
                 //        _page.DisplayAlert(" ", "The is an alert from a notification", "OK")
