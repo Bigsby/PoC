@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <element>This is the element
+and a new line.</element>
+    <attr value="The is an attribute&#10;and a new line"/>
+</root>
