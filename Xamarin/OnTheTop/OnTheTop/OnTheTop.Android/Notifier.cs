@@ -1,4 +1,5 @@
-﻿using Android.Content;
+﻿using Android.App;
+using Android.Content;
 using Android.Runtime;
 using Android.Views;
 
@@ -10,9 +11,9 @@ namespace OnTheTop.Droid
 
         public void Notify(NotifyViewModel viewModel)
         {
-            var windowManager = MainActivity.Context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
+            var windowManager = Application.Context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
 
-            var theView = new NotificationView(MainActivity.Context, windowManager, viewModel);
+            var theView = new NotificationView(Application.Context, windowManager, viewModel);
 
             var param = new WindowManagerLayoutParams(
                             800, 300,
