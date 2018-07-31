@@ -6,6 +6,7 @@ using Owin;
 using static System.Console;
 using SignalRing.Definitions;
 using Microsoft.AspNet.SignalR.Hubs;
+using Microsoft.Owin.Cors;
 
 namespace SignalRing.Server
 {
@@ -35,6 +36,7 @@ namespace SignalRing.Server
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
             app.MapSignalR();
         }
     }

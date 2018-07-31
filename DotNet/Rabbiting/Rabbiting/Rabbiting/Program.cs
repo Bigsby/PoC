@@ -1,6 +1,9 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Serilog;
+using Serilog.Events;
 using System;
+using System.Collections.Generic;
 
 namespace Rabbiting
 {
@@ -9,22 +12,27 @@ namespace Rabbiting
         static IModel channel;
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting...");
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.ColoredConsole(restrictedToMinimumLevel: LogEventLevel.Verbose)
+                .CreateLogger();
+
+            Info(nameof(Program), "Starting...");
             var connectionFactoy = new ConnectionFactory
             {
-                Uri = new Uri("amqp://localhost:5672/")
-                //,
-                //Ssl = new SslOption
-                //{
-                //    Enabled = false,
-                //    AcceptablePolicyErrors = System.Net.Security.SslPolicyErrors.None
-                //},
-                //AutomaticRecoveryEnabled = true,
-                //NetworkRecoveryInterval = TimeSpan.FromSeconds(10),
-                //TopologyRecoveryEnabled = true
+                Uri = new Uri("amqp://localhost:5672/"),
+                AutomaticRecoveryEnabled = true,
+                NetworkRecoveryInterval = TimeSpan.FromSeconds(10),
+                TopologyRecoveryEnabled = true
             };
-
             var connection = connectionFactoy.CreateConnection();
+
+            #region Connection Events
+            connection.CallbackException += (s, e) => Error(nameof(connection), nameof(connection.CallbackException), e.Exception);
+            connection.ConnectionBlocked += (s, e) => Warn(nameof(connection), nameof(connection.ConnectionBlocked));
+            connection.ConnectionRecoveryError += (s, e) => Warn(nameof(connection), nameof(connection.ConnectionRecoveryError), e.Exception);
+            connection.ConnectionShutdown += (s, e) => Warn(nameof(connection), nameof(connection.ConnectionShutdown));
+            connection.RecoverySucceeded += (s, e) => Info(nameof(connection), nameof(connection.RecoverySucceeded));
+            #endregion
 
             var exchangeName = "theExchange";
             var queueName = "theQueue";
@@ -33,47 +41,62 @@ namespace Rabbiting
 
             channel = connection.CreateModel();
             channel.BasicQos(0, 3, false);
-            channel.ModelShutdown += OnChannelShutdown;
-            channel.CallbackException += OnChannelCallbackException;
+            
+            #region Channel Events
+            channel.ModelShutdown += (s, e) => Warn(nameof(channel), nameof(channel.ModelShutdown));
+            channel.CallbackException += (s, e) => Warn(nameof(channel), nameof(channel.CallbackException), e.Exception);
+            #endregion
+
             channel.ExchangeDeclare(exchangeName, ExchangeType.Direct, true, false, null);
-            channel.QueueDeclare(queueName, true, false, false, null);
-            channel.QueueBind(queueName, exchangeName, routingKey, null);
+            channel.QueueDeclare(queueName, true, false, false, new Dictionary<string, object> {
+                { "prop1", "value1" },
+                { "prop2", "value2" }
+            });
+            channel.QueueBind(queueName, exchangeName, routingKey, new Dictionary<string, object> {
+                { "prop3", "value3" },
+                { "prop4", "value4" }
+            });
 
             var consumer = new EventingBasicConsumer(channel);
             consumer.ConsumerTag = consumerTag;
-            consumer.ConsumerCancelled += OnConsumerCancelled;
-            consumer.Shutdown += OnConsumerShutdown;
-            consumer.Received += HandleMessage;
 
-            channel.BasicConsume(queueName, false, consumerTag, consumer);
-            Console.WriteLine("Listening...");
-            Console.ReadLine();
+            #region Receiver Events
+            consumer.ConsumerCancelled += (s, e) => Warn(nameof(consumer), nameof(consumer.ConsumerCancelled));
+            consumer.Shutdown += (s, e) => Warn(nameof(consumer), nameof(consumer.Shutdown));
+            consumer.Received += (sender, e) => Info(nameof(consumer), nameof(consumer.Received), System.Text.Encoding.UTF8.GetString(e.Body));
+            consumer.Registered += (s, e) => Info(nameof(consumer), nameof(consumer.Registered));
+            consumer.Unregistered += (s, e) => Warn(nameof(consumer), nameof(consumer.Unregistered));
+            #endregion
+
+            channel.BasicConsume(queueName, true, consumerTag, consumer);
+            Info(nameof(Program), "Listening...");
+            var key = ConsoleKey.A;
+            while (key != ConsoleKey.Q)
+            {
+                var keyInfo = Console.ReadKey(true);
+                key = keyInfo.Key;
+            }
         }
 
-        private static void OnChannelCallbackException(object sender, CallbackExceptionEventArgs e)
+        static void Info(string component, string eventName, string data = "")
         {
-            throw new NotImplementedException();
+            Log.Information("{component}.{event}: {data}", component, eventName, data);
         }
 
-        private static void OnChannelShutdown(object sender, ShutdownEventArgs e)
+        static void Warn(string component, string eventName, Exception exception = null)
         {
-            throw new NotImplementedException();
+            if (exception == null)
+                Log.Warning("{component}.{event}", component, eventName);
+            else
+                Log.Warning(exception, "{component}.{event}: {data}", component, eventName);
         }
 
-        private static void HandleMessage(object sender, BasicDeliverEventArgs e)
+        static void Error(string component, string eventName, Exception exception = null)
         {
-            Console.WriteLine($"Received {e.BasicProperties.Type}: " + System.Text.Encoding.UTF8.GetString(e.Body));
-            channel.BasicAck(e.DeliveryTag, true);
-        }
-
-        private static void OnConsumerShutdown(object sender, ShutdownEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void OnConsumerCancelled(object sender, ConsumerEventArgs e)
-        {
-            throw new NotImplementedException();
+            if (exception == null)
+                Log.Error("{component}.{event}", component, eventName);
+            else
+                Log.Error(exception, "{component}.{event}: {data}", component, eventName);
         }
     }
 }

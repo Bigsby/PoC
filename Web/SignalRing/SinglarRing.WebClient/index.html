@@ -19,7 +19,7 @@
             };
 
             $.connection.hub.url = "http://localhost:3000/signalr";
-            var hub = $.connection.theHub;
+            var hub = $.connection.TheHub;
             hub.client.receive = function (message) {
                 var encodedMsg = $('<div />').text(message).html();
                 append(encodedMsg);
