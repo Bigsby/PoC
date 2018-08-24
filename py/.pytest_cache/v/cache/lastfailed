@@ -1,0 +1,4 @@
+{
+  "first-test.py::TestClass::test_another": true, 
+  "first-test.py::TestClass::test_second": true
+}

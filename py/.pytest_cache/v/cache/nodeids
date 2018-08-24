@@ -1,0 +1,8 @@
+[
+  "first-test.py::TestClass::test_another", 
+  "first-test.py::TestClass::test_first", 
+  "first-test.py::TestClass::test_second", 
+  "from-doc-1.py::TestStringMethods::test_isupper", 
+  "from-doc-1.py::TestStringMethods::test_split", 
+  "from-doc-1.py::TestStringMethods::test_upper"
+]
