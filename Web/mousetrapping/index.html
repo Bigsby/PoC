@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Testing Mousetrap.js!</title>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.2/mousetrap.min.js"></script>
+    <body>
+        <h1>Testing <a href="https://craig.is/killing/mice" target="_blank">mousetrap.js!</a></h1>
+        <div id="context"></div><br/>
+        <div id="result"></div>
+    </body>
+    <script>
+        var result = document.getElementById("result");
+        var context = document.getElementById("context");
+        var currentContext;
+
+        function setContext(newContext) {
+            if (currentContext === newContext) return;
+
+            currentContext = newContext;
+            context.innerHTML = "<b>Current Context:</b> " + currentContext;
+        }
+
+        function appendInput(inputContext){
+            if (inputContext !== currentContext) return;
+
+            var newSpan = document.createElement("span");
+            newSpan.innerHTML = "You clicked " + inputContext + "!<br/>";
+
+            result.insertBefore(newSpan, result.firstChild);
+        }
+
+        Mousetrap.bind("1", function(){
+            setContext(1);
+        });
+
+        Mousetrap.bind("2", function(){
+            setContext(2);
+        });
+
+        var mt1 = new Mousetrap();
+        mt1.bind("x", function() {
+            appendInput(1);
+        });
+
+
+        var mt2 = new Mousetrap();
+        mt2.bind("x", function(){
+            appendInput(2);
+        });
+
+        setContext(1);
+    </script>
+</html>

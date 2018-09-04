@@ -1,0 +1,44 @@
+{
+    "general": {
+        "bindings": {},
+        "contexts": {
+            "home": {
+                "bindings": {},
+                "contexts": {}
+            },
+            "projects": {
+                "bindings": {},
+                "contexts": {}
+            },
+            "media": {
+                "bindings": {},
+                "contexts": {}
+            },
+            "editor": {
+                "bindings": {},
+                "contexts": {
+                    "view": {
+                        "bindings": {},
+                        "contexts": {}  
+                    },
+                    "volume": {
+                        "bindings": {},
+                        "contexts": {}
+                    },
+                    "edit": {
+                        "bindings": {},
+                        "contexts": {}
+                    },
+                    "advanced": {
+                        "bindings": {},
+                        "contexts": {}
+                    },
+                    "video": {
+                        "bindings": {},
+                        "contexts": {}
+                    }
+                }
+            }
+        }
+    }
+}
