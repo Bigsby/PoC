@@ -1,0 +1,1 @@
+exec VAR=ONE echo $VAR
