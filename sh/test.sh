@@ -1,0 +1,2 @@
+VARA="asdfsa"
+echo $VARA
