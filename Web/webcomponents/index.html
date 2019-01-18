@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Testing web components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+</head>
+
+<body>
+    testing stuff
+    - module
+    - webcomponent
+    - shadow DOM
+    - HTML template
+
+    <!-- <script type="module" src="module1.mjs"></script> -->
+    <script type="module">
+        import * as m from "./module1.mjs";
+        m.doStuff("module");
+    </script>
+
+    <script type="module">
+        import {doStuff} from "./module1.mjs";
+        //m.doStuff("module");
+        //import { doStuff } from "./module1.mjs";
+        doStuff("simple");
+    </script>
+
+    <script defer>
+        //import { doStuff } from "./module1.mjs";
+        m.doStuff("defered");
+    </script>
+
+</body>
+
+</html>
