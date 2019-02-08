@@ -11,5 +11,5 @@ int main()
 	return 0;
 }
 
-// build
-// gcc cap.c -l ncurses
+// build & run
+// gcc cap.c -l ncurses && ./a.out
