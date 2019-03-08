@@ -1,0 +1,11 @@
+{
+	"hello": "Hello, %s!",
+    "hello_n": "Hello, {{name}}!",
+    "hello_mf": "Hello, {name}!",
+	"%s dog": {
+		"one": "%s dog",
+		"other": "%s dog"
+    },
+    "people": "Total of {count, plural, one{# person} other{# persons}}",
+    "gender_select": "{name} is {gender, select, male{a man} female{a woman} other{undeternimed}}."
+}

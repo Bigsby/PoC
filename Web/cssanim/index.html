@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Css Animations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <svg id="theSVG" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="800"
+        height="800" fill="blue">
+        <rect fill="blue" fill-opacity=".5" with="100%" height="100%"></rect>
+        <path id="orbit" d="M200 400 A200,200 0 1,1 600,400 A200,200 0 1,1 200,400" fill="salmon" stroke="black"
+            stroke-width="3" />
+
+        <g fill="none" width="200">
+            <text id="theText" width="200" fill="black"></text>
+            <animateMotion begin="0s" dur="12s" repeatCount="indefinite">
+                <mpath xlink:href="#orbit" />
+            </animateMotion>
+        </g>
+        <!-- <circle r = "20" fill = "yellow" stroke = "black" stroke-width = "3">
+           
+           <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
+               <mpath xlink:href="#orbit"/>
+           </animateMotion>
+       </circle> -->
+    </svg>
+</body>
+
+</html>
