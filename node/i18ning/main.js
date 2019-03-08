@@ -3,6 +3,7 @@ const i18n = require("./services/i18n");
 function test(locale) {
     i18n.setLocale(locale);
     console.log(`Testing ${locale}:`)
+    console.log(i18n.__("lang"));
     const name = "Bigsby";
     console.log(i18n.__("hello", name));
     console.log(i18n.__("hello_n", { name: name }));
@@ -14,6 +15,7 @@ function test(locale) {
     console.log(i18n.__mf("gender_select", { name: "John", gender: "male"}));
     console.log(i18n.__mf("gender_select", { name: "Ann", gender: "female"}));
     console.log(i18n.__mf("gender_select", { name: "Blah"}));
+    console.log(i18n.__("nested.value"));
     console.log();
 }
 

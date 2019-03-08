@@ -1,11 +1,15 @@
 {
-    "hello": "Olá, %s!",
-    "hello_n": "Olá, {{name}}!",
-    "hello_mf": "Olá, {name}!",
+    "lang": "isto é português",
+	"hello": "Olá, %s!",
+	"hello_n": "Olá, {{name}}!",
+	"hello_mf": "Olá, {name}!",
 	"%s dog": {
 		"one": "%s cão",
 		"other": "%s cães"
-    },
-    "people": "Total de {count, plural, one{# pessoa} other{# pessoas}}",
-    "gender_select": "{name} é {gender, select, male{um homem} female{uma mulher} other{um indeterminado}}."
+	},
+	"people": "Total de {count, plural, one{# pessoa} other{# pessoas}}",
+	"gender_select": "{name} é {gender, select, male{um homem} female{uma mulher} other{um indeterminado}}.",
+	"nested": {
+		"value": "Valor interno"
+	}
 }
