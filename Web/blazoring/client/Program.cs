@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace blazoring
+namespace client
 {
     public class Program
     {
