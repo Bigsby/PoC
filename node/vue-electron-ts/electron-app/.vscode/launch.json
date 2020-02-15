@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Electron: Main",
+            "runtimeExecutable": "${workspaceFolder:electron}/node_modules/.bin/electron",
+            "windows": {
+                "runtimeExecutable": "${workspaceFolder:electron}/node_modules/.bin/electron.cmd"
+            },
+            "env": {
+                "ELECTRON_ENABLE_LOGGING": "1"
+            },
+            "protocol": "inspector",
+            "runtimeArgs": [
+                "--remote-debugging-port=9223",
+                "./dist/app.js"
+            ],
+            "outFiles": [
+                "${workspaceFolder:electron}/**/*.js"
+            ],
+            "preLaunchTask": "build"
+        },
+        {
+            "name": "Electron: Renderer",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9223,
+            "pathMapping": {
+                "/": "${workspaceFolder:electron}/app"
+            },
+            "timeout": 30000,
+            "preLaunchTask": "build-vue"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Bot",
+            "configurations": [
+                "Electron: Main",
+                "Electron: Renderer"
+            ]
+        }
+    ]
+}

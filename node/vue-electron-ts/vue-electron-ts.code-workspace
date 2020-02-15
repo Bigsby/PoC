@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "electron-app",
+			"name": "electron"
+		},
+		{
+			"path": "vue-app",
+			"name": "vue"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.js": true,
+			"**/*.js.map": true,
+			"**/dist": true
+		}
+	},
+	"launch": {
+		"compounds": [
+			{
+				"name": "All",
+				"configurations": [
+					"Electron: Main",
+					"Electron: Renderer"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>listing to object events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="display"></div>
+    <script>
+        const display = document.querySelector("#display");
+        const obj = {};
+        Object.defineProperty(obj, "prop", {
+            get: () => this.prop,
+            set: newValue => {
+                display.innerHTML += `changing from ${this.prop} to ${newValue}<br/>`;
+                this.prop = newValue;
+            }
+        });
+
+        obj.prop = "newValue";
+        obj.prop = "newerValue";
+    </script>
+</body>
+</html>
