@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Markdown Rendering</title>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"
+        integrity="sha256-jl1+DOsSs9uABTKppOJ2GF8kXoc3XQzBtFFyS0i9Xoo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/a11y-dark.min.css"> -->
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai.min.css"> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        pre {
+            background-color: #404040;
+            padding: 20px;
+            margin: 0 20px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="display"></div>
+
+    <script>
+        const md = `
+# This is a title
+\`\`\`js
+const a = "some string";
+const b = 5;
+\`\`\`
+
+Some more text
+
+\`\`\`cs
+const a = "some string";
+const b = 5;
+\`\`\`
+
+Some html
+\`\`\`html
+<body>
+    <div id="display">Inner Text</div>
+</body>
+\`\`\`
+
+Some shell
+\`\`\`sh
+ls . | grep "something"
+\`\`\`
+
+Some giberish
+\`\`\`giberish
+ls . | grep "something"
+\`\`\`
+
+Some text
+\`\`\`text
+ls . | grep "something"
+\`\`\`
+
+        `;
+        showdown.setFlavor('github');
+        showdown.extension('codehighlight', function () {
+            function htmlunencode(text) {
+                return (
+                    text
+                        .replace(/&amp;/g, '&')
+                        .replace(/&lt;/g, '<')
+                        .replace(/&gt;/g, '>')
+                );
+            }
+            return [
+                {
+                    type: 'output',
+                    filter: function (text, converter, options) {
+                        var left = '<pre><code\\b[^>]*>',
+                            right = '</code></pre>',
+                            flags = 'g',
+                            languageRegex = /class="(\S+)/,
+                            replacement = function (wholeMatch, match, left, right) {
+                                // unescape match to prevent double escaping
+                                match = htmlunencode(match);
+                                languageName = languageRegex.exec(left)[1];
+                                language = hljs.getLanguage(languageName);
+                                highlighted = hljs.highlight(language ? languageName : "text", match);
+                                return left + highlighted.value + right;
+                            };
+                        return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+                    }
+                }
+            ];
+        });
+
+        async function getHtml() {
+            const converter = new showdown.Converter({
+                extensions: ["codehighlight"]
+            });
+            const html = converter.makeHtml(md);
+
+            document.getElementById("display").innerHTML = html;
+        }
+
+        getHtml();
+
+    </script>
+</body>
+
+</html>
