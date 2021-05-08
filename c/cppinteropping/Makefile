@@ -1,21 +1,23 @@
+current_dir = $(shell pwd)
+
 default_target: all
 
 cppClass.o: cppClass.cpp
 	$(info in cppClass.o)
-	g++ -c -o $@ $<
+	g++ -c -fPIC -o $@ $<
 
-wrapper.a: wrapper.cpp
+libwrapper.so: wrapper.cpp cppClass.o
 	$(info in wrapper.a)
-	g++ -c -o $@ $?
+	g++ -shared -o $@ $?
 
 
-mainC: main.c wrapper.a cppClass.o
+mainC: main.c libwrapper.so
 	$(info in MainC)
-	gcc $? -o $@ -lstdc++
+	gcc $< -o $@ -L. -lwrapper
 
 c: mainC
 	$(info in all)
-	./$<
+	LD_LIBRARY_PATH=${current_dir} ./$<
 .PHONY: c
 
 mainCpp: main.cpp cppClass.o
@@ -29,4 +31,4 @@ all: c cpp
 .PHONY: all
 
 clean:
-	-rm cppClass.o wrapper.a mainC mainCpp
+	-rm cppClass.o libwrapper.so mainC mainCpp
