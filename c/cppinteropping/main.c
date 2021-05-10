@@ -15,5 +15,7 @@ int main(int argc, char *argv[])
     printf(">>>>>> 2nd Result in C: %d\n", cppClass_int_get(c));
     cppClass_set_process(c, c_process);
     printf(">>>>>> Process Result in C: %d\n", cppClasss_process(c));
+    const char *descrition = cppClass_description(c, "C");
+    printf(">>>>>> Description in C: %s\n", descrition);
     cppClass_delete(c);
 }

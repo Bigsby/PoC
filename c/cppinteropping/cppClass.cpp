@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "cppClass.hpp"
 
 using namespace std;
@@ -32,4 +33,9 @@ void CppClass::set_process(process_func func)
 int CppClass::process()
 {
     return this->_process(_my_i);
+}
+
+string CppClass::description(string caller)
+{
+    return "Cpp class with value " + to_string(_my_i) + " to: " + caller;
 }

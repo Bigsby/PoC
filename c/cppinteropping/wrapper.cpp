@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "cppClass.hpp"
 #include "wrapper.h"
 
@@ -32,5 +33,13 @@ extern "C"
     void cppClass_delete(CppClass *v)
     {
         delete v;
+    }
+
+    char* cppClass_description(CppClass *v, const char* suffix)
+    {
+        std::string description = v->description(suffix);
+        char *result = new char[description.length() + 1];
+        strcpy(result, description.c_str());
+        return result;
     }
 }

@@ -15,5 +15,6 @@ int main(int argc, char *argv[])
     });
     int processResult = c->process();
     cout << ">>>>>> Process Result in C++: " << processResult << endl;
+    cout << ">>>>>> Descrition in C++: " << c->description("C++") << endl;
     delete c;
 }
