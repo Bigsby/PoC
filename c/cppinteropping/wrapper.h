@@ -19,7 +19,7 @@ extern "C"
 
     int cppClasss_process(CppClass *v);
 
-    char* cppClass_description(CppClass *v, const char* caller);
+    const char* cppClass_description(CppClass *v, const char* caller);
 
     void cppClass_delete(CppClass *v);
 

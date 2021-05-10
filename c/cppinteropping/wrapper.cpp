@@ -35,7 +35,7 @@ extern "C"
         delete v;
     }
 
-    char* cppClass_description(CppClass *v, const char* suffix)
+    const char* cppClass_description(CppClass *v, const char* suffix)
     {
         std::string description = v->description(suffix);
         char *result = new char[description.length() + 1];
